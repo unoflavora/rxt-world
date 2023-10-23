@@ -5,9 +5,13 @@ import { getImageDimensions } from "@sanity/asset-utils";
 export function ImageComponent({
   value,
   isInline,
+  maxWidth,
+  maxHeight,
 }: {
   value: any;
   isInline: boolean;
+  maxWidth?: number;
+  maxHeight?: number;
 }) {
   const { width, height } = getImageDimensions(value);
 
@@ -15,8 +19,8 @@ export function ImageComponent({
 
   return (
     <Image
-      width={width}
-      height={height}
+      width={maxWidth == null || width < maxWidth ? width : maxWidth}
+      height={maxHeight == null || height < maxHeight ? height : maxHeight}
       src={src}
       alt={value.alt || " "}
       loading="lazy"

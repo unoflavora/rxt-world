@@ -44,3 +44,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+:global([class^="PortableTextInput_editorBoxContent"]) {
+  height: 8rem;
+}
