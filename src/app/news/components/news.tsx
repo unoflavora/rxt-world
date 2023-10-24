@@ -15,14 +15,14 @@ export function News(props: { content: NewsType }) {
 
   return (
     <Link href={`/news/${content.slug.current}`} className="max-w-sm ">
-      <Card className="hover:bg-slate-200">
+      <Card className="">
+        <CardContent>
+          <ImageComponent value={content.image} isInline={false} />
+        </CardContent>
         <CardHeader>
           <CardTitle>{content.title}</CardTitle>
           <CardDescription></CardDescription>
         </CardHeader>
-        <CardContent>
-          <ImageComponent value={content.image} isInline={false} />
-        </CardContent>
         <CardFooter>
           <p>{content.description}</p>
         </CardFooter>

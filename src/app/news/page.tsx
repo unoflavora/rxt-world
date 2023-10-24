@@ -14,7 +14,7 @@ export default async function Page() {
   console.log(news[0]);
 
   return (
-    <div className="container flex gap-10">
+    <div className="container flex gap-10 py-24">
       {news.map((content) => {
         return <News key={content._id} content={content} />;
       })}
