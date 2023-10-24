@@ -59,10 +59,7 @@ export default function Navmenu() {
           </NavigationMenuContent>
         </NavigationMenuItem>
 
-        <Separator
-          orientation="vertical"
-          className=" h-[24px] bg-gradient-to-b from-background to-background via-primary"
-        />
+        <Separator orientation="vertical" className=" h-[24px]" />
         <NavigationMenuItem>
           <Link href="/#token" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
