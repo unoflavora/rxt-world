@@ -15,7 +15,7 @@ export default async function Home() {
   return (
     <main className="flex min-h-screen flex-col gap-10 items-center justify-between">
       <div className="w-full h-screen   bg-[url('/bg/grid.svg')] overflow-visible bg-cover bg-center bg-no-repeat flex  justify-center bg-fixed ">
-        <div className="container z-10 px-4  grid grid-flow-row grid-rows-2 pt-32 md:py-56 gap-10 ">
+        <div className="container z-10 px-4  grid grid-flow-row grid-rows-2 pt-32 md:py-56 lg:py-72 gap-10 lg:gap-24 ">
           <article className=" flex flex-col text-center gap-6 justify-center items-center  font-semibold  ">
             <h1 className="text-2xl md:text-3xl xl:text-6xl">
               Bitcoin Land: RXT&apos;s Vision for Malaysia
@@ -44,9 +44,9 @@ export default async function Home() {
             </h2>
           </Link>
         </div>
-        <div className="flex gap-10">
+        <div className="grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {news.map((content) => {
-            return <News key={content._id} content={content} />;
+            return <News key={content._id} content={content} fixedSize />;
           })}
         </div>
       </div>

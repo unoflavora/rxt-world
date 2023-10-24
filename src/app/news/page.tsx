@@ -1,4 +1,3 @@
-import { ImageComponent } from "@/components/sanity/image";
 import { client } from "@/lib/sanity/client";
 import { NewsType } from "@/types/news";
 import Link from "next/link";
@@ -14,9 +13,9 @@ export default async function Page() {
   console.log(news[0]);
 
   return (
-    <div className="container flex gap-10 py-24">
+    <div className="container  gap-10 py-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       {news.map((content) => {
-        return <News key={content._id} content={content} />;
+        return <News key={content._id} content={content} fixedSize />;
       })}
     </div>
   );
