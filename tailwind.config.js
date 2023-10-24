@@ -49,6 +49,10 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        separator: {
+          DEFAULT:
+            "linear-gradient(180deg, rgba(202, 161, 62, 0.00) 0%, #CAA13E 46.35%, rgba(202, 161, 62, 0.00) 100%)",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
