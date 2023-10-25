@@ -1,9 +1,21 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Noto_Sans, Crimson_Text } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/ui/navbar/navbar";
 
-const inter = Inter({ subsets: ["latin"] });
+const sans = Noto_Sans({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  display: "swap",
+  variable: "--notoSans",
+});
+
+const crimson = Crimson_Text({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  display: "swap",
+  variable: "--crimson",
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,7 +31,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={
-          inter.className + " " + "bg-background min-h-screen w-full h-full "
+          sans.className + " " + "bg-background min-h-screen w-full h-full "
         }
       >
         <div className="w-full  flex flex-col">

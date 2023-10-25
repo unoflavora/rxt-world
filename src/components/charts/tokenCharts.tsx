@@ -255,6 +255,7 @@ var options: ApexCharts.ApexOptions = {
   title: {
     text: "$RXT",
     align: "left",
+    style: {},
   },
   xaxis: {
     type: "datetime",
@@ -268,6 +269,12 @@ var options: ApexCharts.ApexOptions = {
 
 export function TokenChart() {
   return (
-    <ApexCharts type="candlestick" options={options} series={options.series} />
+    <div className="w-full h-full">
+      <ApexCharts
+        type="candlestick"
+        options={options}
+        series={options.series}
+      />
+    </div>
   );
 }

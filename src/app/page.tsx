@@ -5,6 +5,11 @@ import { PlusCircleIcon } from "lucide-react";
 import Link from "next/link";
 import { News } from "./news/components/news";
 import { TokenChart } from "@/components/charts/tokenCharts";
+import MeetRimaunangis from "./(home-components)/MeetRimaunangis";
+import Teams from "./(home-components)/MeetTeams";
+import Bitcoinland from "./(home-components)/SeeBitcoin";
+import Charts from "./(home-components)/Charts";
+import Products from "./(home-components)/Products";
 
 export default async function Home() {
   const news = await client.fetch<NewsType[]>(`*[_type == "news"]`, {
@@ -18,10 +23,10 @@ export default async function Home() {
       <div className="w-full h-screen   bg-[url('/bg/grid.svg')] overflow-visible bg-cover bg-center bg-no-repeat flex  justify-center bg-fixed ">
         <div className="container z-10 px-4  grid grid-flow-row grid-rows-2 pt-32 md:py-56 lg:py-72 gap-10 lg:gap-24 ">
           <article className=" flex flex-col text-center gap-6 justify-center items-center  font-semibold  ">
-            <h1 className="text-2xl md:text-3xl xl:text-6xl">
+            <h1 className="text-2xl md:text-3xl xl:text-6xl font-crimson">
               Bitcoin Land: RXT&apos;s Vision for Malaysia
             </h1>
-            <h2 className="text-lg md:text-2xl xl:text-4xl">
+            <h2 className="text-lg md:text-2xl xl:text-4xl text-tertiary">
               Transforming the Penang, Malaysia Waterfront into Asia&apos;s
               Premier Tech Hub
             </h2>
@@ -36,12 +41,21 @@ export default async function Home() {
         <Separator className=" z-0" />
       </div>
 
+      <MeetRimaunangis />
+      <Teams />
+      <Bitcoinland />
+      <Charts />
+      <Separator />
+      <Products />
+
       <div className="container w-full flex flex-col gap-5 text-tertiary xl:py-16">
         <div className="w-full flex justify-between items-center">
-          <h1 className="text-xl md:text-3xl">Company News</h1>
+          <h1 className="text-xl md:text-3xl font-crimson text-white">
+            Company News
+          </h1>
           <Link href={"/news"}>
-            <h2 className="text-sm md:text-base inline-flex gap-2 hover:text-tertiary/30 transition-colors ">
-              READMORE <PlusCircleIcon />
+            <h2 className="text-xs md:text-sm inline-flex justify-center items-center border border-white rounded-full px-3 py-1 gap-2 hover:text-text-white/30 transition-colors text-white ">
+              READMORE <PlusCircleIcon size={15} />
             </h2>
           </Link>
         </div>
@@ -50,8 +64,6 @@ export default async function Home() {
             return <News key={content._id} content={content} fixedSize />;
           })}
         </div>
-
-        <TokenChart/>
       </div>
     </main>
   );
