@@ -4,6 +4,7 @@ import { NewsType } from "@/types/news";
 import { PlusCircleIcon } from "lucide-react";
 import Link from "next/link";
 import { News } from "./news/components/news";
+import { TokenChart } from "@/components/charts/tokenCharts";
 
 export default async function Home() {
   const news = await client.fetch<NewsType[]>(`*[_type == "news"]`, {
@@ -49,6 +50,8 @@ export default async function Home() {
             return <News key={content._id} content={content} fixedSize />;
           })}
         </div>
+
+        <TokenChart/>
       </div>
     </main>
   );
