@@ -1,5 +1,5 @@
 import { TokenChart } from "@/components/charts/tokenCharts";
-import { GET } from "@/app/api/token/route";
+import { GET } from "@/app/api/token";
 export default async function Charts() {
   var res = await GET();
 
