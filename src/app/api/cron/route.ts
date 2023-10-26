@@ -1,5 +1,4 @@
 import prisma from "@/lib/db/prisma";
-import { Series } from "@prisma/client";
 import { NextResponse } from "next/server";
 
 export async function GET() {
@@ -15,7 +14,7 @@ export async function GET() {
 
   const data = (await res.json()) as any[][];
 
-  const series: Series = await prisma.series.create({
+  const series: any = await prisma.series.create({
     data: { createdAt: new Date() },
   });
   console.log(series.id);
