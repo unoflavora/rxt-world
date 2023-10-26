@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Noto_Sans, Crimson_Text } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/ui/navbar/navbar";
+import Footer from "./footer";
 
 const sans = Noto_Sans({
   subsets: ["latin"],
@@ -38,6 +39,8 @@ export default function RootLayout({
           <Navbar />
 
           {children}
+
+          <Footer />
         </div>
       </body>
     </html>
