@@ -2,7 +2,7 @@ import prisma from "@/lib/db/prisma";
 import { Series } from "@prisma/client";
 import { NextResponse } from "next/server";
 
-export default async function GET() {
+export async function GET() {
   const res = await fetch(
     "https://api.coingecko.com/api/v3/coins/rimaunangis/ohlc?vs_currency=usd&days=1",
     {
