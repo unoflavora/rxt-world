@@ -4,7 +4,6 @@ import { NewsType } from "@/types/news";
 import { PlusCircleIcon } from "lucide-react";
 import Link from "next/link";
 import { News } from "./news/components/news";
-import { TokenChart } from "@/components/charts/tokenCharts";
 import MeetRimaunangis from "./(home-components)/MeetRimaunangis";
 import Teams from "./(home-components)/MeetTeams";
 import Bitcoinland from "./(home-components)/SeeBitcoin";

@@ -1,0 +1,8 @@
+{
+  "crons": [
+    {
+      "path": "/api/token/cron/fetchNewData",
+      "schedule": "0 8 * * *"
+    }
+  ]
+}
