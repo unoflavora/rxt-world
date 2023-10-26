@@ -2,7 +2,7 @@ import { TokenChart } from "@/components/charts/tokenCharts";
 import { GET } from "@/app/api/token";
 export default async function Charts() {
   var res = await GET();
-
+  console.log(res);
   return (
     <div className="w-full h-full py-20  text-white">
       <div className="container flex flex-col gap-8 justify-center items-center">
