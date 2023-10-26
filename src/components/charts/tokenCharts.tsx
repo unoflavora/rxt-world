@@ -1,5 +1,7 @@
 "use client";
-import ApexCharts from "react-apexcharts";
+
+import dynamic from "next/dynamic";
+const ApexCharts = dynamic(() => import("react-apexcharts"), { ssr: false });
 
 var options: ApexCharts.ApexOptions = {
   series: [
