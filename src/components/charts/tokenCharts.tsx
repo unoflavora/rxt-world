@@ -1,7 +1,13 @@
 "use client";
 
 import dynamic from "next/dynamic";
-const ApexCharts = dynamic(() => import("react-apexcharts"), { ssr: false });
+import { useEffect, useRef, useState } from "react";
+
+const ApexCharts = dynamic(() => import("react-apexcharts"), {
+  ssr: false,
+  loading: () => <p>Loading...</p>,
+});
+// import ApexCharts from "react-apexcharts";
 
 var options: ApexCharts.ApexOptions = {
   series: [
@@ -270,11 +276,39 @@ var options: ApexCharts.ApexOptions = {
 };
 
 export function TokenChart() {
+  const [size, setSize] = useState<{ width: number; height: number }>({
+    width: 1000,
+    height: 500,
+  });
+  const winRef = useRef<HTMLDivElement>(null);
+
+  const handleResize = () => {
+    if (winRef.current == null) return;
+
+    setSize({
+      height: winRef.current.clientHeight,
+      width: winRef.current.clientWidth,
+    });
+    console.log(winRef.current.clientWidth);
+  };
+
+  useEffect(() => {
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [winRef]);
+
   return (
-    <div className="w-full h-full">
+    <div ref={winRef} className="w-full h-full">
       <ApexCharts
         type="candlestick"
         options={options}
+        width={size.width}
+        height={600}
         series={options.series}
       />
     </div>
