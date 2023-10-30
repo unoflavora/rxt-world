@@ -32,8 +32,14 @@ export default async function Home() {
               Premier Tech Hub
             </h2>
           </article>
-          <div className="bg-[#262217] flex w-full md:h-[350%] max-h-[32rem] justify-center  text-center items-center">
-            <h1 className="text-6xl font-semibold">GIF</h1>
+          <div className="relative flex w-full md:h-[350%] max-h-[32rem] justify-center  text-center items-center">
+            <video
+              src="/banner.mp4"
+              autoPlay
+              loop
+              muted
+              className="absolute h-full w-full"
+            ></video>
           </div>
         </div>
       </div>

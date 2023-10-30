@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Teams() {
   return (
@@ -25,9 +26,11 @@ export default function Teams() {
               magna, iaculis rutrum diam finibus eu. Aenean quis porttitor
               massa. In rhoncus a lorem sed condimentum.
             </p>
-            <Button className="border-black text-black bg-transparent border w-fit font-bold hover:bg-black hover:border-white hover:text-white">
-              SEE FULL TEAM
-            </Button>
+            <Link href="/our-team">
+              <Button className="border-black text-black bg-transparent border w-fit font-bold hover:bg-black hover:border-white hover:text-white">
+                SEE FULL TEAM
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
