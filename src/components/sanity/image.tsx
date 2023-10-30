@@ -17,7 +17,6 @@ export const ImageComponent = React.forwardRef<HTMLDivElement, Props>(
     const { width, height } = getImageDimensions(value);
 
     const src = buildUrl({ value, isInline });
-    console.log(height);
 
     return (
       <div

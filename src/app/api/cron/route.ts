@@ -9,6 +9,9 @@ export async function GET() {
       headers: {
         accept: "application/json",
       },
+      next: {
+        revalidate: 0,
+      },
     }
   );
 
@@ -17,7 +20,6 @@ export async function GET() {
   const series: any = await prisma.series.create({
     data: { createdAt: new Date() },
   });
-  console.log(series.id);
 
   await Promise.all(
     data.map((point) => {

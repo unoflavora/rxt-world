@@ -299,7 +299,6 @@ export function TokenChart(props: {
       height: winRef.current.clientHeight,
       width: winRef.current.clientWidth,
     });
-    console.log(winRef.current.clientWidth);
   };
 
   useEffect(() => {

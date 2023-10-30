@@ -14,7 +14,6 @@ import { cn } from "@/lib/utils";
 
 export function News(props: { content: NewsType; fixedSize?: boolean }) {
   const { content } = props;
-  console.log(content);
 
   return (
     <Link href={`/news/${content.slug.current}`} className="w-full  ">

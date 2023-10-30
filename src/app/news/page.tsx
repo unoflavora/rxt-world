@@ -10,8 +10,6 @@ export default async function Page() {
     },
   });
 
-  console.log(news[0]);
-
   return (
     <div className="container  gap-10 py-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
       {news.map((content) => {
