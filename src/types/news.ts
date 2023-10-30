@@ -9,6 +9,8 @@ export type NewsType = {
   body: any[];
   image: ImageType;
   slug: SlugType;
+  date: string;
+  url: string;
 };
 
 type ImageType = {

@@ -9,11 +9,13 @@ import Teams from "./(home-components)/MeetTeams";
 import Bitcoinland from "./(home-components)/SeeBitcoin";
 import Charts from "./(home-components)/Charts";
 import Products from "./(home-components)/Products";
+import Media from "./(home-components)/Media";
+import { Button } from "@/components/ui/button";
 
 export default async function Home() {
   const news = await client.fetch<NewsType[]>(`*[_type == "news"]`, {
     next: {
-      revalidate: 0,
+      revalidate: 1,
     },
   });
 
@@ -46,21 +48,28 @@ export default async function Home() {
       <Charts />
       <Separator />
       <Products />
+      <Media />
 
       <div className="container w-full flex flex-col gap-5 text-tertiary xl:py-16">
         <div className="w-full flex justify-between items-center">
-          <h1 className="text-xl md:text-3xl font-crimson text-white">
+          <h1 className="text-xl md:text-2xl font-crimson text-white">
             Company News
           </h1>
           <Link href={"/news"}>
-            <h2 className="text-xs md:text-sm inline-flex justify-center items-center border border-white rounded-full px-3 py-1 gap-2 hover:text-text-white/30 transition-colors text-white ">
-              READMORE <PlusCircleIcon size={15} />
-            </h2>
+            <Button
+              variant={"outline"}
+              className="flex justify-center items-center gap-2"
+            >
+              READMORE <PlusCircleIcon className="-mt-0.5" size={15} />
+            </Button>
           </Link>
         </div>
         <div className="grid gap-10 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {news.map((content) => {
-            return <News key={content._id} content={content} fixedSize />;
+          {news.map((content, i) => {
+            if (i < 3)
+              return (
+                <News key={content._id} content={content} fixedSize home />
+              );
           })}
         </div>
       </div>

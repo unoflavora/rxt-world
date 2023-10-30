@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+
 export default function Teams() {
   return (
     <div className="w-full h-full py-20 bg-white min-h-screen text-black">
@@ -23,6 +25,9 @@ export default function Teams() {
               magna, iaculis rutrum diam finibus eu. Aenean quis porttitor
               massa. In rhoncus a lorem sed condimentum.
             </p>
+            <Button className="border-black text-black bg-transparent border w-fit font-bold hover:bg-black hover:border-white hover:text-white">
+              SEE FULL TEAM
+            </Button>
           </div>
         </div>
       </div>

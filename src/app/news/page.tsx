@@ -6,12 +6,13 @@ import { News } from "./components/news";
 export default async function Page() {
   const news = await client.fetch<NewsType[]>(`*[_type == "news"]`, {
     next: {
-      revalidate: 0,
+      revalidate: 1,
     },
   });
 
   return (
-    <div className="container  gap-10 py-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    <div className="container  gap-14 p-24 flex flex-col ">
+      <h1 className="text-2xl font-bold">Company News</h1>
       {news.map((content) => {
         return <News key={content._id} content={content} fixedSize />;
       })}
