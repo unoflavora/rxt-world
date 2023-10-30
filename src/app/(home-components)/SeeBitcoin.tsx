@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import MapScene from "./ThreeMap";
+import Link from "next/link";
 
 export default function Bitcoinland() {
   return (
@@ -14,7 +15,9 @@ export default function Bitcoinland() {
           </div>
           <div className="absolute -bottom-7 left-1/2 -translate-x-1/2 bg-background w-[80%] max-w-[46rem]  py-7 px-14 flex max-sm:flex-col max-sm:justify-center max-sm:gap-2 justify-between items-center">
             <h1 className="text-base text-tertiary">EXPLORE MORE</h1>
-            <Button className="font-bold">VIEW ON BITCOIN LAND</Button>
+            <Link href="https://www.bitcoinland.com" target="_blank">
+              <Button className="font-bold">VIEW ON BITCOIN LAND</Button>
+            </Link>
           </div>
         </div>
       </div>

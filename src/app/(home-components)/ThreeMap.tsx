@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import { OrbitControls } from "@react-three/drei";
 import { MTLLoader } from "three/addons/loaders/MTLLoader.js";
 import { OBJLoader } from "three/addons/loaders/OBJLoader.js";
+import { Loader, LoaderIcon } from "lucide-react";
 const Scene = () => {
   const materials = useLoader(
     MTLLoader,
@@ -25,15 +26,22 @@ const Scene = () => {
 export default function MapScene() {
   return (
     <div className=" w-full h-full">
-      <Canvas camera={{ fov: 45, position: [10, 5, 0] }}>
-        <Suspense fallback={null}>
+      <Suspense
+        fallback={
+          <div className="w-full h-full  flex flex-col justify-center items-center">
+            <LoaderIcon className="animate-spin" size={"50"} />
+            <h1 className="text-sm">Loading 3D...</h1>
+          </div>
+        }
+      >
+        <Canvas camera={{ fov: 45, position: [10, 5, 0] }}>
           <Scene />
           <OrbitControls />
 
           <ambientLight />
           <hemisphereLight color="white" position={[0, 20, 0]} />
-        </Suspense>
-      </Canvas>
+        </Canvas>
+      </Suspense>
     </div>
   );
 }
