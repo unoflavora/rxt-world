@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import MapScene from "./ThreeMap";
 
 export default function Bitcoinland() {
   return (
@@ -8,7 +9,9 @@ export default function Bitcoinland() {
           BITCOIN LAND
         </div>
         <div className="w-full relative justify-center items-end text-4xl">
-          <div className="w-full h-[46rem] bg-[url('/company/bitcoinland3d.png')] bg-cover bg-no-repeat bg-center" />
+          <div className="w-full h-[46rem]">
+            <MapScene />
+          </div>
           <div className="absolute -bottom-7 left-1/2 -translate-x-1/2 bg-background w-[80%] max-w-[46rem]  py-7 px-14 flex max-sm:flex-col max-sm:justify-center max-sm:gap-2 justify-between items-center">
             <h1 className="text-base text-tertiary">EXPLORE MORE</h1>
             <Button className="font-bold">VIEW ON BITCOIN LAND</Button>

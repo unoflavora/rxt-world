@@ -1,0 +1,242 @@
+# Blender 3.3.8 MTL File: 'building_edit.blend'
+# www.blender.org
+
+newmtl AC
+Ns 0.189378
+Ka 1.000000 1.000000 1.000000
+Ks 0.821101 0.821101 0.821101
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Textures/Aircos0129_350.jpg
+
+newmtl Bark
+Ns 200.000000
+Ka 0.095455 0.095455 0.095455
+Ks 0.427273 0.427273 0.427273
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd Textures/Bark_004_basecolor.jpg
+
+newmtl Gold
+Ns 1000.000000
+Ka 0.082535 0.082535 0.082535
+Ks 0.885455 0.885455 0.885455
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd Textures/TCom_Metal_FineGold_512_albedo.jpg
+
+newmtl Gold.001
+Ns 80.885452
+Ka 0.403636 0.403636 0.403636
+Ks 0.885455 0.885455 0.885455
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd Textures/TCom_Metal_FineGold_512_roughness.jpg
+
+newmtl Tree_Leaves
+Ns 150.639221
+Ka 1.000000 1.000000 1.000000
+Ks 0.918182 0.918182 0.918182
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+illum 3
+map_Kd Textures/T_Biome_D.png
+map_d Textures/T_Biome_D.png
+
+newmtl building_2
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Textures/TCom_HighRiseResidential0024_1_seamless_S.jpg
+
+newmtl building_3
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Textures/TCom_BuildingsHighRise0628_2_seamless_S.jpg
+
+newmtl building_3_window
+Ns 810.000000
+Ka 0.201835 0.201835 0.201835
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd Textures/TCom_BuildingsHighRise0628_2_seamless_S.jpg
+
+newmtl building_4
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Textures/TCom_HighRiseGlass0009_1_seamless_S.jpg
+
+newmtl building_4_window
+Ns 810.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Textures/TCom_HighRiseGlass0009_1_seamless_S.jpg
+
+newmtl building_5
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Textures/TCom_BuildingsTallHouse0118_S.jpg
+
+newmtl building_5
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Textures/TCom_HighRiseResidential0160_1_seamless_S.jpg
+
+newmtl building_6
+Ns 808.349426
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Textures/TCom_HighRiseGlass0082_1_S.jpg
+
+newmtl bush
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.800000 0.800000 0.800000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+
+newmtl concrete
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Textures/TCom_ConcreteBare0330_7_seamless_S.png
+
+newmtl concrete_2
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Textures/TCom_ConcreteBare0356_9_seamless_S.png
+
+newmtl dirt
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Textures/TCom_Gravel0160_1_seamless_S.jpg
+
+newmtl grass
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Textures/TCom_Grass0053_1_seamless_S.jpg
+
+newmtl road_1
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Textures/TCom_Gravel0100_1_seamless_S.jpg
+
+newmtl sand
+Ns 0.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Textures/TCom_Gravel0043_1_seamless_S.jpg
+
+newmtl test_texture.001
+Ns 27.496786
+Ka 0.298182 0.298182 0.298182
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 3
+map_Kd Textures/TCom_BuildingsHighRise0530_1_seamless_S.jpg
+
+newmtl water
+Ns 728.857178
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Textures/TCom_WaterPlain0008_1_seamless_S.jpg
+
+newmtl window
+Ns 360.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Textures/TCom_HighRiseGlass0055_1_seamless_S.jpg
+
+newmtl window_2
+Ns 360.000000
+Ka 1.000000 1.000000 1.000000
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 1.000000
+illum 2
+map_Kd Textures/TCom_HighRiseGlass0055_1_seamless_S.jpg
