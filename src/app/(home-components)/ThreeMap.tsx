@@ -31,7 +31,7 @@ export default function MapScene() {
       >
         <Canvas camera={{ fov: 45, position: [10, 5, 0] }}>
           <Scene />
-          <OrbitControls/>
+          <OrbitControls minPolarAngle={1.2} maxPolarAngle={1.2} />
 
           <ambientLight />
           <hemisphereLight color="white" />
