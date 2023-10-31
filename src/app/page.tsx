@@ -11,6 +11,7 @@ import Charts from "./(home-components)/Charts";
 import Products from "./(home-components)/Products";
 import Media from "./(home-components)/Media";
 import { Button } from "@/components/ui/button";
+import HomeHeader from "./(home-components)/Header";
 
 export default async function Home() {
   const news = await client.fetch<NewsType[]>(`*[_type == "news"]`, {
@@ -21,33 +22,8 @@ export default async function Home() {
 
   return (
     <main className="flex min-h-screen flex-col gap-10 items-center justify-between">
-      <div className="w-full h-screen   bg-[url('/bg/grid.svg')] overflow-visible bg-cover bg-center bg-no-repeat flex  justify-center bg-fixed ">
-        <div className="container z-10 px-4  grid grid-flow-row grid-rows-2 pt-32 md:py-56 lg:py-72 gap-10 lg:gap-24 ">
-          <article className=" flex flex-col text-center gap-6 justify-center items-center  font-semibold  ">
-            <h1 className="text-2xl md:text-3xl xl:text-6xl font-crimson">
-              Bitcoin Land: RXT&apos;s Vision for Malaysia
-            </h1>
-            <h2 className="text-lg md:text-2xl xl:text-4xl text-tertiary">
-              Transforming the Penang, Malaysia Waterfront into Asia&apos;s
-              Premier Tech Hub
-            </h2>
-          </article>
-          <div className="relative flex w-full md:h-[350%] max-h-[32rem] justify-center  text-center items-center">
-            <video
-              src="https://cdk-hnb659fds-assets-148134072949-ap-southeast-1/Background Video.mp4"
-              autoPlay
-              loop
-              muted
-              className="absolute h-full w-full"
-            ></video>
-          </div>
-        </div>
-      </div>
-
-      <div className="container">
-        <Separator className=" z-0" />
-      </div>
-
+      <HomeHeader />
+      <Separator className="container z-0" />
       <MeetRimaunangis />
       <Teams />
       <Bitcoinland />

@@ -34,7 +34,7 @@ export default function NavMenuMobile() {
 
   const menus = [
     { title: "Products", path: "/your-path" },
-    { title: "Token Performance", path: "/your-path" },
+    { title: "Token Performance", path: "/#token" },
     { title: "Contact Us", path: "/your-path" },
   ];
 
@@ -46,8 +46,12 @@ export default function NavMenuMobile() {
         </SheetTrigger>
         <SheetContent className="list-none py-10 gap-8 flex flex-col">
           <Products />
-          <h4 className=" font-semibold">Token Performance</h4>
-          <h4 className=" font-semibold">Contact Us</h4>
+          <Link href={"/#token"}>
+            <h4 className=" font-semibold">Token Performance</h4>
+          </Link>
+          <Link href={"/contact"}>
+            <h4 className=" font-semibold">Contact Us</h4>
+          </Link>
         </SheetContent>
       </Sheet>
     </div>

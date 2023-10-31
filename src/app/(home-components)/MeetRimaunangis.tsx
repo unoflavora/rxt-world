@@ -1,3 +1,6 @@
+"use client";
+import { motion, stagger } from "framer-motion";
+
 import Image from "next/image";
 
 export default function MeetRimaunangis() {
@@ -39,7 +42,11 @@ export default function MeetRimaunangis() {
       <div className="container flex flex-col gap-10 md:gap-36">
         <h1 className="text-center text-3xl font-crimson">MEET RIMAUNANGIS</h1>
         {contents.map((content, i) => (
-          <div
+          <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ ease: [0.17, 0.22, 0.0, 1.57], duration: 2.5 }}
+            viewport={{ once: true }}
             key={content.key}
             className="grid grid-cols-1 sm:grid-cols-2 gap-10 text-start"
           >
@@ -58,12 +65,20 @@ export default function MeetRimaunangis() {
               </h3>
               <p className="text-[#F0F2F5]">{content.desc}</p>
             </div>
-          </div>
+          </motion.div>
         ))}
 
         <div className="flex max-sm:flex-col px-4 xl:px-24 flex-wrap justify-center items-start gap-10 bg-[#1E1C17] shadow py-6 md:py-20  ">
           {missions.map((mission, i) => (
-            <div
+            <motion.div
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{
+                ease: [0.17, 0.22, 0.0, 1.57],
+                duration: 2.5,
+                delay: 0.3 * i,
+              }}
+              viewport={{ once: true }}
               className="flex flex-col  gap-[1.25rem] xl:min-w-[20rem] md:text-center text-start lg:text-start md:w-[calc(50%-1.25rem)] lg:w-[calc(33%-1.25rem-.3rem)] w-auto justify-start md:justify-center lg:justify-start items-start md:items-center lg:items-start "
               key={mission.title}
             >
@@ -78,7 +93,7 @@ export default function MeetRimaunangis() {
                 {mission.title}
               </h1>
               <p className="text-base font-light">{mission.desc}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

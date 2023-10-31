@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 export default function Products() {
   const products = [
     {
@@ -38,7 +40,15 @@ export default function Products() {
           {products.map((product, i) => {
             const index = i + 1;
             return (
-              <div
+              <motion.div
+                initial={{ opacity: 0, y: 100 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  ease: [0.17, 0.22, 0.0, 1.57],
+                  duration: 2.5,
+                  delay: 0.1 * (i - 1),
+                }}
+                viewport={{ once: true }}
                 key={product.title}
                 className={`${
                   index % 2 === 0 ? "md:pt-72" : index !== 1 ? "md:-mt-36" : ""
@@ -52,7 +62,7 @@ export default function Products() {
                 <p className="text-[#E2E2E2] text-sm md:text-base">
                   {product.desc}
                 </p>
-              </div>
+              </motion.div>
             );
           })}
         </div>

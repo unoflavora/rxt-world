@@ -19,7 +19,6 @@ const Scene = () => {
     loader.setPath("/map/");
   });
 
-  console.log(obj);
   return <primitive object={obj} scale={0.008} />;
 };
 
