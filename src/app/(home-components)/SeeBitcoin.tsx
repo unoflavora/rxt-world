@@ -6,7 +6,7 @@ export default function Bitcoinland() {
   return (
     <div className="w-full h-full  bg-[url('/bg/grid-2d.svg')] bg-cover text-white">
       <div className="container flex flex-col gap-8 justify-start py-20">
-        <div className="p-2 px-4 self-start text-2xl md:text-4xl xl:text-6xl text-center bg-white text-black font-bold font-crimson">
+        <div className="p-2 px-4 self-start text-2xl md:text-4xl xl:text-6xl text-center  text-[#D4AF37] font-bold font-crimson">
           BITCOIN LAND
         </div>
         <div className="w-full relative justify-center items-end text-4xl">
