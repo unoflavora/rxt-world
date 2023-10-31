@@ -9,7 +9,7 @@ export default function Navbar() {
   const visible = useVisibleOnScrollUp();
   return (
     <nav
-      className={`fixed bg-blend-normal z-20 w-full transition-transform duration-300 ${
+      className={`fixed bg-black z-20 w-full transition-transform duration-300 ${
         visible ? "translate-y-0" : "-translate-y-24"
       }`}
     >

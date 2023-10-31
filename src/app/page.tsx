@@ -34,7 +34,7 @@ export default async function Home() {
           </article>
           <div className="relative flex w-full md:h-[350%] max-h-[32rem] justify-center  text-center items-center">
             <video
-              src="/banner.mp4"
+              src="https://cdk-hnb659fds-assets-148134072949-ap-southeast-1/Background Video.mp4"
               autoPlay
               loop
               muted
