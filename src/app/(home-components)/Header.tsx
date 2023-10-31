@@ -16,7 +16,8 @@ export default function HomeHeader() {
 
   useEffect(() => {
     scrollYProgress.on("change", (val) => {
-      setCurrentDivProgress(1 + val);
+      console.log(val);
+      setCurrentDivProgress(Math.min(1 + val, 1.4));
     });
     return () => {
       scrollYProgress.clearListeners();
@@ -46,6 +47,7 @@ export default function HomeHeader() {
             src="https://rimaunangis.s3.ap-southeast-1.amazonaws.com/Background+Video.mp4"
             autoPlay
             loop
+            muted
             className="absolute h-full w-full md:mt-20 lg:mt-44"
           ></video>
           <div className="absolute z-20 mt-20 md:mt-56 ml-5 w-10 lg:ml-20 md:w-24">
