@@ -30,7 +30,7 @@ export default function Media() {
           MEDIA PARTNER
         </h2>
         <div className="flex relative overflow-hidden">
-          <div className="flex w-full flex-col justify-center items-center md:flex-row md:animate-marquee gap-2  ">
+          <div className="px-2 flex w-full min-w-fit flex-col justify-center items-center md:flex-row md:animate-marquee gap-2  ">
             {medias.map((media, i) => {
               return (
                 <div
@@ -52,7 +52,7 @@ export default function Media() {
               );
             })}
           </div>
-          <div className="absolute max-sm:hidden flex flex-col animate-marquee2 md:flex-row gap-2  ">
+          <div className="px-2 absolute w-full min-w-fit max-sm:hidden flex flex-col animate-marquee2 md:flex-row gap-2   ">
             {medias.map((media, i) => {
               return (
                 <div

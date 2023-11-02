@@ -49,7 +49,7 @@ export default function RootLayout({
         <div className="w-full  flex flex-col">
           <Navbar />
 
-          {children}
+          <div className="w-full h-full flex flex-col py-24">{children}</div>
 
           <Footer />
         </div>

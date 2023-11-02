@@ -9,7 +9,7 @@ export default function HomeHeader() {
 
   const { scrollYProgress } = useScroll({
     target: headerRef,
-    offset: ["20vh", "80vh"],
+    offset: [0, "100vh"],
   });
 
   const [currentDivProgress, setCurrentDivProgress] = useState(0);
@@ -27,38 +27,26 @@ export default function HomeHeader() {
   return (
     <div
       ref={headerRef}
-      className="w-full h-screen md:h-[120vh] lg:h-[200vh] xl:h-[240vh] 2xl:h-[190vh]  bg-[url('/bg/grid.svg')] overflow-hidden  bg-cover bg-center bg-no-repeat flex  justify-center bg-fixed "
+      className="w-full min-h-fit py-20 bg-[url('/bg/grid.svg')] overflow-hidden  bg-cover bg-center bg-no-repeat flex  justify-center items-center  bg-fixed "
     >
-      <div className="container z-10 px-4 flex flex-col  md:pt-64">
-        <article className=" flex pt-44  flex-col text-center gap-6 justify-center items-center  font-semibold  ">
+      <div className="relative container z-10 px-4 flex flex-col gap-10  ">
+        <article className="lg:py-36 flex flex-col text-center gap-6 justify-center items-center  font-semibold  ">
           <h1 className="text-2xl md:text-3xl xl:text-6xl font-crimson">
-            Bitcoin Land: RXT&apos;s Vision for Malaysia
+            Bitcoinland: RXT&apos;s Vision for Malaysia
           </h1>
           <h2 className="text-lg md:text-2xl xl:text-4xl text-tertiary">
             Transforming the Penang, Malaysia Waterfront into Asia&apos;s
             Premier Tech Hub
           </h2>
         </article>
-        <div
+        <video
           style={{ scale: Math.max(1, currentDivProgress) }}
-          className="relative flex w-full h-[45rem] justify-start  text-center items-start "
-        >
-          <video
-            src="https://rimaunangis.s3.ap-southeast-1.amazonaws.com/Background+Video.mp4"
-            autoPlay
-            loop
-            muted
-            className="absolute h-full w-full md:mt-20 lg:mt-44"
-          ></video>
-          <div className="absolute z-20 mt-20 md:mt-56 ml-5 w-10 lg:ml-20 md:w-24">
-            <Image
-              src="/company/token.png"
-              width={100}
-              height={50}
-              alt="company logo"
-            />
-          </div>
-        </div>
+          src="https://rimaunangis.s3.ap-southeast-1.amazonaws.com/Background+Video.mp4"
+          autoPlay
+          loop
+          muted
+          className="overflow-y-visible"
+        ></video>
       </div>
     </div>
   );

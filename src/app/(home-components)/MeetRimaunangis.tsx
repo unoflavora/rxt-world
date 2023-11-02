@@ -76,7 +76,7 @@ export default function MeetRimaunangis() {
               transition={{
                 ease: [0.17, 0.22, 0.0, 1.57],
                 duration: 2.5,
-                delay: 0.3 * i,
+                delay: 0.2 * i,
               }}
               viewport={{ once: true }}
               className="flex flex-col  gap-[1.25rem] xl:min-w-[20rem] md:text-center text-start lg:text-start md:w-[calc(50%-1.25rem)] lg:w-[calc(33%-1.25rem-.3rem)] w-auto justify-start md:justify-center lg:justify-start items-start md:items-center lg:items-start "
