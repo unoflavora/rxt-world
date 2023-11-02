@@ -33,22 +33,21 @@ export default function Products() {
     <div className="w-full h-full flex justify-center bg-[url('/bg/grid-2d-light.svg')] min-h-screen py-20">
       <div className="container flex flex-col gap-2">
         <div className="text-3xl uppercase">products</div>
-        <div
+        <motion.div
+          initial={{ opacity: 0, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            ease: [0.17, 0.22, 0.0, 1.57],
+            duration: 2.5,
+          }}
+          viewport={{ once: true }}
           style={{ gridTemplateColumns: "repeat(2, minmax(0, 1fr))" }}
           className={`flex flex-col gap-10 md:grid md:gap-20 lg:gap-44 place-content-start justify-items-start`}
         >
           {products.map((product, i) => {
             const index = i + 1;
             return (
-              <motion.div
-                initial={{ opacity: 0, y: 100 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{
-                  ease: [0.17, 0.22, 0.0, 1.57],
-                  duration: 2.5,
-                  delay: 0.1 * (i - 1),
-                }}
-                viewport={{ once: true }}
+              <div
                 key={product.title}
                 className={`${
                   index % 2 === 0 ? "md:pt-72" : index !== 1 ? "md:-mt-36" : ""
@@ -62,10 +61,10 @@ export default function Products() {
                 <p className="text-[#E2E2E2] text-sm md:text-base">
                   {product.desc}
                 </p>
-              </motion.div>
+              </div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </div>
   );

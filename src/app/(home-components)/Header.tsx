@@ -45,6 +45,7 @@ export default function HomeHeader() {
           autoPlay
           loop
           muted
+          playsInline
           className="overflow-y-visible"
         ></video>
       </div>
