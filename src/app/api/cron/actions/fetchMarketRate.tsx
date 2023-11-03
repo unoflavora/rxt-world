@@ -48,6 +48,7 @@ export default async function fetchMarketRate() {
       try {
         const ticker = exchangeData.tickers[0];
         const convertedData = {
+          price: ticker.last,
           lastTraded: ticker.last_traded_at,
           lastUpdated: ticker.last_fetch_at,
           tradeUrl: ticker.trade_url,

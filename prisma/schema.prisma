@@ -26,6 +26,7 @@ model StockPrice {
 
 model MarketData {
   id          Int        @id @default(autoincrement())
+  price Float @default(0)
   spread      Float
   dailyVolume Int
   lastTraded  DateTime
