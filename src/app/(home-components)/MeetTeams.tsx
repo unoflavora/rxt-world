@@ -3,14 +3,14 @@ import Link from "next/link";
 
 export default function Teams() {
   return (
-    <div className="w-full h-full py-20 bg-white min-h-screen text-black">
-      <div className="container flex flex-col gap-8 justify-start">
+    <div className="w-full h-full flex flex-col gap-8   min-h-screen text-black">
+      <div className="w-full h-[20rem] bg-background text-white flex justify-center items-center text-4xl">
+        3D team member
+      </div>
+      <div className="container flex bg-white py-14 flex-col gap-8 justify-start">
         <div className="grid grid-cols-1 gap-5 md:gap-0 md:grid-cols-2 justify-center items-center">
-          <div className="w-full h-[46rem] bg-background text-white flex justify-center items-center text-4xl">
-            3D team member
-          </div>
           <div className="flex flex-col gap-2 md:px-6">
-            <h1 className="text-2xl  bg-black text-white font-crimson uppercase p-2">
+            <h1 className="text-2xl max-sm:w-fit max-sm:pr-14  bg-black text-white font-crimson uppercase p-2">
               THE TEAMS
             </h1>
             <p>

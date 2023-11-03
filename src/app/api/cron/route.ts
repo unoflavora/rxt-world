@@ -1,65 +1,9 @@
 import prisma from "@/lib/db/prisma";
 import { NextResponse } from "next/server";
+import fetchTokenRate from "./actions/fetchTokenRate";
 
 export async function GET() {
-  const res = await fetch(
-    "https://api.coingecko.com/api/v3/coins/rimaunangis/ohlc?vs_currency=usd&days=1",
-    {
-      method: "GET",
-      headers: {
-        accept: "application/json",
-      },
-      next: {
-        revalidate: 0,
-      },
-    }
-  );
+  const finalTokenRate = await fetchTokenRate();
 
-  const data = (await res.json()) as any[][];
-
-  const series: any = await prisma.series.create({
-    data: { createdAt: new Date() },
-  });
-
-  await Promise.all(
-    data.map((point) => {
-      return prisma.stockPrice.create({
-        data: {
-          date: new Date(point[0]),
-          data: point.slice(1),
-          seriesId: series.id,
-        },
-      });
-    })
-  );
-
-  const finalData = await prisma.series.findFirst({
-    where: { id: series.id },
-    include: { price: true },
-  });
-
-  return NextResponse.json({ finalData });
+  return NextResponse.json({ finalTokenRate });
 }
-
-// import { NextResponse } from "next/server";
-
-// export async function S() {
-//   const res = await fetch(
-//     "https://api.coingecko.com/api/v3/coins/rimaunangis/ohlc?vs_currency=usd&days=7",
-//     {
-//       method: "GET",
-//       headers: {
-//         accept: "application/json",
-//       },
-//     }
-//   );
-
-//   const data = (await res.json()) as string[];
-
-//   const series = data.map((point) => {
-
-//     return { x: new Date(point[0]), y: point.slice(1) };
-//   });
-
-//   return NextResponse.json({ series });
-// }

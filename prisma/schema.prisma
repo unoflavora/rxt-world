@@ -23,3 +23,13 @@ model StockPrice {
   Series   Series?  @relation(fields: [seriesId], references: [id])
   seriesId Int?
 }
+
+model MarketData {
+  id Int @id @default(autoincrement())
+  market String
+  spread Float
+  dailyVolume Int
+  lastTraded DateTime
+  lastUpdated DateTime
+  tradeUrl String
+}

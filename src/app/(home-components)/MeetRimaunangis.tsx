@@ -23,7 +23,7 @@ export default function MeetRimaunangis() {
     {
       title: "Introduction to the Bitcoin Land project",
       desc: "Bitcoin Land is more than a development project; it's a vision to create a hub that encapsulates the essence of technological evolution. Rooted in the principles of innovation, sustainability, and forward- thinking, Bitcoin Land is designed to be a magnet for tech enthusiasts, startups, and established giants in the industry.",
-      image: "/company/mission (1).png",
+      image: "/company/mission (3).png",
     },
     {
       title: "Strategic Importance of Malaysia's Waterfront",
@@ -33,12 +33,20 @@ export default function MeetRimaunangis() {
     {
       title: "Vision for Redefining Asia's Tech Landscape",
       desc: "As Asia emerges as the next global tech powerhouse, Bitcoin Land seeks to position Malaysia at the vanguard of this transformation. The project embodies our belief that Malaysia has the potential to set benchmarks for the rest of Asia, driving technological advancements that resonate worldwide. In essence, Bitcoin Land isn't just a place; it's a movement, aiming to redefine the contours of Asia's tech narrative.",
-      image: "/company/mission (3).png",
+      image: "/company/mission (1).png",
     },
   ];
 
   return (
-    <div className="w-full flex justify-center py-20 text-[#F0F2F5]">
+    <div className="relative w-full flex justify-center  text-[#F0F2F5]">
+      <Image
+        className="absolute right-0 top-5"
+        src={"/graphics/box.svg"}
+        width={50}
+        height={50}
+        alt="decoration"
+      />
+
       <div className="container flex flex-col gap-10 md:gap-36">
         <h1 className="text-center text-3xl font-crimson">MEET RIMAUNANGIS</h1>
         {contents.map((content, i) => (
@@ -48,7 +56,7 @@ export default function MeetRimaunangis() {
             transition={{ ease: [0.17, 0.22, 0.0, 1.57], duration: 2.5 }}
             viewport={{ once: true }}
             key={content.key}
-            className="grid grid-cols-1 sm:grid-cols-2 gap-10 text-start"
+            className="relative grid grid-cols-1 sm:grid-cols-2 gap-10 text-start"
           >
             <div
               style={{ backgroundImage: `url('${content.image}')` }}
@@ -79,11 +87,12 @@ export default function MeetRimaunangis() {
                 delay: 0.2 * i,
               }}
               viewport={{ once: true }}
-              className="flex flex-col  gap-[1.25rem] xl:min-w-[20rem] md:text-center text-start lg:text-start md:w-[calc(50%-1.25rem)] lg:w-[calc(33%-1.25rem-.3rem)] w-auto justify-start md:justify-center lg:justify-start items-start md:items-center lg:items-start "
+              className="relative flex flex-col  gap-[1.25rem] xl:min-w-[20rem] md:text-center text-start lg:text-start md:w-[calc(50%-1.25rem)] lg:w-[calc(33%-1.25rem-.3rem)] w-auto justify-start md:justify-center lg:justify-start items-start md:items-center lg:items-start "
               key={mission.title}
             >
+             
               <Image
-                className="w-20 aspect-square"
+                className="w-20 aspect-square max-sm:self-center rounded-full"
                 src={mission.image}
                 width={100}
                 height={25}
