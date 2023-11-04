@@ -87,7 +87,7 @@ function Products({ onClick }: { onClick: () => void }) {
     <Collapsible
       open={isOpen}
       onOpenChange={setIsOpen}
-      className="w-full space-y-2 transition-all"
+      className="w-full space-y-2 transition-all translate-x-0"
     >
       <div className="flex items-center justify-between space-x-4 4">
         <h4 className=" font-semibold">Products</h4>
