@@ -38,7 +38,7 @@ export default function MeetRimaunangis() {
   ];
 
   return (
-    <div className="relative w-full flex justify-center  text-[#F0F2F5]">
+    <div className="relative w-full flex justify-center py-10  text-[#F0F2F5]">
       <Image
         className="absolute right-0 top-5"
         src={"/graphics/box.svg"}
@@ -90,7 +90,6 @@ export default function MeetRimaunangis() {
               className="relative flex flex-col  gap-[1.25rem] xl:min-w-[20rem] md:text-center text-start lg:text-start md:w-[calc(50%-1.25rem)] lg:w-[calc(33%-1.25rem-.3rem)] w-auto justify-start md:justify-center lg:justify-start items-start md:items-center lg:items-start "
               key={mission.title}
             >
-             
               <Image
                 className="w-20 aspect-square max-sm:self-center rounded-full"
                 src={mission.image}

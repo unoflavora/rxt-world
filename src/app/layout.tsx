@@ -46,7 +46,7 @@ export default function RootLayout({
           sans.className + " " + "bg-background min-h-screen w-full h-full "
         }
       >
-        <div className="w-full  flex flex-col">
+        <div suppressHydrationWarning className="w-full  flex flex-col">
           <Navbar />
 
           <div className="w-full h-full flex flex-col py-24">{children}</div>
