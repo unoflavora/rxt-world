@@ -17,9 +17,7 @@ import { Suspense } from "react";
 
 export default async function Home() {
   const news = await client.fetch<NewsType[]>(`*[_type == "news"]`, {
-    next: {
-      revalidate: 1,
-    },
+    cache: "no-store",
   });
 
   return (
@@ -45,7 +43,7 @@ export default async function Home() {
       <Products />
       <Media />
 
-      <div className="container w-full flex flex-col gap-5 text-tertiary xl:py-16">
+      <div className="container w-full flex flex-col gap-5 py-10 text-tertiary xl:py-16">
         <div className="w-full flex justify-between items-center">
           <h1 className="text-xl md:text-2xl font-crimson text-white">
             Company News

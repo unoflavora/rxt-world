@@ -17,15 +17,19 @@ export function News(props: {
   content: NewsType;
   fixedSize?: boolean;
   home?: boolean;
+  className?: string;
 }) {
   const { content } = props;
+  console.log(content);
 
   return (
     <Link
-      href={content.url ? content.url : "/"}
+      target="_blank"
+      href={content.Url ? content.Url : "/"}
       className={cn(
-        `grid grid-cols-2 gap-5`,
-        `${props.home && "flex flex-col transition-all hover:scale-105"}`
+        `flex flex-col gap-5`,
+        `${props.home && "transition-all hover:scale-105"}`,
+        props.className
       )}
     >
       <ImageComponent
@@ -33,7 +37,7 @@ export function News(props: {
         isInline={false}
         fixedSize={props.fixedSize}
       />
-      <div className="w-full h-full flex flex-col justify-between  items-start">
+      <div className="w-full h-full flex flex-col gap-3 justify-between  items-start">
         <div className="w-full h-full flex flex-col gap-3">
           <h1
             className={cn(

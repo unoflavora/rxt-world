@@ -10,7 +10,7 @@ export type NewsType = {
   image: ImageType;
   slug: SlugType;
   date: string;
-  url: string;
+  Url: string;
 };
 
 type ImageType = {
