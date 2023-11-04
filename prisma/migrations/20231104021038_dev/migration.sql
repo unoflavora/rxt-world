@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "MarketData" ADD COLUMN     "logoUrl" TEXT NOT NULL DEFAULT '',
+ADD COLUMN     "percentageVolume" DOUBLE PRECISION NOT NULL DEFAULT 0;

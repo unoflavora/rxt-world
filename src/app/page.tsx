@@ -1,7 +1,7 @@
 import { Separator } from "@/components/ui/separator";
 import { client } from "@/lib/sanity/client";
 import { NewsType } from "@/types/news";
-import { PlusCircleIcon } from "lucide-react";
+import { LoaderIcon, PlusCircleIcon } from "lucide-react";
 import Link from "next/link";
 import { News } from "./news/components/news";
 import MeetRimaunangis from "./(home-components)/MeetRimaunangis";
@@ -12,6 +12,8 @@ import Products from "./(home-components)/Products";
 import Media from "./(home-components)/Media";
 import { Button } from "@/components/ui/button";
 import HomeHeader from "./(home-components)/Header";
+import MarketTable from "./(home-components)/Table/MarketTable";
+import { Suspense } from "react";
 
 export default async function Home() {
   const news = await client.fetch<NewsType[]>(`*[_type == "news"]`, {
@@ -21,13 +23,24 @@ export default async function Home() {
   });
 
   return (
-    <main className="flex min-h-screen flex-col gap-10 items-center justify-between">
+    <main className="flex min-h-screen flex-col items-center justify-between">
       <HomeHeader />
       <Separator className="container z-0" />
       <MeetRimaunangis />
       <Teams />
       <Bitcoinland />
       <Charts />
+
+      <Suspense
+        fallback={
+          <div className="min-h-screen w-full h-full flex justify-center items-center">
+            <LoaderIcon className="animate-spin" size={30} />
+          </div>
+        }
+      >
+        <MarketTable />
+      </Suspense>
+
       <Separator />
       <Products />
       <Media />

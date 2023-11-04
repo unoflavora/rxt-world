@@ -29,9 +29,11 @@ model MarketData {
   price Float @default(0)
   spread      Float
   dailyVolume Int
+  percentageVolume Float @default(0)
   lastTraded  DateTime
   lastUpdated DateTime
   tradeUrl    String
+  logoUrl String
   exchange Exchange @relation(fields: [exchangeName], references: [id])
   exchangeName String @unique
 }
