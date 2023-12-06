@@ -11,7 +11,8 @@ export const projectId = assertValue(
   "Missing environment variable: SANITY_PROJECT_ID"
 );
 
-export const useCdn = process.env.NODE_ENV === "production";
+export const useCdn =
+  typeof document !== "undefined" && process.env.NODE_ENV === "production";
 
 function assertValue<T>(v: T | undefined, errorMessage: string): T {
   if (v === undefined) {

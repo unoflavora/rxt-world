@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import { LoaderIcon } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
+import { sanityFetch } from "@/lib/sanity/lib/fetch";
 import {
   Charts,
   MeetRimaunangis,
@@ -11,22 +12,13 @@ import {
   HomeHeader,
   MarketTable,
   HomeNews,
-} from "HomeComponents/index";
-import { client } from "@/lib/sanity/lib/client";
+} from "@/homeComponents/index";
 
 export default async function Home() {
-  const video = await client.fetch<{ id: string }>(
-    `*[_type == "homepageVideo"]{"id": file.asset._ref}[0]`,
-    {},
-    {
-      headers: {
-        Authorization: "bearer " + process.env.SANITY_SECRET,
-      },
-      next: {
-        tags: ["homepageVideo"],
-      },
-    }
-  );
+  const video = await sanityFetch<{ id: string }>({
+    query: `*[_type == "homepageVideo"]{"id": file.asset._ref}[0]`,
+    tags: ["homepageVideo"],
+  });
 
   const id = video.id.replace("file-", "").replace("-mp4", "");
 

@@ -20,8 +20,8 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
-      "sanity/*": ["./src/lib/sanity/*"],
-      "HomeComponents/*": ["./src/app/(main)/(home-components)/*"]
+      "@/homeComponents/*": ["./src/app/(main)/(home-components)/*"],
+      "sanity/*": ["./src/lib/sanity/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { getImageDimensions } from "@sanity/asset-utils";
 import React from "react";
-import { buildUrl } from "../../lib/sanity/lib/client";
+import { buildUrl } from "../../lib/sanity/client";
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   value: any;

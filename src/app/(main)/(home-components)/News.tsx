@@ -3,21 +3,14 @@ import { PlusCircleIcon } from "lucide-react";
 import Link from "next/link";
 import { News } from "../news/components/news";
 import { NewsType } from "@/types/news";
-import { client } from "@/lib/sanity/lib/client";
+import { sanityFetch } from "@/lib/sanity/lib/fetch";
 
 export default async function HomeNews() {
-  const news = await client.fetch<NewsType[]>(
-    `*[_type == "news"]`,
-    {},
-    {
-      headers: {
-        Authorization: "bearer " + process.env.SANITY_SECRET,
-      },
-      next: {
-        tags: ["news"],
-      },
-    }
-  );
+  const news = await sanityFetch<NewsType[]>({
+    query: `*[_type == "news"]`,
+    tags: ["news"],
+  });
+
   return (
     <div className="container w-full flex flex-col gap-5 py-10 text-tertiary xl:py-16">
       <div className="w-full flex justify-between items-center">

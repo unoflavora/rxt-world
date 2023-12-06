@@ -1,6 +1,5 @@
 "use client";
 
-import { client } from "@/lib/sanity/lib/client";
 import { useScroll } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { buildFileUrl } from "@sanity/asset-utils";

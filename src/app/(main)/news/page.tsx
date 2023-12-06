@@ -1,20 +1,12 @@
 import { NewsType } from "@/types/news";
 import { News } from "./components/news";
-import { client } from "../../../lib/sanity/lib/client";
+import { sanityFetch } from "@/lib/sanity/lib/fetch";
 
 export default async function Page() {
-  const news = await client.fetch<NewsType[]>(
-    `*[_type == "news"]`,
-    {},
-    {
-      headers: {
-        Authorization: "bearer " + process.env.SANITY_SECRET,
-      },
-      next: {
-        tags: ["news"],
-      },
-    }
-  );
+  const news = await sanityFetch<NewsType[]>({
+    query: `*[_type == "news"]`,
+    tags: ["news"],
+  });
 
   return (
     <div className="container  gap-14 lg:px-24 pb-10 flex flex-col ">

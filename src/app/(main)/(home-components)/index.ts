@@ -1,5 +1,5 @@
 import Charts from "./Charts";
-import MeetRimaunangis from "HomeComponents/MeetRimaunangis";
+import MeetRimaunangis from "./MeetRimaunangis";
 import Teams from "./MeetTeams";
 import Bitcoinland from "./SeeBitcoin";
 import Products from "./Products";
