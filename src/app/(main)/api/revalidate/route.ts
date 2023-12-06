@@ -25,7 +25,7 @@ export async function POST(req: NextRequest) {
     // `{next: {tags: ['page']}}` will be revalidated
     revalidateTag(body._type);
 
-    return NextResponse.json({ body });
+    return NextResponse.json({ _type: body._type });
   } catch (err: any) {
     console.error(err);
     return new Response(err.message, { status: 500 });
