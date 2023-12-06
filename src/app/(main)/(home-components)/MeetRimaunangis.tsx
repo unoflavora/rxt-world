@@ -68,7 +68,9 @@ export default function MeetRimaunangis() {
               <h2 className="text-base uppercase bg-white text-black px-3 w-fit font-bold">
                 {content.key}
               </h2>
-              <h3 className="text-4xl  font-crimson">{content.title}</h3>
+              <h3 className="text-4xl text-primary font-crimson">
+                {content.title}
+              </h3>
               <p className="text-[#F0F2F5]">{content.desc}</p>
             </div>
           </motion.div>

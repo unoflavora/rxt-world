@@ -41,3 +41,10 @@ export interface ConvertedVolume {
   eth: number;
   usd: number;
 }
+
+export type Status = {
+  status?: {
+    error_code: number;
+    error_message: string;
+  };
+};

@@ -1,10 +1,11 @@
 "use client";
 
-import { motion, useScroll, useSpring } from "framer-motion";
-import Image from "next/image";
+import { client } from "@/lib/sanity/lib/client";
+import { useScroll } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
+import { buildFileUrl } from "@sanity/asset-utils";
 
-export default function HomeHeader() {
+export default function HomeHeader(props: { fileId: string }) {
   const headerRef = useRef<HTMLDivElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -16,13 +17,20 @@ export default function HomeHeader() {
 
   useEffect(() => {
     scrollYProgress.on("change", (val) => {
-      console.log(val);
       setCurrentDivProgress(Math.min(1 + val, 1.4));
     });
     return () => {
       scrollYProgress.clearListeners();
     };
   }, [scrollYProgress]);
+
+  var url = buildFileUrl({
+    assetId: props.fileId,
+    extension: "mp4",
+    projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+    dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+  });
+  console.log(url);
 
   return (
     <div
@@ -40,8 +48,9 @@ export default function HomeHeader() {
           </h2>
         </article>
         <video
+          preload="true"
           style={{ scale: Math.max(1, currentDivProgress) }}
-          src="https://rimaunangis.s3.ap-southeast-1.amazonaws.com/Background+Video.mp4"
+          src={url}
           autoPlay
           loop
           muted

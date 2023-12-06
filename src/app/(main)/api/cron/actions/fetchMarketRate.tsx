@@ -1,6 +1,6 @@
 import prisma from "@/lib/db/prisma";
 import { Exchange, MarketData } from "@prisma/client";
-import ExchangeType from "../types/Exchange";
+import ExchangeType, { Status } from "../types/Exchange";
 
 export default async function fetchMarketRate() {
   const exchanges = ["lbank", "coinw", "probit", "digifinex", "bitmart"];
@@ -18,7 +18,6 @@ export default async function fetchMarketRate() {
             headers: {
               accept: "application/json",
             },
-            cache: "no-store",
           }
         );
 
@@ -30,17 +29,14 @@ export default async function fetchMarketRate() {
               headers: {
                 accept: "application/json",
               },
-              cache: "no-store",
             }
           )
         ).json();
 
-        const exchangeData = (await res.json()) as ExchangeType & {
-          error?: string;
-        };
+        const exchangeData = (await res.json()) as ExchangeType & Status;
 
-        if (exchangeData.error != null) {
-          reject(exchangeData.error);
+        if (exchangeData.status?.error_message != null) {
+          reject(exchangeData.status?.error_message);
           return;
         }
 
@@ -106,6 +102,8 @@ export default async function fetchMarketRate() {
     if (curr.data != null) return prev + curr.data?.dailyVolume;
     return prev;
   }, 0);
+
+  if (data == null) return [];
 
   const finalData = data.map((d) => {
     return new Promise<MarketExchangeData>(async (res, rej) => {

@@ -144,7 +144,9 @@ export const columns: ColumnDef<MarketData>[] = [
     ),
     cell: ({ row }) => {
       return (
-        <p className="text-gray-400">{row.getValue("percentageVolume")}%</p>
+        <p className="text-gray-400">
+          {(row.getValue("percentageVolume") as number).toFixed(2)}%
+        </p>
       );
     },
   },
