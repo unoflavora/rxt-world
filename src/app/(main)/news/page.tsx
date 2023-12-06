@@ -17,7 +17,7 @@ export default async function Page() {
   );
 
   return (
-    <div className="container  gap-14 lg:px-24 flex flex-col ">
+    <div className="container  gap-14 lg:px-24 pb-10 flex flex-col ">
       <h1 className="text-2xl font-bold">Company News</h1>
       {news.map((content) => {
         return (

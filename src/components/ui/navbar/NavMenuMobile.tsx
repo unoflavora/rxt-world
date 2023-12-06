@@ -77,10 +77,11 @@ export default function NavMenuMobile() {
 function Products({ onClick }: { onClick: () => void }) {
   const [isOpen, setIsOpen] = React.useState(false);
   const products = [
-    { title: "Farming with NFT", path: "/your-path" },
-    { title: "Streaming TV", path: "/your-path" },
-    { title: "E-Commerce Dairy Products", path: "/your-path" },
-    { title: "Property Development", path: "/your-path" },
+    { title: "Farming with NFT", path: "/#nft" },
+    { title: "Streaming TV", path: "/#streaming" },
+    { title: "E-Commerce Dairy Products", path: "/#dairy" },
+    { title: "Property Development", path: "/#property" },
+    { title: "Metaverse World", path: "/#metaverse" },
   ];
 
   return (
