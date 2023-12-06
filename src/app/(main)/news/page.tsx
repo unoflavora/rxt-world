@@ -1,14 +1,20 @@
-import { client } from "@/lib/sanity/client";
 import { NewsType } from "@/types/news";
-import Link from "next/link";
 import { News } from "./components/news";
-
-export const dynamic = "force-dynamic";
+import { client } from "../../../lib/sanity/lib/client";
 
 export default async function Page() {
-  const news = await client.fetch<NewsType[]>(`*[_type == "news"]`, {
-    cache: "no-store",
-  });
+  const news = await client.fetch<NewsType[]>(
+    `*[_type == "news"]`,
+    {},
+    {
+      headers: {
+        Authorization: "bearer " + process.env.SANITY_SECRET,
+      },
+      next: {
+        tags: ["news"],
+      },
+    }
+  );
 
   return (
     <div className="container  gap-14 lg:px-24 flex flex-col ">

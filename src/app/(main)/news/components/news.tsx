@@ -20,7 +20,6 @@ export function News(props: {
   className?: string;
 }) {
   const { content } = props;
-  console.log(content);
 
   return (
     <Link

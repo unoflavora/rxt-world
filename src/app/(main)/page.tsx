@@ -1,24 +1,35 @@
-import { Separator } from "@/components/ui/separator";
-import { client } from "@/lib/sanity/client";
-import { NewsType } from "@/types/news";
-import { LoaderIcon, PlusCircleIcon } from "lucide-react";
 import Link from "next/link";
-import { News } from "./news/components/news";
-import MeetRimaunangis from "./(home-components)/MeetRimaunangis";
-import Teams from "./(home-components)/MeetTeams";
-import Bitcoinland from "./(home-components)/SeeBitcoin";
-import Charts from "./(home-components)/Charts";
-import Products from "./(home-components)/Products";
-import Media from "./(home-components)/Media";
-import { Button } from "@/components/ui/button";
-import HomeHeader from "./(home-components)/Header";
-import MarketTable from "./(home-components)/Table/MarketTable";
 import { Suspense } from "react";
+import { LoaderIcon, PlusCircleIcon } from "lucide-react";
+import { NewsType } from "@/types/news";
+import { News } from "./news/components/news";
+import { Separator } from "@/components/ui/separator";
+import { Button } from "@/components/ui/button";
+import {
+  Charts,
+  MeetRimaunangis,
+  Teams,
+  Bitcoinland,
+  Products,
+  Media,
+  HomeHeader,
+  MarketTable,
+} from "HomeComponents/index";
+import { client } from "../../lib/sanity/lib/client";
 
 export default async function Home() {
-  const news = await client.fetch<NewsType[]>(`*[_type == "news"]`, {
-    cache: "no-store",
-  });
+  const news = await client.fetch<NewsType[]>(
+    `*[_type == "news"]`,
+    {},
+    {
+      headers: {
+        Authorization: "bearer " + process.env.SANITY_SECRET,
+      },
+      next: {
+        tags: ["news"],
+      },
+    }
+  );
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
