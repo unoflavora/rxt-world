@@ -33,22 +33,22 @@ export default function Footer() {
     },
   ];
 
-  const links = [
-    {
-      key: "Copyright",
-      url: "/",
-    },
-    {
-      key: "Privacy Policy",
-      url: "/",
-    },
-    {
-      key: "Terms of Service",
-      url: "/",
-    },
+  const links: { key: string; url: string }[] = [
+    // {
+    //   key: "Copyright",
+    //   url: "/",
+    // },
+    // {
+    //   key: "Privacy Policy",
+    //   url: "/",
+    // },
+    // {
+    //   key: "Terms of Service",
+    //   url: "/",
+    // },
   ];
   return (
-    <div className="w-full flex flex-col items-center gap-4 pt-10 pb-5 justify-center">
+    <div className="w-full flex flex-col items-center gap-4  pb-5 justify-center">
       <Separator />
       <div className="container flex flex-col gap-5 justify-center md:flex-row md:justify-between py-5">
         <div className="flex flex-col gap-5 justify-between items-center ">

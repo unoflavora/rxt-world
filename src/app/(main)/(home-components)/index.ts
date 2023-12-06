@@ -6,7 +6,7 @@ import Products from "./Products";
 import Media from "./Media";
 import HomeHeader from "./Header";
 import MarketTable from "./Table/MarketTable";
-
+import HomeNews from "./News";
 export {
   Charts,
   MeetRimaunangis,
@@ -16,4 +16,5 @@ export {
   Media,
   HomeHeader,
   MarketTable,
+  HomeNews,
 };

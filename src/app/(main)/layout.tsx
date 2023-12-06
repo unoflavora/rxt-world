@@ -49,7 +49,7 @@ export default function RootLayout({
         <div suppressHydrationWarning className="w-full  flex flex-col">
           <Navbar />
 
-          <div className="w-full h-full flex flex-col py-24">{children}</div>
+          <div className="w-full h-full flex flex-col pt-24">{children}</div>
 
           <Footer />
         </div>
