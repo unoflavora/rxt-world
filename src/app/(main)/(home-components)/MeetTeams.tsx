@@ -29,7 +29,7 @@ export default async function Teams() {
 
       <p>{team.description}</p>
       <Link className="flex justify-center" href="/our-team">
-        <Button className=" text-white bg-transparent border w-fit font-bold hover:bg-black hover:border-white hover:text-white">
+        <Button className=" text-white bg-transparent border w-fit font-bold hover:bg-white hover:border-white hover:text-black">
           SEE FULL TEAM
         </Button>
       </Link>

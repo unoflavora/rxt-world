@@ -12,6 +12,7 @@ export default defineType({
       title: "Description",
       validation: (Rule) => Rule.required().min(10).max(300),
     },
+
     {
       name: "image",
       type: "image",

@@ -37,9 +37,18 @@ export default defineType({
       ],
     },
     {
+      name: "photo",
+      type: "image",
+      title: "Member Photo",
+      description: "Real photo to be displayed in the member page",
+      validation: (Rule) => Rule.required(),
+    },
+    {
       title: "3d file",
       name: "file",
       type: "file",
+      description:
+        "3d file in *.glb file, NEVER PUT ANOTHER TYPE OF FILE OTHERWISE IT WILL ERROR",
       validation: (Rule) => Rule.required(),
     },
   ],

@@ -1,5 +1,3 @@
-import { PortableTextBlockComponent } from "@portabletext/react";
-
 export type NewsType = {
   _id: string;
   _updatedAt: Date;
@@ -7,17 +5,10 @@ export type NewsType = {
   title: string;
   description: string;
   body: any[];
-  image: ImageType;
+  image: FileType;
   slug: SlugType;
   date: string;
   Url: string;
-};
-
-type ImageType = {
-  asset: {
-    _ref: string;
-    _type: "reference";
-  };
 };
 
 type SlugType = {
