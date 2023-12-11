@@ -2,6 +2,7 @@ import Image from "next/image";
 import { getImageDimensions } from "@sanity/asset-utils";
 import React from "react";
 import { buildUrl } from "../../lib/sanity/client";
+import { cn } from "@/lib/utils";
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   value: any;
@@ -18,13 +19,15 @@ export const ImageComponent = React.forwardRef<HTMLDivElement, Props>(
     const src = buildUrl({ value, isInline });
 
     return (
-      <div
-        style={{
-          backgroundImage: `url('${src}')`,
-          width: fixedSize ? "100%" : width,
-          aspectRatio: fixedSize ? "4 / 3" : "auto",
-        }}
-        className={`w-full min-h-[16rem] h-full  bg-cover`}
+      <Image
+        src={src}
+        width={width}
+        height={height}
+        alt="image"
+        className={cn(
+          `w-full min-h-[16rem] h-full object-cover object-left`,
+          className
+        )}
       />
     );
   }

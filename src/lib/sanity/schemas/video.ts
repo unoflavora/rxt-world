@@ -6,7 +6,7 @@ export default defineType({
   title: "Homepage Video",
   fields: [
     {
-      title: "file",
+      title: "Video File",
       name: "file",
       type: "file",
       validation: (Rule) => Rule.required(),

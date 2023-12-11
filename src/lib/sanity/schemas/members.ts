@@ -21,7 +21,7 @@ export default defineType({
       name: "description",
       type: "string",
       title: "Description",
-      validation: (Rule) => Rule.required().min(10).max(80),
+      validation: (Rule) => Rule.required().min(10).max(300),
     },
     {
       title: "Socials",
@@ -30,10 +30,10 @@ export default defineType({
       validation: (Rule) => Rule.required(),
       fields: [
         { name: "email", type: "email", title: "Email" },
-        { name: "facebook", type: "string", title: "Facebook" },
-        { name: "instagram", type: "string", title: "Instagram" },
-        { name: "linkedin", type: "string", title: "Linkedin" },
-        { name: "twitter", type: "string", title: "Twitter" },
+        { name: "facebook", type: "url", title: "Facebook" },
+        { name: "instagram", type: "url", title: "Instagram" },
+        { name: "linkedin", type: "url", title: "Linkedin" },
+        { name: "twitter", type: "url", title: "Twitter" },
       ],
     },
     {

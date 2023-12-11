@@ -14,12 +14,11 @@ export const buildUrl = ({
   value,
   isInline,
 }: {
-  value: any;
+  value: string;
   isInline: boolean;
 }) =>
   urlBuilder({ clientConfig: { projectId, dataset } })
-    .image(value.asset)
-    .width(isInline ? 100 : 800)
+    .image(value)
     .fit("max")
     .auto("format")
     .url();

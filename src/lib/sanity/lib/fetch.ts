@@ -16,7 +16,7 @@ export async function sanityFetch<QueryResponse>({
   tags: string[];
 }): Promise<QueryResponse> {
   return client.fetch<QueryResponse>(query, params, {
-    cache: "force-cache",
+    cache: process.env.NODE_ENV === "production" ? "force-cache" : "no-cache",
     headers: {
       Authorization: "bearer " + process.env.SANITY_SECRET,
     },
