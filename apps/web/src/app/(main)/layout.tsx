@@ -10,6 +10,7 @@ const sans = Noto_Sans({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
   display: "swap",
   variable: "--notoSans",
+  preload: false,
 });
 
 const crimson = Crimson_Text({
@@ -17,6 +18,7 @@ const crimson = Crimson_Text({
   weight: ["400", "600", "700"],
   display: "swap",
   variable: "--crimson",
+  preload: false,
 });
 
 export const metadata: Metadata = {
