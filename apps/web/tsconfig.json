@@ -4,8 +4,7 @@
     "plugins": [{ "name": "next" }],
     "paths": {
       "@/*": ["./src/*"],
-      "@/homeComponents/*": ["./src/app/(main)/(home-components)/*"],
-      "sanity/*": ["./src/lib/sanity/*"]
+      "@/homeComponents/*": ["src/app/(home-components)/*"]
     }
   },
   "include": [

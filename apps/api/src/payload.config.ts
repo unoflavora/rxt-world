@@ -11,6 +11,11 @@ import { s3Adapter } from "@payloadcms/plugin-cloud-storage/s3";
 import Users from "./collections/Users";
 import { Media } from "./collections/Media";
 import News from "./collections/News";
+import TeamDescription from "./collections/TeamDescriptions";
+import TeamMembers from "./collections/TeamMembers";
+import { File } from "./collections/File";
+import { Texture } from "./collections/Texture";
+import HomepageVideo from "./collections/HomeVideo";
 
 export default buildConfig({
   admin: {
@@ -26,7 +31,16 @@ export default buildConfig({
     },
   },
   editor: slateEditor({}),
-  collections: [Users, Media, News],
+  collections: [
+    Users,
+    Media,
+    File,
+    Texture,
+    News,
+    TeamDescription,
+    TeamMembers,
+    HomepageVideo,
+  ],
   typescript: {
     outputFile: path.resolve(__dirname, "payload-types.ts"),
   },
@@ -39,6 +53,30 @@ export default buildConfig({
     cloudStorage({
       collections: {
         media: {
+          adapter: s3Adapter({
+            config: {
+              endpoint: process.env.S3_ENDPOINT,
+              credentials: {
+                accessKeyId: process.env.S3_ACCESS_KEY_ID,
+                secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,
+              },
+            },
+            bucket: process.env.S3_BUCKET,
+          }),
+        },
+        texture: {
+          adapter: s3Adapter({
+            config: {
+              endpoint: process.env.S3_ENDPOINT,
+              credentials: {
+                accessKeyId: process.env.S3_ACCESS_KEY_ID,
+                secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,
+              },
+            },
+            bucket: process.env.S3_BUCKET,
+          }),
+        },
+        file: {
           adapter: s3Adapter({
             config: {
               endpoint: process.env.S3_ENDPOINT,
