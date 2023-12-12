@@ -44,11 +44,27 @@ export default defineType({
       validation: (Rule) => Rule.required(),
     },
     {
-      title: "3d file",
+      title: "3D obj file",
       name: "file",
       type: "file",
       description:
-        "3d file in *.glb file, NEVER PUT ANOTHER TYPE OF FILE OTHERWISE IT WILL ERROR",
+        "3d file in *.obj file, NEVER PUT ANOTHER TYPE OF FILE OTHERWISE IT WILL ERROR",
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      title: "3D material file",
+      name: "mat",
+      type: "file",
+      description:
+        "3d file in *.mat file, NEVER PUT ANOTHER TYPE OF FILE OTHERWISE IT WILL ERROR",
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      title: "Textures",
+      name: "textures",
+      type: "array",
+      of: [{ type: "file" }],
+      description: "Textures",
       validation: (Rule) => Rule.required(),
     },
   ],
