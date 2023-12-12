@@ -1,6 +1,5 @@
 import express from "express";
 import payload from "payload";
-
 require("dotenv").config();
 const app = express();
 
@@ -10,7 +9,6 @@ app.get("/", (_, res) => {
 });
 
 const start = async () => {
-  console.log(process.env.DATABASE_URI);
   // Initialize Payload
   await payload.init({
     secret: process.env.PAYLOAD_SECRET!,
