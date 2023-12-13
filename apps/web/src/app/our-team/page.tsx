@@ -67,11 +67,11 @@ export default async function Page() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-3 xl:grid-cols-4 gap-10">
+      <div className="grid max-sm:grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-10">
         {teams == null || teams.docs == null
           ? "No Team"
           : teams.docs.map((team) => {
-              if (team == null) return;
+              if (team == null) return <></>;
               return <Team key={team.id} person={team as Member} />;
             })}
       </div>

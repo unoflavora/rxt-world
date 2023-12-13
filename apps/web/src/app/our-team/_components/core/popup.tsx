@@ -19,30 +19,28 @@ export default function PersonPopup({ person }: { person: Member }) {
       <DialogTrigger>
         <Person person={person} />
       </DialogTrigger>
-      <div className="flex gap-5">
-        <DialogContent>
-          <ThreeScene
-            objUrl={person.obj.url as string}
-            matUrl={person.mat.url as string}
-          />
-          <Image
-            src="/graphics/rotate.svg"
-            width={50}
-            height={15}
-            alt="rotate here"
-            className="fixed left-10 top-10 animate-pulse"
-          />
+      <DialogContent>
+        <ThreeScene
+          objUrl={person.obj.url as string}
+          matUrl={person.mat.url as string}
+        />
+        <Image
+          src="/graphics/rotate.svg"
+          width={50}
+          height={15}
+          alt="rotate here"
+          className="fixed left-10 top-10 animate-pulse"
+        />
 
-          <DialogHeader>
-            <DialogTitle>{person.name}</DialogTitle>
-            <DialogDescription>{person.description}</DialogDescription>
-          </DialogHeader>
+        <DialogHeader>
+          <DialogTitle>{person.name}</DialogTitle>
+          <DialogDescription>{person.description}</DialogDescription>
+        </DialogHeader>
 
-          <DialogFooter>
-            <Socials socials={person.socials[0]}></Socials>
-          </DialogFooter>
-        </DialogContent>
-      </div>
+        <DialogFooter>
+          <Socials socials={person.socials[0]}></Socials>
+        </DialogFooter>
+      </DialogContent>
     </Dialog>
   );
 }
