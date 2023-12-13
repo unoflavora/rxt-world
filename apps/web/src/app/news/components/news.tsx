@@ -15,7 +15,7 @@ export function News(
       target="_blank"
       href={news.Url ? news.Url : "/"}
       className={cn(
-        `flex flex-col gap-5`,
+        `flex flex-col gap-5 `,
         `${props.home && "transition-all hover:scale-105"}`,
         props.className
       )}
@@ -24,10 +24,10 @@ export function News(
         src={news.image.url as string}
         width={500}
         height={100}
-        className="object-cover object-center"
+        className="w-full h-full object-cover object-center"
         alt={news.title}
       />
-      <div className="w-full h-full flex flex-col gap-3 justify-between  items-start">
+      <div className="w-full flex flex-col gap-3 justify-between  items-start">
         <div className="w-full h-full flex flex-col gap-3">
           <h1
             className={cn(
