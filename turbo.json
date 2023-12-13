@@ -21,6 +21,10 @@
     },
     "clean": {
       "cache": false
+    },
+    "start:server": {
+      "cache": true,
+      "persistent": true
     }
   }
 }

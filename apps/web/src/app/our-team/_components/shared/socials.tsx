@@ -10,6 +10,7 @@ export default function Socials(props: { socials: Member_Socials }) {
       {Object.keys(socials).map((social, key) => {
         var soc = social as keyof typeof socials;
         var link = socials[soc] as string;
+        if (link == null) return null;
         return (
           <Link
             key={social}

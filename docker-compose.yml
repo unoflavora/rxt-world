@@ -1,39 +1,37 @@
 version: "3"
-
 services:
   web:
     container_name: web
     build:
-      context: .
-      dockerfile: ./apps/web/Dockerfile
+      context: ./apps/web
+      dockerfile: .dockerfile
     restart: always
     ports:
       - 3000:3000
     networks:
       - rxt_network
-  api:
-    container_name: api
+    depends_on:
+      cms:
+        condition: service_started
+
+    env_file:
+      - ./apps/web/.env
+      - ./apps/web/.env.prod
+  cms:
+    container_name: cms
     build:
-      context: .
-      dockerfile: ./apps/api/Dockerfile
+      context: ./apps/api
+      dockerfile: .dockerfile
     restart: always
     ports:
       - 3001:3001
     networks:
       - rxt_network
-  mongo:
-    image: mongo:latest
-    ports:
-      - "27017:27017"
-    command:
-      - --storageEngine=wiredTiger
-    volumes:
-      - data:/data/db
-    logging:
-      driver: none
+    env_file:
+      - ./apps/api/.env
 
 networks:
-  app_network:
+  rxt_network:
     external: true
 volumes:
   data:

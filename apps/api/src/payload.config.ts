@@ -26,6 +26,7 @@ export default buildConfig({
         fs: false,
         os: false,
         path: false,
+        crypto: require.resolve("crypto-browserify"),
       };
       return config;
     },

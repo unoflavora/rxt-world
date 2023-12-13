@@ -1,25 +1,23 @@
-FROM node:18-alpine as base
-
-FROM base as builder
-
-WORKDIR /home/node
+FROM node:18.8-alpine as builder
+WORKDIR /app
 COPY package*.json ./
-
+RUN NODE_ENV=development npm install 
 COPY . .
-RUN yarn install
-RUN yarn build
+RUN npm i sharp --platform=linuxmusl
+RUN npm run build
 
-FROM base as runtime
-
+FROM node:18.8-alpine as runtime
 ENV NODE_ENV=production
-
-WORKDIR /home/node
+ENV PAYLOAD_CONFIG_PATH=dist/payload.config.js
+WORKDIR /usr/app
 COPY package*.json  ./
+RUN npm install --production
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/build ./build
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/src/migrations ./src/migrations
+EXPOSE 3001
 
-RUN yarn install --production
-COPY --from=builder /home/node/dist ./dist
-COPY --from=builder /home/node/build ./build
-
-EXPOSE 3000
-
-CMD ["node", "dist/server.js"]
+RUN cd /usr/app
+ENTRYPOINT [ "/bin/sh", "-c" ]
+CMD ["npm run payload migrate; npm run serve"]

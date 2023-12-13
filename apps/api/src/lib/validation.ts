@@ -8,5 +8,7 @@ export function validateUrl(text: string) {
     return true;
   }
 
+  if (text == null) return true;
+
   return "This is not a valid URL";
 }
