@@ -19,7 +19,7 @@ export async function GET() {
 
     return { data };
   } catch (e) {
-    console.log(e);
+    console.error(e);
     return { data: null, error: e };
   }
 }

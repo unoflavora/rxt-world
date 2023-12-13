@@ -10,7 +10,6 @@ export const Media: CollectionConfig = {
       const url =
         "https://rxt-rimaunangis.s3.ap-southeast-1.amazonaws.com" +
         `/${doc.filename}`;
-      console.log(url);
       return url;
     },
     imageSizes: [

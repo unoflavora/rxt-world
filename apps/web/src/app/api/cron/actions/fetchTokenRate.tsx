@@ -65,7 +65,7 @@ export default async function fetchTokenRate() {
       include: { price: true },
     });
   } catch (e) {
-    console.log(e);
+    console.error(e);
     return { error: e };
   }
 }

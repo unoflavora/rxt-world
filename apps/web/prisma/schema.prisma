@@ -7,25 +7,25 @@ generator client {
 
 datasource db {
   provider = "mongodb"
-  url      = env("MONGODB_URL")
+  url      = env("DATABASE_URI")
 }
 
 model Series {
-  id        Int   @id @map("_id") 
+  id       String    @id @default(auto()) @map("_id") @db.ObjectId
   price     StockPrice[]
   createdAt DateTime
 }
 
 model StockPrice {
-  id        Int   @id @map("_id") 
+  id       String    @id @default(auto()) @map("_id") @db.ObjectId
   date     DateTime
   data     Float[]
   Series   Series?  @relation(fields: [seriesId], references: [id])
-  seriesId Int?
+  seriesId String? @db.ObjectId
 }
 
 model MarketData {
-  id        Int   @id @map("_id") 
+  id       String    @id @default(auto()) @map("_id") @db.ObjectId
   price Float @default(0)
   spread      Float
   dailyVolume Int
@@ -39,6 +39,6 @@ model MarketData {
 }
 
 model Exchange {
-  id  String     @id
+  id  String     @id @map("_id")
   data MarketData?
 }

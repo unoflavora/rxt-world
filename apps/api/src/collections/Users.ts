@@ -5,7 +5,9 @@ const Users: CollectionConfig = {
   auth: {
     useAPIKey: true,
   },
-
+  admin: {
+    useAsTitle: "email",
+  },
   fields: [
     // Email added by default
     // Add more fields as needed
