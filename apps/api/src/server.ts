@@ -19,7 +19,9 @@ const start = async () => {
     secret: process.env.PAYLOAD_SECRET!,
     express: app,
     onInit: async () => {
-      payload.logger.info(`Payload Admin URL: ${payload.getAdminURL()}`);
+      payload.logger.info(
+        `View Payload at http://localhost:3001${payload.getAdminURL()}`
+      );
     },
   });
 

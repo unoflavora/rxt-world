@@ -9,13 +9,13 @@ import { cloudStorage } from "@payloadcms/plugin-cloud-storage";
 import { s3Adapter } from "@payloadcms/plugin-cloud-storage/s3";
 
 import Users from "./collections/Users";
-import { Media } from "./collections/Media";
+import { Media } from "./collections/asset/Media";
 import News from "./collections/News";
-import TeamDescription from "./collections/TeamDescriptions";
 import TeamMembers from "./collections/TeamMembers";
-import { File } from "./collections/File";
-import { Texture } from "./collections/Texture";
-import HomepageVideo from "./collections/HomeVideo";
+import { File } from "./collections/asset/File";
+import { Texture } from "./collections/asset/Texture";
+import HomepageVideo from "./global/HomeVideo";
+import TeamMemberDisplayConfig from "./global/TeamMemberDisplayConfig";
 
 export default buildConfig({
   admin: {
@@ -32,16 +32,8 @@ export default buildConfig({
     },
   },
   editor: slateEditor({}),
-  collections: [
-    Users,
-    Media,
-    File,
-    Texture,
-    News,
-    TeamDescription,
-    TeamMembers,
-    HomepageVideo,
-  ],
+  globals: [TeamMemberDisplayConfig, HomepageVideo],
+  collections: [Users, News, TeamMembers, File, Media, Texture],
   typescript: {
     outputFile: path.resolve(__dirname, "payload-types.ts"),
   },

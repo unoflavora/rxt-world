@@ -1,6 +1,6 @@
-import { CollectionConfig } from "payload/types";
+import { CollectionConfig, GlobalConfig } from "payload/types";
 
-const HomepageVideo: CollectionConfig = {
+const HomepageVideo: GlobalConfig = {
   slug: "homeVideo",
   fields: [
     {

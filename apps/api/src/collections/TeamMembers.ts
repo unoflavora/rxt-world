@@ -3,6 +3,9 @@ import { validateUrl } from "../lib/validation";
 
 const TeamMembers: CollectionConfig = {
   slug: "members",
+  admin: {
+    useAsTitle: "name",
+  },
   fields: [
     {
       name: "name",
@@ -20,17 +23,50 @@ const TeamMembers: CollectionConfig = {
       required: true,
     },
     {
-      name: "socials",
-      type: "array",
-      required: true,
-      fields: [
-        { name: "email", type: "email" },
-        { name: "facebook", type: "text", validate: validateUrl },
-        { name: "instagram", type: "text", validate: validateUrl },
-        { name: "linkedin", type: "text", validate: validateUrl },
-        { name: "twitter", type: "text", validate: validateUrl },
-      ],
+      name: "email",
+      admin: {
+        description:
+          "You can fill this one or not, if empty, the icon will not be shown in the page",
+      },
+      type: "email",
     },
+    {
+      name: "facebook",
+      admin: {
+        description:
+          "You can fill this one or not, if empty, the icon will not be shown in the page",
+      },
+      type: "text",
+      validate: validateUrl,
+    },
+    {
+      name: "instagram",
+      admin: {
+        description:
+          "You can fill this one or not, if empty, the icon will not be shown in the page",
+      },
+      type: "text",
+      validate: validateUrl,
+    },
+    {
+      name: "linkedin",
+      admin: {
+        description:
+          "You can fill this one or not, if empty, the icon will not be shown in the page",
+      },
+      type: "text",
+      validate: validateUrl,
+    },
+    {
+      name: "twitter",
+      admin: {
+        description:
+          "You can fill this one or not, if empty, the icon will not be shown in the page",
+      },
+      type: "text",
+      validate: validateUrl,
+    },
+
     {
       name: "image",
       type: "upload",
@@ -39,12 +75,20 @@ const TeamMembers: CollectionConfig = {
     },
     {
       name: "obj",
+      admin: {
+        description:
+          "Please upload ONLY .obj files, otherwise web will return error",
+      },
       type: "upload",
       required: true,
       relationTo: "file",
     },
     {
       name: "mat",
+      admin: {
+        description:
+          "Please upload ONLY .mat files, otherwise web will return error",
+      },
       type: "upload",
       required: true,
       relationTo: "file",
@@ -52,6 +96,11 @@ const TeamMembers: CollectionConfig = {
     {
       name: "textures",
       type: "array",
+      admin: {
+        description:
+          "Input texture files, feel free to add more rows as needed",
+      },
+
       fields: [
         { name: "tex1", type: "upload", relationTo: "texture" },
         { name: "tex2", type: "upload", relationTo: "texture" },

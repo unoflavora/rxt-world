@@ -1,7 +1,10 @@
 import { CollectionConfig } from "payload/types";
 
-export const Texture: CollectionConfig = {
-  slug: "texture",
+export const Media: CollectionConfig = {
+  slug: "media",
+  admin: {
+    hidden: true,
+  },
   upload: {
     staticURL: process.env.S3_DOMAIN,
     staticDir: "",
@@ -12,7 +15,20 @@ export const Texture: CollectionConfig = {
         `/${doc.filename}`;
       return url;
     },
+    imageSizes: [
+      {
+        name: "thumbnail",
+        width: 400,
+        height: 300,
+        position: "centre",
+      },
+    ],
     mimeTypes: ["image/*"],
   },
-  fields: [],
+  fields: [
+    {
+      name: "alt",
+      type: "text",
+    },
+  ],
 };
