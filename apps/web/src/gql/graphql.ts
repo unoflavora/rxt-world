@@ -26,7 +26,6 @@ export type Scalars = {
 
 export type Access = {
   __typename?: 'Access';
-  allTeam: Maybe<AllTeamAccess>;
   canAccessAdmin: Scalars['Boolean']['output'];
   file: Maybe<FileAccess>;
   homeVideo: Maybe<HomeVideoAccess>;
@@ -34,636 +33,9 @@ export type Access = {
   members: Maybe<MembersAccess>;
   news: Maybe<NewsAccess>;
   payload_preferences: Maybe<Payload_PreferencesAccess>;
+  teamMemberDisplayConfig: Maybe<TeamMemberDisplayConfigAccess>;
   texture: Maybe<TextureAccess>;
   users: Maybe<UsersAccess>;
-};
-
-export type AllTeam = {
-  __typename?: 'AllTeam';
-  createdAt: Maybe<Scalars['DateTime']['output']>;
-  description: Scalars['String']['output'];
-  id: Maybe<Scalars['String']['output']>;
-  photo: Media;
-  updatedAt: Maybe<Scalars['DateTime']['output']>;
-};
-
-
-export type AllTeamPhotoArgs = {
-  where: InputMaybe<AllTeam_Photo_Where>;
-};
-
-export type AllTeamCreateAccess = {
-  __typename?: 'AllTeamCreateAccess';
-  permission: Scalars['Boolean']['output'];
-  where: Maybe<Scalars['JSONObject']['output']>;
-};
-
-export type AllTeamCreateDocAccess = {
-  __typename?: 'AllTeamCreateDocAccess';
-  permission: Scalars['Boolean']['output'];
-  where: Maybe<Scalars['JSONObject']['output']>;
-};
-
-export type AllTeamDeleteAccess = {
-  __typename?: 'AllTeamDeleteAccess';
-  permission: Scalars['Boolean']['output'];
-  where: Maybe<Scalars['JSONObject']['output']>;
-};
-
-export type AllTeamDeleteDocAccess = {
-  __typename?: 'AllTeamDeleteDocAccess';
-  permission: Scalars['Boolean']['output'];
-  where: Maybe<Scalars['JSONObject']['output']>;
-};
-
-export type AllTeamDocAccessFields = {
-  __typename?: 'AllTeamDocAccessFields';
-  createdAt: Maybe<AllTeamDocAccessFields_CreatedAt>;
-  description: Maybe<AllTeamDocAccessFields_Description>;
-  photo: Maybe<AllTeamDocAccessFields_Photo>;
-  updatedAt: Maybe<AllTeamDocAccessFields_UpdatedAt>;
-};
-
-export type AllTeamDocAccessFields_CreatedAt = {
-  __typename?: 'AllTeamDocAccessFields_createdAt';
-  create: Maybe<AllTeamDocAccessFields_CreatedAt_Create>;
-  delete: Maybe<AllTeamDocAccessFields_CreatedAt_Delete>;
-  read: Maybe<AllTeamDocAccessFields_CreatedAt_Read>;
-  update: Maybe<AllTeamDocAccessFields_CreatedAt_Update>;
-};
-
-export type AllTeamDocAccessFields_CreatedAt_Create = {
-  __typename?: 'AllTeamDocAccessFields_createdAt_Create';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type AllTeamDocAccessFields_CreatedAt_Delete = {
-  __typename?: 'AllTeamDocAccessFields_createdAt_Delete';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type AllTeamDocAccessFields_CreatedAt_Read = {
-  __typename?: 'AllTeamDocAccessFields_createdAt_Read';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type AllTeamDocAccessFields_CreatedAt_Update = {
-  __typename?: 'AllTeamDocAccessFields_createdAt_Update';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type AllTeamDocAccessFields_Description = {
-  __typename?: 'AllTeamDocAccessFields_description';
-  create: Maybe<AllTeamDocAccessFields_Description_Create>;
-  delete: Maybe<AllTeamDocAccessFields_Description_Delete>;
-  read: Maybe<AllTeamDocAccessFields_Description_Read>;
-  update: Maybe<AllTeamDocAccessFields_Description_Update>;
-};
-
-export type AllTeamDocAccessFields_Description_Create = {
-  __typename?: 'AllTeamDocAccessFields_description_Create';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type AllTeamDocAccessFields_Description_Delete = {
-  __typename?: 'AllTeamDocAccessFields_description_Delete';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type AllTeamDocAccessFields_Description_Read = {
-  __typename?: 'AllTeamDocAccessFields_description_Read';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type AllTeamDocAccessFields_Description_Update = {
-  __typename?: 'AllTeamDocAccessFields_description_Update';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type AllTeamDocAccessFields_Photo = {
-  __typename?: 'AllTeamDocAccessFields_photo';
-  create: Maybe<AllTeamDocAccessFields_Photo_Create>;
-  delete: Maybe<AllTeamDocAccessFields_Photo_Delete>;
-  read: Maybe<AllTeamDocAccessFields_Photo_Read>;
-  update: Maybe<AllTeamDocAccessFields_Photo_Update>;
-};
-
-export type AllTeamDocAccessFields_Photo_Create = {
-  __typename?: 'AllTeamDocAccessFields_photo_Create';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type AllTeamDocAccessFields_Photo_Delete = {
-  __typename?: 'AllTeamDocAccessFields_photo_Delete';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type AllTeamDocAccessFields_Photo_Read = {
-  __typename?: 'AllTeamDocAccessFields_photo_Read';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type AllTeamDocAccessFields_Photo_Update = {
-  __typename?: 'AllTeamDocAccessFields_photo_Update';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type AllTeamDocAccessFields_UpdatedAt = {
-  __typename?: 'AllTeamDocAccessFields_updatedAt';
-  create: Maybe<AllTeamDocAccessFields_UpdatedAt_Create>;
-  delete: Maybe<AllTeamDocAccessFields_UpdatedAt_Delete>;
-  read: Maybe<AllTeamDocAccessFields_UpdatedAt_Read>;
-  update: Maybe<AllTeamDocAccessFields_UpdatedAt_Update>;
-};
-
-export type AllTeamDocAccessFields_UpdatedAt_Create = {
-  __typename?: 'AllTeamDocAccessFields_updatedAt_Create';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type AllTeamDocAccessFields_UpdatedAt_Delete = {
-  __typename?: 'AllTeamDocAccessFields_updatedAt_Delete';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type AllTeamDocAccessFields_UpdatedAt_Read = {
-  __typename?: 'AllTeamDocAccessFields_updatedAt_Read';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type AllTeamDocAccessFields_UpdatedAt_Update = {
-  __typename?: 'AllTeamDocAccessFields_updatedAt_Update';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type AllTeamFields = {
-  __typename?: 'AllTeamFields';
-  createdAt: Maybe<AllTeamFields_CreatedAt>;
-  description: Maybe<AllTeamFields_Description>;
-  photo: Maybe<AllTeamFields_Photo>;
-  updatedAt: Maybe<AllTeamFields_UpdatedAt>;
-};
-
-export type AllTeamFields_CreatedAt = {
-  __typename?: 'AllTeamFields_createdAt';
-  create: Maybe<AllTeamFields_CreatedAt_Create>;
-  delete: Maybe<AllTeamFields_CreatedAt_Delete>;
-  read: Maybe<AllTeamFields_CreatedAt_Read>;
-  update: Maybe<AllTeamFields_CreatedAt_Update>;
-};
-
-export type AllTeamFields_CreatedAt_Create = {
-  __typename?: 'AllTeamFields_createdAt_Create';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type AllTeamFields_CreatedAt_Delete = {
-  __typename?: 'AllTeamFields_createdAt_Delete';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type AllTeamFields_CreatedAt_Read = {
-  __typename?: 'AllTeamFields_createdAt_Read';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type AllTeamFields_CreatedAt_Update = {
-  __typename?: 'AllTeamFields_createdAt_Update';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type AllTeamFields_Description = {
-  __typename?: 'AllTeamFields_description';
-  create: Maybe<AllTeamFields_Description_Create>;
-  delete: Maybe<AllTeamFields_Description_Delete>;
-  read: Maybe<AllTeamFields_Description_Read>;
-  update: Maybe<AllTeamFields_Description_Update>;
-};
-
-export type AllTeamFields_Description_Create = {
-  __typename?: 'AllTeamFields_description_Create';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type AllTeamFields_Description_Delete = {
-  __typename?: 'AllTeamFields_description_Delete';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type AllTeamFields_Description_Read = {
-  __typename?: 'AllTeamFields_description_Read';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type AllTeamFields_Description_Update = {
-  __typename?: 'AllTeamFields_description_Update';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type AllTeamFields_Photo = {
-  __typename?: 'AllTeamFields_photo';
-  create: Maybe<AllTeamFields_Photo_Create>;
-  delete: Maybe<AllTeamFields_Photo_Delete>;
-  read: Maybe<AllTeamFields_Photo_Read>;
-  update: Maybe<AllTeamFields_Photo_Update>;
-};
-
-export type AllTeamFields_Photo_Create = {
-  __typename?: 'AllTeamFields_photo_Create';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type AllTeamFields_Photo_Delete = {
-  __typename?: 'AllTeamFields_photo_Delete';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type AllTeamFields_Photo_Read = {
-  __typename?: 'AllTeamFields_photo_Read';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type AllTeamFields_Photo_Update = {
-  __typename?: 'AllTeamFields_photo_Update';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type AllTeamFields_UpdatedAt = {
-  __typename?: 'AllTeamFields_updatedAt';
-  create: Maybe<AllTeamFields_UpdatedAt_Create>;
-  delete: Maybe<AllTeamFields_UpdatedAt_Delete>;
-  read: Maybe<AllTeamFields_UpdatedAt_Read>;
-  update: Maybe<AllTeamFields_UpdatedAt_Update>;
-};
-
-export type AllTeamFields_UpdatedAt_Create = {
-  __typename?: 'AllTeamFields_updatedAt_Create';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type AllTeamFields_UpdatedAt_Delete = {
-  __typename?: 'AllTeamFields_updatedAt_Delete';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type AllTeamFields_UpdatedAt_Read = {
-  __typename?: 'AllTeamFields_updatedAt_Read';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type AllTeamFields_UpdatedAt_Update = {
-  __typename?: 'AllTeamFields_updatedAt_Update';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type AllTeamReadAccess = {
-  __typename?: 'AllTeamReadAccess';
-  permission: Scalars['Boolean']['output'];
-  where: Maybe<Scalars['JSONObject']['output']>;
-};
-
-export type AllTeamReadDocAccess = {
-  __typename?: 'AllTeamReadDocAccess';
-  permission: Scalars['Boolean']['output'];
-  where: Maybe<Scalars['JSONObject']['output']>;
-};
-
-export type AllTeamUpdateAccess = {
-  __typename?: 'AllTeamUpdateAccess';
-  permission: Scalars['Boolean']['output'];
-  where: Maybe<Scalars['JSONObject']['output']>;
-};
-
-export type AllTeamUpdateDocAccess = {
-  __typename?: 'AllTeamUpdateDocAccess';
-  permission: Scalars['Boolean']['output'];
-  where: Maybe<Scalars['JSONObject']['output']>;
-};
-
-export type AllTeam_Photo_Alt_Operator = {
-  all: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  contains: InputMaybe<Scalars['String']['input']>;
-  equals: InputMaybe<Scalars['String']['input']>;
-  exists: InputMaybe<Scalars['Boolean']['input']>;
-  in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  like: InputMaybe<Scalars['String']['input']>;
-  not_equals: InputMaybe<Scalars['String']['input']>;
-  not_in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
-export type AllTeam_Photo_CreatedAt_Operator = {
-  equals: InputMaybe<Scalars['DateTime']['input']>;
-  exists: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than: InputMaybe<Scalars['DateTime']['input']>;
-  greater_than_equal: InputMaybe<Scalars['DateTime']['input']>;
-  less_than: InputMaybe<Scalars['DateTime']['input']>;
-  less_than_equal: InputMaybe<Scalars['DateTime']['input']>;
-  like: InputMaybe<Scalars['DateTime']['input']>;
-  not_equals: InputMaybe<Scalars['DateTime']['input']>;
-};
-
-export type AllTeam_Photo_Filename_Operator = {
-  all: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  contains: InputMaybe<Scalars['String']['input']>;
-  equals: InputMaybe<Scalars['String']['input']>;
-  exists: InputMaybe<Scalars['Boolean']['input']>;
-  in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  like: InputMaybe<Scalars['String']['input']>;
-  not_equals: InputMaybe<Scalars['String']['input']>;
-  not_in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
-export type AllTeam_Photo_Filesize_Operator = {
-  equals: InputMaybe<Scalars['Float']['input']>;
-  exists: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal: InputMaybe<Scalars['Float']['input']>;
-  less_than: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal: InputMaybe<Scalars['Float']['input']>;
-  not_equals: InputMaybe<Scalars['Float']['input']>;
-};
-
-export type AllTeam_Photo_Height_Operator = {
-  equals: InputMaybe<Scalars['Float']['input']>;
-  exists: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal: InputMaybe<Scalars['Float']['input']>;
-  less_than: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal: InputMaybe<Scalars['Float']['input']>;
-  not_equals: InputMaybe<Scalars['Float']['input']>;
-};
-
-export type AllTeam_Photo_Id_Operator = {
-  all: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  contains: InputMaybe<Scalars['String']['input']>;
-  equals: InputMaybe<Scalars['String']['input']>;
-  exists: InputMaybe<Scalars['Boolean']['input']>;
-  in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  like: InputMaybe<Scalars['String']['input']>;
-  not_equals: InputMaybe<Scalars['String']['input']>;
-  not_in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
-export type AllTeam_Photo_MimeType_Operator = {
-  all: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  contains: InputMaybe<Scalars['String']['input']>;
-  equals: InputMaybe<Scalars['String']['input']>;
-  exists: InputMaybe<Scalars['Boolean']['input']>;
-  in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  like: InputMaybe<Scalars['String']['input']>;
-  not_equals: InputMaybe<Scalars['String']['input']>;
-  not_in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
-export type AllTeam_Photo_Sizes__Thumbnail__Filename_Operator = {
-  all: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  contains: InputMaybe<Scalars['String']['input']>;
-  equals: InputMaybe<Scalars['String']['input']>;
-  exists: InputMaybe<Scalars['Boolean']['input']>;
-  in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  like: InputMaybe<Scalars['String']['input']>;
-  not_equals: InputMaybe<Scalars['String']['input']>;
-  not_in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
-export type AllTeam_Photo_Sizes__Thumbnail__Filesize_Operator = {
-  equals: InputMaybe<Scalars['Float']['input']>;
-  exists: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal: InputMaybe<Scalars['Float']['input']>;
-  less_than: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal: InputMaybe<Scalars['Float']['input']>;
-  not_equals: InputMaybe<Scalars['Float']['input']>;
-};
-
-export type AllTeam_Photo_Sizes__Thumbnail__Height_Operator = {
-  equals: InputMaybe<Scalars['Float']['input']>;
-  exists: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal: InputMaybe<Scalars['Float']['input']>;
-  less_than: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal: InputMaybe<Scalars['Float']['input']>;
-  not_equals: InputMaybe<Scalars['Float']['input']>;
-};
-
-export type AllTeam_Photo_Sizes__Thumbnail__MimeType_Operator = {
-  all: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  contains: InputMaybe<Scalars['String']['input']>;
-  equals: InputMaybe<Scalars['String']['input']>;
-  exists: InputMaybe<Scalars['Boolean']['input']>;
-  in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  like: InputMaybe<Scalars['String']['input']>;
-  not_equals: InputMaybe<Scalars['String']['input']>;
-  not_in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
-export type AllTeam_Photo_Sizes__Thumbnail__Url_Operator = {
-  all: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  contains: InputMaybe<Scalars['String']['input']>;
-  equals: InputMaybe<Scalars['String']['input']>;
-  exists: InputMaybe<Scalars['Boolean']['input']>;
-  in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  like: InputMaybe<Scalars['String']['input']>;
-  not_equals: InputMaybe<Scalars['String']['input']>;
-  not_in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
-export type AllTeam_Photo_Sizes__Thumbnail__Width_Operator = {
-  equals: InputMaybe<Scalars['Float']['input']>;
-  exists: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal: InputMaybe<Scalars['Float']['input']>;
-  less_than: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal: InputMaybe<Scalars['Float']['input']>;
-  not_equals: InputMaybe<Scalars['Float']['input']>;
-};
-
-export type AllTeam_Photo_UpdatedAt_Operator = {
-  equals: InputMaybe<Scalars['DateTime']['input']>;
-  exists: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than: InputMaybe<Scalars['DateTime']['input']>;
-  greater_than_equal: InputMaybe<Scalars['DateTime']['input']>;
-  less_than: InputMaybe<Scalars['DateTime']['input']>;
-  less_than_equal: InputMaybe<Scalars['DateTime']['input']>;
-  like: InputMaybe<Scalars['DateTime']['input']>;
-  not_equals: InputMaybe<Scalars['DateTime']['input']>;
-};
-
-export type AllTeam_Photo_Url_Operator = {
-  all: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  contains: InputMaybe<Scalars['String']['input']>;
-  equals: InputMaybe<Scalars['String']['input']>;
-  exists: InputMaybe<Scalars['Boolean']['input']>;
-  in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  like: InputMaybe<Scalars['String']['input']>;
-  not_equals: InputMaybe<Scalars['String']['input']>;
-  not_in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
-export type AllTeam_Photo_Where = {
-  AND: InputMaybe<Array<InputMaybe<AllTeam_Photo_Where_And>>>;
-  OR: InputMaybe<Array<InputMaybe<AllTeam_Photo_Where_Or>>>;
-  alt: InputMaybe<AllTeam_Photo_Alt_Operator>;
-  createdAt: InputMaybe<AllTeam_Photo_CreatedAt_Operator>;
-  filename: InputMaybe<AllTeam_Photo_Filename_Operator>;
-  filesize: InputMaybe<AllTeam_Photo_Filesize_Operator>;
-  height: InputMaybe<AllTeam_Photo_Height_Operator>;
-  id: InputMaybe<AllTeam_Photo_Id_Operator>;
-  mimeType: InputMaybe<AllTeam_Photo_MimeType_Operator>;
-  sizes__thumbnail__filename: InputMaybe<AllTeam_Photo_Sizes__Thumbnail__Filename_Operator>;
-  sizes__thumbnail__filesize: InputMaybe<AllTeam_Photo_Sizes__Thumbnail__Filesize_Operator>;
-  sizes__thumbnail__height: InputMaybe<AllTeam_Photo_Sizes__Thumbnail__Height_Operator>;
-  sizes__thumbnail__mimeType: InputMaybe<AllTeam_Photo_Sizes__Thumbnail__MimeType_Operator>;
-  sizes__thumbnail__url: InputMaybe<AllTeam_Photo_Sizes__Thumbnail__Url_Operator>;
-  sizes__thumbnail__width: InputMaybe<AllTeam_Photo_Sizes__Thumbnail__Width_Operator>;
-  updatedAt: InputMaybe<AllTeam_Photo_UpdatedAt_Operator>;
-  url: InputMaybe<AllTeam_Photo_Url_Operator>;
-  width: InputMaybe<AllTeam_Photo_Width_Operator>;
-};
-
-export type AllTeam_Photo_Where_And = {
-  AND: InputMaybe<Array<InputMaybe<AllTeam_Photo_Where_And>>>;
-  OR: InputMaybe<Array<InputMaybe<AllTeam_Photo_Where_Or>>>;
-  alt: InputMaybe<AllTeam_Photo_Alt_Operator>;
-  createdAt: InputMaybe<AllTeam_Photo_CreatedAt_Operator>;
-  filename: InputMaybe<AllTeam_Photo_Filename_Operator>;
-  filesize: InputMaybe<AllTeam_Photo_Filesize_Operator>;
-  height: InputMaybe<AllTeam_Photo_Height_Operator>;
-  id: InputMaybe<AllTeam_Photo_Id_Operator>;
-  mimeType: InputMaybe<AllTeam_Photo_MimeType_Operator>;
-  sizes__thumbnail__filename: InputMaybe<AllTeam_Photo_Sizes__Thumbnail__Filename_Operator>;
-  sizes__thumbnail__filesize: InputMaybe<AllTeam_Photo_Sizes__Thumbnail__Filesize_Operator>;
-  sizes__thumbnail__height: InputMaybe<AllTeam_Photo_Sizes__Thumbnail__Height_Operator>;
-  sizes__thumbnail__mimeType: InputMaybe<AllTeam_Photo_Sizes__Thumbnail__MimeType_Operator>;
-  sizes__thumbnail__url: InputMaybe<AllTeam_Photo_Sizes__Thumbnail__Url_Operator>;
-  sizes__thumbnail__width: InputMaybe<AllTeam_Photo_Sizes__Thumbnail__Width_Operator>;
-  updatedAt: InputMaybe<AllTeam_Photo_UpdatedAt_Operator>;
-  url: InputMaybe<AllTeam_Photo_Url_Operator>;
-  width: InputMaybe<AllTeam_Photo_Width_Operator>;
-};
-
-export type AllTeam_Photo_Where_Or = {
-  AND: InputMaybe<Array<InputMaybe<AllTeam_Photo_Where_And>>>;
-  OR: InputMaybe<Array<InputMaybe<AllTeam_Photo_Where_Or>>>;
-  alt: InputMaybe<AllTeam_Photo_Alt_Operator>;
-  createdAt: InputMaybe<AllTeam_Photo_CreatedAt_Operator>;
-  filename: InputMaybe<AllTeam_Photo_Filename_Operator>;
-  filesize: InputMaybe<AllTeam_Photo_Filesize_Operator>;
-  height: InputMaybe<AllTeam_Photo_Height_Operator>;
-  id: InputMaybe<AllTeam_Photo_Id_Operator>;
-  mimeType: InputMaybe<AllTeam_Photo_MimeType_Operator>;
-  sizes__thumbnail__filename: InputMaybe<AllTeam_Photo_Sizes__Thumbnail__Filename_Operator>;
-  sizes__thumbnail__filesize: InputMaybe<AllTeam_Photo_Sizes__Thumbnail__Filesize_Operator>;
-  sizes__thumbnail__height: InputMaybe<AllTeam_Photo_Sizes__Thumbnail__Height_Operator>;
-  sizes__thumbnail__mimeType: InputMaybe<AllTeam_Photo_Sizes__Thumbnail__MimeType_Operator>;
-  sizes__thumbnail__url: InputMaybe<AllTeam_Photo_Sizes__Thumbnail__Url_Operator>;
-  sizes__thumbnail__width: InputMaybe<AllTeam_Photo_Sizes__Thumbnail__Width_Operator>;
-  updatedAt: InputMaybe<AllTeam_Photo_UpdatedAt_Operator>;
-  url: InputMaybe<AllTeam_Photo_Url_Operator>;
-  width: InputMaybe<AllTeam_Photo_Width_Operator>;
-};
-
-export type AllTeam_Photo_Width_Operator = {
-  equals: InputMaybe<Scalars['Float']['input']>;
-  exists: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than: InputMaybe<Scalars['Float']['input']>;
-  greater_than_equal: InputMaybe<Scalars['Float']['input']>;
-  less_than: InputMaybe<Scalars['Float']['input']>;
-  less_than_equal: InputMaybe<Scalars['Float']['input']>;
-  not_equals: InputMaybe<Scalars['Float']['input']>;
-};
-
-export type AllTeam_CreatedAt_Operator = {
-  equals: InputMaybe<Scalars['DateTime']['input']>;
-  exists: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than: InputMaybe<Scalars['DateTime']['input']>;
-  greater_than_equal: InputMaybe<Scalars['DateTime']['input']>;
-  less_than: InputMaybe<Scalars['DateTime']['input']>;
-  less_than_equal: InputMaybe<Scalars['DateTime']['input']>;
-  like: InputMaybe<Scalars['DateTime']['input']>;
-  not_equals: InputMaybe<Scalars['DateTime']['input']>;
-};
-
-export type AllTeam_Description_Operator = {
-  all: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  contains: InputMaybe<Scalars['String']['input']>;
-  equals: InputMaybe<Scalars['String']['input']>;
-  in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  like: InputMaybe<Scalars['String']['input']>;
-  not_equals: InputMaybe<Scalars['String']['input']>;
-  not_in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
-export type AllTeam_Id_Operator = {
-  all: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  contains: InputMaybe<Scalars['String']['input']>;
-  equals: InputMaybe<Scalars['String']['input']>;
-  exists: InputMaybe<Scalars['Boolean']['input']>;
-  in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  like: InputMaybe<Scalars['String']['input']>;
-  not_equals: InputMaybe<Scalars['String']['input']>;
-  not_in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
-export type AllTeam_Photo_Operator = {
-  equals: InputMaybe<Scalars['String']['input']>;
-  not_equals: InputMaybe<Scalars['String']['input']>;
-};
-
-export type AllTeam_UpdatedAt_Operator = {
-  equals: InputMaybe<Scalars['DateTime']['input']>;
-  exists: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than: InputMaybe<Scalars['DateTime']['input']>;
-  greater_than_equal: InputMaybe<Scalars['DateTime']['input']>;
-  less_than: InputMaybe<Scalars['DateTime']['input']>;
-  less_than_equal: InputMaybe<Scalars['DateTime']['input']>;
-  like: InputMaybe<Scalars['DateTime']['input']>;
-  not_equals: InputMaybe<Scalars['DateTime']['input']>;
-};
-
-export type AllTeam_Where = {
-  AND: InputMaybe<Array<InputMaybe<AllTeam_Where_And>>>;
-  OR: InputMaybe<Array<InputMaybe<AllTeam_Where_Or>>>;
-  createdAt: InputMaybe<AllTeam_CreatedAt_Operator>;
-  description: InputMaybe<AllTeam_Description_Operator>;
-  id: InputMaybe<AllTeam_Id_Operator>;
-  photo: InputMaybe<AllTeam_Photo_Operator>;
-  updatedAt: InputMaybe<AllTeam_UpdatedAt_Operator>;
-};
-
-export type AllTeam_Where_And = {
-  AND: InputMaybe<Array<InputMaybe<AllTeam_Where_And>>>;
-  OR: InputMaybe<Array<InputMaybe<AllTeam_Where_Or>>>;
-  createdAt: InputMaybe<AllTeam_CreatedAt_Operator>;
-  description: InputMaybe<AllTeam_Description_Operator>;
-  id: InputMaybe<AllTeam_Id_Operator>;
-  photo: InputMaybe<AllTeam_Photo_Operator>;
-  updatedAt: InputMaybe<AllTeam_UpdatedAt_Operator>;
-};
-
-export type AllTeam_Where_Or = {
-  AND: InputMaybe<Array<InputMaybe<AllTeam_Where_And>>>;
-  OR: InputMaybe<Array<InputMaybe<AllTeam_Where_Or>>>;
-  createdAt: InputMaybe<AllTeam_CreatedAt_Operator>;
-  description: InputMaybe<AllTeam_Description_Operator>;
-  id: InputMaybe<AllTeam_Id_Operator>;
-  photo: InputMaybe<AllTeam_Photo_Operator>;
-  updatedAt: InputMaybe<AllTeam_UpdatedAt_Operator>;
-};
-
-export type AllTeams = {
-  __typename?: 'AllTeams';
-  docs: Maybe<Array<Maybe<AllTeam>>>;
-  hasNextPage: Maybe<Scalars['Boolean']['output']>;
-  hasPrevPage: Maybe<Scalars['Boolean']['output']>;
-  limit: Maybe<Scalars['Int']['output']>;
-  nextPage: Maybe<Scalars['Int']['output']>;
-  offset: Maybe<Scalars['Int']['output']>;
-  page: Maybe<Scalars['Int']['output']>;
-  pagingCounter: Maybe<Scalars['Int']['output']>;
-  prevPage: Maybe<Scalars['Int']['output']>;
-  totalDocs: Maybe<Scalars['Int']['output']>;
-  totalPages: Maybe<Scalars['Int']['output']>;
 };
 
 export type File = {
@@ -1355,7 +727,6 @@ export type Files = {
 export type HomeVideo = {
   __typename?: 'HomeVideo';
   createdAt: Maybe<Scalars['DateTime']['output']>;
-  id: Maybe<Scalars['String']['output']>;
   updatedAt: Maybe<Scalars['DateTime']['output']>;
   video: File;
 };
@@ -1363,30 +734,6 @@ export type HomeVideo = {
 
 export type HomeVideoVideoArgs = {
   where: InputMaybe<HomeVideo_Video_Where>;
-};
-
-export type HomeVideoCreateAccess = {
-  __typename?: 'HomeVideoCreateAccess';
-  permission: Scalars['Boolean']['output'];
-  where: Maybe<Scalars['JSONObject']['output']>;
-};
-
-export type HomeVideoCreateDocAccess = {
-  __typename?: 'HomeVideoCreateDocAccess';
-  permission: Scalars['Boolean']['output'];
-  where: Maybe<Scalars['JSONObject']['output']>;
-};
-
-export type HomeVideoDeleteAccess = {
-  __typename?: 'HomeVideoDeleteAccess';
-  permission: Scalars['Boolean']['output'];
-  where: Maybe<Scalars['JSONObject']['output']>;
-};
-
-export type HomeVideoDeleteDocAccess = {
-  __typename?: 'HomeVideoDeleteDocAccess';
-  permission: Scalars['Boolean']['output'];
-  where: Maybe<Scalars['JSONObject']['output']>;
 };
 
 export type HomeVideoDocAccessFields = {
@@ -1731,86 +1078,6 @@ export type HomeVideo_Video_Width_Operator = {
   less_than: InputMaybe<Scalars['Float']['input']>;
   less_than_equal: InputMaybe<Scalars['Float']['input']>;
   not_equals: InputMaybe<Scalars['Float']['input']>;
-};
-
-export type HomeVideo_CreatedAt_Operator = {
-  equals: InputMaybe<Scalars['DateTime']['input']>;
-  exists: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than: InputMaybe<Scalars['DateTime']['input']>;
-  greater_than_equal: InputMaybe<Scalars['DateTime']['input']>;
-  less_than: InputMaybe<Scalars['DateTime']['input']>;
-  less_than_equal: InputMaybe<Scalars['DateTime']['input']>;
-  like: InputMaybe<Scalars['DateTime']['input']>;
-  not_equals: InputMaybe<Scalars['DateTime']['input']>;
-};
-
-export type HomeVideo_Id_Operator = {
-  all: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  contains: InputMaybe<Scalars['String']['input']>;
-  equals: InputMaybe<Scalars['String']['input']>;
-  exists: InputMaybe<Scalars['Boolean']['input']>;
-  in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  like: InputMaybe<Scalars['String']['input']>;
-  not_equals: InputMaybe<Scalars['String']['input']>;
-  not_in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
-export type HomeVideo_UpdatedAt_Operator = {
-  equals: InputMaybe<Scalars['DateTime']['input']>;
-  exists: InputMaybe<Scalars['Boolean']['input']>;
-  greater_than: InputMaybe<Scalars['DateTime']['input']>;
-  greater_than_equal: InputMaybe<Scalars['DateTime']['input']>;
-  less_than: InputMaybe<Scalars['DateTime']['input']>;
-  less_than_equal: InputMaybe<Scalars['DateTime']['input']>;
-  like: InputMaybe<Scalars['DateTime']['input']>;
-  not_equals: InputMaybe<Scalars['DateTime']['input']>;
-};
-
-export type HomeVideo_Video_Operator = {
-  equals: InputMaybe<Scalars['String']['input']>;
-  not_equals: InputMaybe<Scalars['String']['input']>;
-};
-
-export type HomeVideo_Where = {
-  AND: InputMaybe<Array<InputMaybe<HomeVideo_Where_And>>>;
-  OR: InputMaybe<Array<InputMaybe<HomeVideo_Where_Or>>>;
-  createdAt: InputMaybe<HomeVideo_CreatedAt_Operator>;
-  id: InputMaybe<HomeVideo_Id_Operator>;
-  updatedAt: InputMaybe<HomeVideo_UpdatedAt_Operator>;
-  video: InputMaybe<HomeVideo_Video_Operator>;
-};
-
-export type HomeVideo_Where_And = {
-  AND: InputMaybe<Array<InputMaybe<HomeVideo_Where_And>>>;
-  OR: InputMaybe<Array<InputMaybe<HomeVideo_Where_Or>>>;
-  createdAt: InputMaybe<HomeVideo_CreatedAt_Operator>;
-  id: InputMaybe<HomeVideo_Id_Operator>;
-  updatedAt: InputMaybe<HomeVideo_UpdatedAt_Operator>;
-  video: InputMaybe<HomeVideo_Video_Operator>;
-};
-
-export type HomeVideo_Where_Or = {
-  AND: InputMaybe<Array<InputMaybe<HomeVideo_Where_And>>>;
-  OR: InputMaybe<Array<InputMaybe<HomeVideo_Where_Or>>>;
-  createdAt: InputMaybe<HomeVideo_CreatedAt_Operator>;
-  id: InputMaybe<HomeVideo_Id_Operator>;
-  updatedAt: InputMaybe<HomeVideo_UpdatedAt_Operator>;
-  video: InputMaybe<HomeVideo_Video_Operator>;
-};
-
-export type HomeVideos = {
-  __typename?: 'HomeVideos';
-  docs: Maybe<Array<Maybe<HomeVideo>>>;
-  hasNextPage: Maybe<Scalars['Boolean']['output']>;
-  hasPrevPage: Maybe<Scalars['Boolean']['output']>;
-  limit: Maybe<Scalars['Int']['output']>;
-  nextPage: Maybe<Scalars['Int']['output']>;
-  offset: Maybe<Scalars['Int']['output']>;
-  page: Maybe<Scalars['Int']['output']>;
-  pagingCounter: Maybe<Scalars['Int']['output']>;
-  prevPage: Maybe<Scalars['Int']['output']>;
-  totalDocs: Maybe<Scalars['Int']['output']>;
-  totalPages: Maybe<Scalars['Int']['output']>;
 };
 
 export type Media = {
@@ -3142,14 +2409,18 @@ export type Member = {
   __typename?: 'Member';
   createdAt: Maybe<Scalars['DateTime']['output']>;
   description: Scalars['String']['output'];
+  email: Maybe<Scalars['String']['output']>;
+  facebook: Maybe<Scalars['String']['output']>;
   id: Maybe<Scalars['String']['output']>;
   image: Media;
+  instagram: Maybe<Scalars['String']['output']>;
+  linkedin: Maybe<Scalars['String']['output']>;
   mat: File;
   name: Scalars['String']['output'];
   obj: File;
-  socials: Array<Member_Socials>;
   textures: Maybe<Array<Member_Textures>>;
   title: Scalars['String']['output'];
+  twitter: Maybe<Scalars['String']['output']>;
   updatedAt: Maybe<Scalars['DateTime']['output']>;
 };
 
@@ -3675,16 +2946,6 @@ export type Member_Obj_Width_Operator = {
   less_than: InputMaybe<Scalars['Float']['input']>;
   less_than_equal: InputMaybe<Scalars['Float']['input']>;
   not_equals: InputMaybe<Scalars['Float']['input']>;
-};
-
-export type Member_Socials = {
-  __typename?: 'Member_Socials';
-  email: Maybe<Scalars['EmailAddress']['output']>;
-  facebook: Maybe<Scalars['String']['output']>;
-  id: Maybe<Scalars['String']['output']>;
-  instagram: Maybe<Scalars['String']['output']>;
-  linkedin: Maybe<Scalars['String']['output']>;
-  twitter: Maybe<Scalars['String']['output']>;
 };
 
 export type Member_Textures = {
@@ -4289,6 +3550,28 @@ export type Member_Description_Operator = {
   not_in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
+export type Member_Email_Operator = {
+  all: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contains: InputMaybe<Scalars['String']['input']>;
+  equals: InputMaybe<Scalars['String']['input']>;
+  exists: InputMaybe<Scalars['Boolean']['input']>;
+  in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  like: InputMaybe<Scalars['String']['input']>;
+  not_equals: InputMaybe<Scalars['String']['input']>;
+  not_in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Member_Facebook_Operator = {
+  all: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contains: InputMaybe<Scalars['String']['input']>;
+  equals: InputMaybe<Scalars['String']['input']>;
+  exists: InputMaybe<Scalars['Boolean']['input']>;
+  in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  like: InputMaybe<Scalars['String']['input']>;
+  not_equals: InputMaybe<Scalars['String']['input']>;
+  not_in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
 export type Member_Id_Operator = {
   all: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
   contains: InputMaybe<Scalars['String']['input']>;
@@ -4303,6 +3586,28 @@ export type Member_Id_Operator = {
 export type Member_Image_Operator = {
   equals: InputMaybe<Scalars['String']['input']>;
   not_equals: InputMaybe<Scalars['String']['input']>;
+};
+
+export type Member_Instagram_Operator = {
+  all: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contains: InputMaybe<Scalars['String']['input']>;
+  equals: InputMaybe<Scalars['String']['input']>;
+  exists: InputMaybe<Scalars['Boolean']['input']>;
+  in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  like: InputMaybe<Scalars['String']['input']>;
+  not_equals: InputMaybe<Scalars['String']['input']>;
+  not_in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
+export type Member_Linkedin_Operator = {
+  all: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contains: InputMaybe<Scalars['String']['input']>;
+  equals: InputMaybe<Scalars['String']['input']>;
+  exists: InputMaybe<Scalars['Boolean']['input']>;
+  in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  like: InputMaybe<Scalars['String']['input']>;
+  not_equals: InputMaybe<Scalars['String']['input']>;
+  not_in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Member_Mat_Operator = {
@@ -4323,72 +3628,6 @@ export type Member_Name_Operator = {
 export type Member_Obj_Operator = {
   equals: InputMaybe<Scalars['String']['input']>;
   not_equals: InputMaybe<Scalars['String']['input']>;
-};
-
-export type Member_Socials__Email_Operator = {
-  all: InputMaybe<Array<InputMaybe<Scalars['EmailAddress']['input']>>>;
-  contains: InputMaybe<Scalars['EmailAddress']['input']>;
-  equals: InputMaybe<Scalars['EmailAddress']['input']>;
-  exists: InputMaybe<Scalars['Boolean']['input']>;
-  in: InputMaybe<Array<InputMaybe<Scalars['EmailAddress']['input']>>>;
-  like: InputMaybe<Scalars['EmailAddress']['input']>;
-  not_equals: InputMaybe<Scalars['EmailAddress']['input']>;
-  not_in: InputMaybe<Array<InputMaybe<Scalars['EmailAddress']['input']>>>;
-};
-
-export type Member_Socials__Facebook_Operator = {
-  all: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  contains: InputMaybe<Scalars['String']['input']>;
-  equals: InputMaybe<Scalars['String']['input']>;
-  exists: InputMaybe<Scalars['Boolean']['input']>;
-  in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  like: InputMaybe<Scalars['String']['input']>;
-  not_equals: InputMaybe<Scalars['String']['input']>;
-  not_in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
-export type Member_Socials__Id_Operator = {
-  all: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  contains: InputMaybe<Scalars['String']['input']>;
-  equals: InputMaybe<Scalars['String']['input']>;
-  exists: InputMaybe<Scalars['Boolean']['input']>;
-  in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  like: InputMaybe<Scalars['String']['input']>;
-  not_equals: InputMaybe<Scalars['String']['input']>;
-  not_in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
-export type Member_Socials__Instagram_Operator = {
-  all: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  contains: InputMaybe<Scalars['String']['input']>;
-  equals: InputMaybe<Scalars['String']['input']>;
-  exists: InputMaybe<Scalars['Boolean']['input']>;
-  in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  like: InputMaybe<Scalars['String']['input']>;
-  not_equals: InputMaybe<Scalars['String']['input']>;
-  not_in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
-export type Member_Socials__Linkedin_Operator = {
-  all: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  contains: InputMaybe<Scalars['String']['input']>;
-  equals: InputMaybe<Scalars['String']['input']>;
-  exists: InputMaybe<Scalars['Boolean']['input']>;
-  in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  like: InputMaybe<Scalars['String']['input']>;
-  not_equals: InputMaybe<Scalars['String']['input']>;
-  not_in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-};
-
-export type Member_Socials__Twitter_Operator = {
-  all: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  contains: InputMaybe<Scalars['String']['input']>;
-  equals: InputMaybe<Scalars['String']['input']>;
-  exists: InputMaybe<Scalars['Boolean']['input']>;
-  in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
-  like: InputMaybe<Scalars['String']['input']>;
-  not_equals: InputMaybe<Scalars['String']['input']>;
-  not_in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
 export type Member_Textures__Id_Operator = {
@@ -4436,6 +3675,17 @@ export type Member_Title_Operator = {
   not_in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
 };
 
+export type Member_Twitter_Operator = {
+  all: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  contains: InputMaybe<Scalars['String']['input']>;
+  equals: InputMaybe<Scalars['String']['input']>;
+  exists: InputMaybe<Scalars['Boolean']['input']>;
+  in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  like: InputMaybe<Scalars['String']['input']>;
+  not_equals: InputMaybe<Scalars['String']['input']>;
+  not_in: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+};
+
 export type Member_UpdatedAt_Operator = {
   equals: InputMaybe<Scalars['DateTime']['input']>;
   exists: InputMaybe<Scalars['Boolean']['input']>;
@@ -4452,23 +3702,22 @@ export type Member_Where = {
   OR: InputMaybe<Array<InputMaybe<Member_Where_Or>>>;
   createdAt: InputMaybe<Member_CreatedAt_Operator>;
   description: InputMaybe<Member_Description_Operator>;
+  email: InputMaybe<Member_Email_Operator>;
+  facebook: InputMaybe<Member_Facebook_Operator>;
   id: InputMaybe<Member_Id_Operator>;
   image: InputMaybe<Member_Image_Operator>;
+  instagram: InputMaybe<Member_Instagram_Operator>;
+  linkedin: InputMaybe<Member_Linkedin_Operator>;
   mat: InputMaybe<Member_Mat_Operator>;
   name: InputMaybe<Member_Name_Operator>;
   obj: InputMaybe<Member_Obj_Operator>;
-  socials__email: InputMaybe<Member_Socials__Email_Operator>;
-  socials__facebook: InputMaybe<Member_Socials__Facebook_Operator>;
-  socials__id: InputMaybe<Member_Socials__Id_Operator>;
-  socials__instagram: InputMaybe<Member_Socials__Instagram_Operator>;
-  socials__linkedin: InputMaybe<Member_Socials__Linkedin_Operator>;
-  socials__twitter: InputMaybe<Member_Socials__Twitter_Operator>;
   textures__id: InputMaybe<Member_Textures__Id_Operator>;
   textures__tex1: InputMaybe<Member_Textures__Tex1_Operator>;
   textures__tex2: InputMaybe<Member_Textures__Tex2_Operator>;
   textures__tex3: InputMaybe<Member_Textures__Tex3_Operator>;
   textures__tex4: InputMaybe<Member_Textures__Tex4_Operator>;
   title: InputMaybe<Member_Title_Operator>;
+  twitter: InputMaybe<Member_Twitter_Operator>;
   updatedAt: InputMaybe<Member_UpdatedAt_Operator>;
 };
 
@@ -4477,23 +3726,22 @@ export type Member_Where_And = {
   OR: InputMaybe<Array<InputMaybe<Member_Where_Or>>>;
   createdAt: InputMaybe<Member_CreatedAt_Operator>;
   description: InputMaybe<Member_Description_Operator>;
+  email: InputMaybe<Member_Email_Operator>;
+  facebook: InputMaybe<Member_Facebook_Operator>;
   id: InputMaybe<Member_Id_Operator>;
   image: InputMaybe<Member_Image_Operator>;
+  instagram: InputMaybe<Member_Instagram_Operator>;
+  linkedin: InputMaybe<Member_Linkedin_Operator>;
   mat: InputMaybe<Member_Mat_Operator>;
   name: InputMaybe<Member_Name_Operator>;
   obj: InputMaybe<Member_Obj_Operator>;
-  socials__email: InputMaybe<Member_Socials__Email_Operator>;
-  socials__facebook: InputMaybe<Member_Socials__Facebook_Operator>;
-  socials__id: InputMaybe<Member_Socials__Id_Operator>;
-  socials__instagram: InputMaybe<Member_Socials__Instagram_Operator>;
-  socials__linkedin: InputMaybe<Member_Socials__Linkedin_Operator>;
-  socials__twitter: InputMaybe<Member_Socials__Twitter_Operator>;
   textures__id: InputMaybe<Member_Textures__Id_Operator>;
   textures__tex1: InputMaybe<Member_Textures__Tex1_Operator>;
   textures__tex2: InputMaybe<Member_Textures__Tex2_Operator>;
   textures__tex3: InputMaybe<Member_Textures__Tex3_Operator>;
   textures__tex4: InputMaybe<Member_Textures__Tex4_Operator>;
   title: InputMaybe<Member_Title_Operator>;
+  twitter: InputMaybe<Member_Twitter_Operator>;
   updatedAt: InputMaybe<Member_UpdatedAt_Operator>;
 };
 
@@ -4502,23 +3750,22 @@ export type Member_Where_Or = {
   OR: InputMaybe<Array<InputMaybe<Member_Where_Or>>>;
   createdAt: InputMaybe<Member_CreatedAt_Operator>;
   description: InputMaybe<Member_Description_Operator>;
+  email: InputMaybe<Member_Email_Operator>;
+  facebook: InputMaybe<Member_Facebook_Operator>;
   id: InputMaybe<Member_Id_Operator>;
   image: InputMaybe<Member_Image_Operator>;
+  instagram: InputMaybe<Member_Instagram_Operator>;
+  linkedin: InputMaybe<Member_Linkedin_Operator>;
   mat: InputMaybe<Member_Mat_Operator>;
   name: InputMaybe<Member_Name_Operator>;
   obj: InputMaybe<Member_Obj_Operator>;
-  socials__email: InputMaybe<Member_Socials__Email_Operator>;
-  socials__facebook: InputMaybe<Member_Socials__Facebook_Operator>;
-  socials__id: InputMaybe<Member_Socials__Id_Operator>;
-  socials__instagram: InputMaybe<Member_Socials__Instagram_Operator>;
-  socials__linkedin: InputMaybe<Member_Socials__Linkedin_Operator>;
-  socials__twitter: InputMaybe<Member_Socials__Twitter_Operator>;
   textures__id: InputMaybe<Member_Textures__Id_Operator>;
   textures__tex1: InputMaybe<Member_Textures__Tex1_Operator>;
   textures__tex2: InputMaybe<Member_Textures__Tex2_Operator>;
   textures__tex3: InputMaybe<Member_Textures__Tex3_Operator>;
   textures__tex4: InputMaybe<Member_Textures__Tex4_Operator>;
   title: InputMaybe<Member_Title_Operator>;
+  twitter: InputMaybe<Member_Twitter_Operator>;
   updatedAt: InputMaybe<Member_UpdatedAt_Operator>;
 };
 
@@ -4565,13 +3812,17 @@ export type MembersDocAccessFields = {
   __typename?: 'MembersDocAccessFields';
   createdAt: Maybe<MembersDocAccessFields_CreatedAt>;
   description: Maybe<MembersDocAccessFields_Description>;
+  email: Maybe<MembersDocAccessFields_Email>;
+  facebook: Maybe<MembersDocAccessFields_Facebook>;
   image: Maybe<MembersDocAccessFields_Image>;
+  instagram: Maybe<MembersDocAccessFields_Instagram>;
+  linkedin: Maybe<MembersDocAccessFields_Linkedin>;
   mat: Maybe<MembersDocAccessFields_Mat>;
   name: Maybe<MembersDocAccessFields_Name>;
   obj: Maybe<MembersDocAccessFields_Obj>;
-  socials: Maybe<MembersDocAccessFields_Socials>;
   textures: Maybe<MembersDocAccessFields_Textures>;
   title: Maybe<MembersDocAccessFields_Title>;
+  twitter: Maybe<MembersDocAccessFields_Twitter>;
   updatedAt: Maybe<MembersDocAccessFields_UpdatedAt>;
 };
 
@@ -4631,6 +3882,62 @@ export type MembersDocAccessFields_Description_Update = {
   permission: Scalars['Boolean']['output'];
 };
 
+export type MembersDocAccessFields_Email = {
+  __typename?: 'MembersDocAccessFields_email';
+  create: Maybe<MembersDocAccessFields_Email_Create>;
+  delete: Maybe<MembersDocAccessFields_Email_Delete>;
+  read: Maybe<MembersDocAccessFields_Email_Read>;
+  update: Maybe<MembersDocAccessFields_Email_Update>;
+};
+
+export type MembersDocAccessFields_Email_Create = {
+  __typename?: 'MembersDocAccessFields_email_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MembersDocAccessFields_Email_Delete = {
+  __typename?: 'MembersDocAccessFields_email_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MembersDocAccessFields_Email_Read = {
+  __typename?: 'MembersDocAccessFields_email_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MembersDocAccessFields_Email_Update = {
+  __typename?: 'MembersDocAccessFields_email_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MembersDocAccessFields_Facebook = {
+  __typename?: 'MembersDocAccessFields_facebook';
+  create: Maybe<MembersDocAccessFields_Facebook_Create>;
+  delete: Maybe<MembersDocAccessFields_Facebook_Delete>;
+  read: Maybe<MembersDocAccessFields_Facebook_Read>;
+  update: Maybe<MembersDocAccessFields_Facebook_Update>;
+};
+
+export type MembersDocAccessFields_Facebook_Create = {
+  __typename?: 'MembersDocAccessFields_facebook_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MembersDocAccessFields_Facebook_Delete = {
+  __typename?: 'MembersDocAccessFields_facebook_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MembersDocAccessFields_Facebook_Read = {
+  __typename?: 'MembersDocAccessFields_facebook_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MembersDocAccessFields_Facebook_Update = {
+  __typename?: 'MembersDocAccessFields_facebook_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
 export type MembersDocAccessFields_Image = {
   __typename?: 'MembersDocAccessFields_image';
   create: Maybe<MembersDocAccessFields_Image_Create>;
@@ -4656,6 +3963,62 @@ export type MembersDocAccessFields_Image_Read = {
 
 export type MembersDocAccessFields_Image_Update = {
   __typename?: 'MembersDocAccessFields_image_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MembersDocAccessFields_Instagram = {
+  __typename?: 'MembersDocAccessFields_instagram';
+  create: Maybe<MembersDocAccessFields_Instagram_Create>;
+  delete: Maybe<MembersDocAccessFields_Instagram_Delete>;
+  read: Maybe<MembersDocAccessFields_Instagram_Read>;
+  update: Maybe<MembersDocAccessFields_Instagram_Update>;
+};
+
+export type MembersDocAccessFields_Instagram_Create = {
+  __typename?: 'MembersDocAccessFields_instagram_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MembersDocAccessFields_Instagram_Delete = {
+  __typename?: 'MembersDocAccessFields_instagram_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MembersDocAccessFields_Instagram_Read = {
+  __typename?: 'MembersDocAccessFields_instagram_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MembersDocAccessFields_Instagram_Update = {
+  __typename?: 'MembersDocAccessFields_instagram_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MembersDocAccessFields_Linkedin = {
+  __typename?: 'MembersDocAccessFields_linkedin';
+  create: Maybe<MembersDocAccessFields_Linkedin_Create>;
+  delete: Maybe<MembersDocAccessFields_Linkedin_Delete>;
+  read: Maybe<MembersDocAccessFields_Linkedin_Read>;
+  update: Maybe<MembersDocAccessFields_Linkedin_Update>;
+};
+
+export type MembersDocAccessFields_Linkedin_Create = {
+  __typename?: 'MembersDocAccessFields_linkedin_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MembersDocAccessFields_Linkedin_Delete = {
+  __typename?: 'MembersDocAccessFields_linkedin_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MembersDocAccessFields_Linkedin_Read = {
+  __typename?: 'MembersDocAccessFields_linkedin_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MembersDocAccessFields_Linkedin_Update = {
+  __typename?: 'MembersDocAccessFields_linkedin_Update';
   permission: Scalars['Boolean']['output'];
 };
 
@@ -4740,213 +4103,6 @@ export type MembersDocAccessFields_Obj_Read = {
 
 export type MembersDocAccessFields_Obj_Update = {
   __typename?: 'MembersDocAccessFields_obj_Update';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersDocAccessFields_Socials = {
-  __typename?: 'MembersDocAccessFields_socials';
-  create: Maybe<MembersDocAccessFields_Socials_Create>;
-  delete: Maybe<MembersDocAccessFields_Socials_Delete>;
-  fields: Maybe<MembersDocAccessFields_Socials_Fields>;
-  read: Maybe<MembersDocAccessFields_Socials_Read>;
-  update: Maybe<MembersDocAccessFields_Socials_Update>;
-};
-
-export type MembersDocAccessFields_Socials_Create = {
-  __typename?: 'MembersDocAccessFields_socials_Create';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersDocAccessFields_Socials_Delete = {
-  __typename?: 'MembersDocAccessFields_socials_Delete';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersDocAccessFields_Socials_Fields = {
-  __typename?: 'MembersDocAccessFields_socials_Fields';
-  email: Maybe<MembersDocAccessFields_Socials_Email>;
-  facebook: Maybe<MembersDocAccessFields_Socials_Facebook>;
-  id: Maybe<MembersDocAccessFields_Socials_Id>;
-  instagram: Maybe<MembersDocAccessFields_Socials_Instagram>;
-  linkedin: Maybe<MembersDocAccessFields_Socials_Linkedin>;
-  twitter: Maybe<MembersDocAccessFields_Socials_Twitter>;
-};
-
-export type MembersDocAccessFields_Socials_Read = {
-  __typename?: 'MembersDocAccessFields_socials_Read';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersDocAccessFields_Socials_Update = {
-  __typename?: 'MembersDocAccessFields_socials_Update';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersDocAccessFields_Socials_Email = {
-  __typename?: 'MembersDocAccessFields_socials_email';
-  create: Maybe<MembersDocAccessFields_Socials_Email_Create>;
-  delete: Maybe<MembersDocAccessFields_Socials_Email_Delete>;
-  read: Maybe<MembersDocAccessFields_Socials_Email_Read>;
-  update: Maybe<MembersDocAccessFields_Socials_Email_Update>;
-};
-
-export type MembersDocAccessFields_Socials_Email_Create = {
-  __typename?: 'MembersDocAccessFields_socials_email_Create';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersDocAccessFields_Socials_Email_Delete = {
-  __typename?: 'MembersDocAccessFields_socials_email_Delete';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersDocAccessFields_Socials_Email_Read = {
-  __typename?: 'MembersDocAccessFields_socials_email_Read';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersDocAccessFields_Socials_Email_Update = {
-  __typename?: 'MembersDocAccessFields_socials_email_Update';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersDocAccessFields_Socials_Facebook = {
-  __typename?: 'MembersDocAccessFields_socials_facebook';
-  create: Maybe<MembersDocAccessFields_Socials_Facebook_Create>;
-  delete: Maybe<MembersDocAccessFields_Socials_Facebook_Delete>;
-  read: Maybe<MembersDocAccessFields_Socials_Facebook_Read>;
-  update: Maybe<MembersDocAccessFields_Socials_Facebook_Update>;
-};
-
-export type MembersDocAccessFields_Socials_Facebook_Create = {
-  __typename?: 'MembersDocAccessFields_socials_facebook_Create';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersDocAccessFields_Socials_Facebook_Delete = {
-  __typename?: 'MembersDocAccessFields_socials_facebook_Delete';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersDocAccessFields_Socials_Facebook_Read = {
-  __typename?: 'MembersDocAccessFields_socials_facebook_Read';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersDocAccessFields_Socials_Facebook_Update = {
-  __typename?: 'MembersDocAccessFields_socials_facebook_Update';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersDocAccessFields_Socials_Id = {
-  __typename?: 'MembersDocAccessFields_socials_id';
-  create: Maybe<MembersDocAccessFields_Socials_Id_Create>;
-  delete: Maybe<MembersDocAccessFields_Socials_Id_Delete>;
-  read: Maybe<MembersDocAccessFields_Socials_Id_Read>;
-  update: Maybe<MembersDocAccessFields_Socials_Id_Update>;
-};
-
-export type MembersDocAccessFields_Socials_Id_Create = {
-  __typename?: 'MembersDocAccessFields_socials_id_Create';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersDocAccessFields_Socials_Id_Delete = {
-  __typename?: 'MembersDocAccessFields_socials_id_Delete';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersDocAccessFields_Socials_Id_Read = {
-  __typename?: 'MembersDocAccessFields_socials_id_Read';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersDocAccessFields_Socials_Id_Update = {
-  __typename?: 'MembersDocAccessFields_socials_id_Update';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersDocAccessFields_Socials_Instagram = {
-  __typename?: 'MembersDocAccessFields_socials_instagram';
-  create: Maybe<MembersDocAccessFields_Socials_Instagram_Create>;
-  delete: Maybe<MembersDocAccessFields_Socials_Instagram_Delete>;
-  read: Maybe<MembersDocAccessFields_Socials_Instagram_Read>;
-  update: Maybe<MembersDocAccessFields_Socials_Instagram_Update>;
-};
-
-export type MembersDocAccessFields_Socials_Instagram_Create = {
-  __typename?: 'MembersDocAccessFields_socials_instagram_Create';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersDocAccessFields_Socials_Instagram_Delete = {
-  __typename?: 'MembersDocAccessFields_socials_instagram_Delete';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersDocAccessFields_Socials_Instagram_Read = {
-  __typename?: 'MembersDocAccessFields_socials_instagram_Read';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersDocAccessFields_Socials_Instagram_Update = {
-  __typename?: 'MembersDocAccessFields_socials_instagram_Update';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersDocAccessFields_Socials_Linkedin = {
-  __typename?: 'MembersDocAccessFields_socials_linkedin';
-  create: Maybe<MembersDocAccessFields_Socials_Linkedin_Create>;
-  delete: Maybe<MembersDocAccessFields_Socials_Linkedin_Delete>;
-  read: Maybe<MembersDocAccessFields_Socials_Linkedin_Read>;
-  update: Maybe<MembersDocAccessFields_Socials_Linkedin_Update>;
-};
-
-export type MembersDocAccessFields_Socials_Linkedin_Create = {
-  __typename?: 'MembersDocAccessFields_socials_linkedin_Create';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersDocAccessFields_Socials_Linkedin_Delete = {
-  __typename?: 'MembersDocAccessFields_socials_linkedin_Delete';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersDocAccessFields_Socials_Linkedin_Read = {
-  __typename?: 'MembersDocAccessFields_socials_linkedin_Read';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersDocAccessFields_Socials_Linkedin_Update = {
-  __typename?: 'MembersDocAccessFields_socials_linkedin_Update';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersDocAccessFields_Socials_Twitter = {
-  __typename?: 'MembersDocAccessFields_socials_twitter';
-  create: Maybe<MembersDocAccessFields_Socials_Twitter_Create>;
-  delete: Maybe<MembersDocAccessFields_Socials_Twitter_Delete>;
-  read: Maybe<MembersDocAccessFields_Socials_Twitter_Read>;
-  update: Maybe<MembersDocAccessFields_Socials_Twitter_Update>;
-};
-
-export type MembersDocAccessFields_Socials_Twitter_Create = {
-  __typename?: 'MembersDocAccessFields_socials_twitter_Create';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersDocAccessFields_Socials_Twitter_Delete = {
-  __typename?: 'MembersDocAccessFields_socials_twitter_Delete';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersDocAccessFields_Socials_Twitter_Read = {
-  __typename?: 'MembersDocAccessFields_socials_twitter_Read';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersDocAccessFields_Socials_Twitter_Update = {
-  __typename?: 'MembersDocAccessFields_socials_twitter_Update';
   permission: Scalars['Boolean']['output'];
 };
 
@@ -5156,6 +4312,34 @@ export type MembersDocAccessFields_Title_Update = {
   permission: Scalars['Boolean']['output'];
 };
 
+export type MembersDocAccessFields_Twitter = {
+  __typename?: 'MembersDocAccessFields_twitter';
+  create: Maybe<MembersDocAccessFields_Twitter_Create>;
+  delete: Maybe<MembersDocAccessFields_Twitter_Delete>;
+  read: Maybe<MembersDocAccessFields_Twitter_Read>;
+  update: Maybe<MembersDocAccessFields_Twitter_Update>;
+};
+
+export type MembersDocAccessFields_Twitter_Create = {
+  __typename?: 'MembersDocAccessFields_twitter_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MembersDocAccessFields_Twitter_Delete = {
+  __typename?: 'MembersDocAccessFields_twitter_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MembersDocAccessFields_Twitter_Read = {
+  __typename?: 'MembersDocAccessFields_twitter_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MembersDocAccessFields_Twitter_Update = {
+  __typename?: 'MembersDocAccessFields_twitter_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
 export type MembersDocAccessFields_UpdatedAt = {
   __typename?: 'MembersDocAccessFields_updatedAt';
   create: Maybe<MembersDocAccessFields_UpdatedAt_Create>;
@@ -5188,13 +4372,17 @@ export type MembersFields = {
   __typename?: 'MembersFields';
   createdAt: Maybe<MembersFields_CreatedAt>;
   description: Maybe<MembersFields_Description>;
+  email: Maybe<MembersFields_Email>;
+  facebook: Maybe<MembersFields_Facebook>;
   image: Maybe<MembersFields_Image>;
+  instagram: Maybe<MembersFields_Instagram>;
+  linkedin: Maybe<MembersFields_Linkedin>;
   mat: Maybe<MembersFields_Mat>;
   name: Maybe<MembersFields_Name>;
   obj: Maybe<MembersFields_Obj>;
-  socials: Maybe<MembersFields_Socials>;
   textures: Maybe<MembersFields_Textures>;
   title: Maybe<MembersFields_Title>;
+  twitter: Maybe<MembersFields_Twitter>;
   updatedAt: Maybe<MembersFields_UpdatedAt>;
 };
 
@@ -5254,6 +4442,62 @@ export type MembersFields_Description_Update = {
   permission: Scalars['Boolean']['output'];
 };
 
+export type MembersFields_Email = {
+  __typename?: 'MembersFields_email';
+  create: Maybe<MembersFields_Email_Create>;
+  delete: Maybe<MembersFields_Email_Delete>;
+  read: Maybe<MembersFields_Email_Read>;
+  update: Maybe<MembersFields_Email_Update>;
+};
+
+export type MembersFields_Email_Create = {
+  __typename?: 'MembersFields_email_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MembersFields_Email_Delete = {
+  __typename?: 'MembersFields_email_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MembersFields_Email_Read = {
+  __typename?: 'MembersFields_email_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MembersFields_Email_Update = {
+  __typename?: 'MembersFields_email_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MembersFields_Facebook = {
+  __typename?: 'MembersFields_facebook';
+  create: Maybe<MembersFields_Facebook_Create>;
+  delete: Maybe<MembersFields_Facebook_Delete>;
+  read: Maybe<MembersFields_Facebook_Read>;
+  update: Maybe<MembersFields_Facebook_Update>;
+};
+
+export type MembersFields_Facebook_Create = {
+  __typename?: 'MembersFields_facebook_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MembersFields_Facebook_Delete = {
+  __typename?: 'MembersFields_facebook_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MembersFields_Facebook_Read = {
+  __typename?: 'MembersFields_facebook_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MembersFields_Facebook_Update = {
+  __typename?: 'MembersFields_facebook_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
 export type MembersFields_Image = {
   __typename?: 'MembersFields_image';
   create: Maybe<MembersFields_Image_Create>;
@@ -5279,6 +4523,62 @@ export type MembersFields_Image_Read = {
 
 export type MembersFields_Image_Update = {
   __typename?: 'MembersFields_image_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MembersFields_Instagram = {
+  __typename?: 'MembersFields_instagram';
+  create: Maybe<MembersFields_Instagram_Create>;
+  delete: Maybe<MembersFields_Instagram_Delete>;
+  read: Maybe<MembersFields_Instagram_Read>;
+  update: Maybe<MembersFields_Instagram_Update>;
+};
+
+export type MembersFields_Instagram_Create = {
+  __typename?: 'MembersFields_instagram_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MembersFields_Instagram_Delete = {
+  __typename?: 'MembersFields_instagram_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MembersFields_Instagram_Read = {
+  __typename?: 'MembersFields_instagram_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MembersFields_Instagram_Update = {
+  __typename?: 'MembersFields_instagram_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MembersFields_Linkedin = {
+  __typename?: 'MembersFields_linkedin';
+  create: Maybe<MembersFields_Linkedin_Create>;
+  delete: Maybe<MembersFields_Linkedin_Delete>;
+  read: Maybe<MembersFields_Linkedin_Read>;
+  update: Maybe<MembersFields_Linkedin_Update>;
+};
+
+export type MembersFields_Linkedin_Create = {
+  __typename?: 'MembersFields_linkedin_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MembersFields_Linkedin_Delete = {
+  __typename?: 'MembersFields_linkedin_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MembersFields_Linkedin_Read = {
+  __typename?: 'MembersFields_linkedin_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MembersFields_Linkedin_Update = {
+  __typename?: 'MembersFields_linkedin_Update';
   permission: Scalars['Boolean']['output'];
 };
 
@@ -5363,213 +4663,6 @@ export type MembersFields_Obj_Read = {
 
 export type MembersFields_Obj_Update = {
   __typename?: 'MembersFields_obj_Update';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersFields_Socials = {
-  __typename?: 'MembersFields_socials';
-  create: Maybe<MembersFields_Socials_Create>;
-  delete: Maybe<MembersFields_Socials_Delete>;
-  fields: Maybe<MembersFields_Socials_Fields>;
-  read: Maybe<MembersFields_Socials_Read>;
-  update: Maybe<MembersFields_Socials_Update>;
-};
-
-export type MembersFields_Socials_Create = {
-  __typename?: 'MembersFields_socials_Create';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersFields_Socials_Delete = {
-  __typename?: 'MembersFields_socials_Delete';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersFields_Socials_Fields = {
-  __typename?: 'MembersFields_socials_Fields';
-  email: Maybe<MembersFields_Socials_Email>;
-  facebook: Maybe<MembersFields_Socials_Facebook>;
-  id: Maybe<MembersFields_Socials_Id>;
-  instagram: Maybe<MembersFields_Socials_Instagram>;
-  linkedin: Maybe<MembersFields_Socials_Linkedin>;
-  twitter: Maybe<MembersFields_Socials_Twitter>;
-};
-
-export type MembersFields_Socials_Read = {
-  __typename?: 'MembersFields_socials_Read';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersFields_Socials_Update = {
-  __typename?: 'MembersFields_socials_Update';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersFields_Socials_Email = {
-  __typename?: 'MembersFields_socials_email';
-  create: Maybe<MembersFields_Socials_Email_Create>;
-  delete: Maybe<MembersFields_Socials_Email_Delete>;
-  read: Maybe<MembersFields_Socials_Email_Read>;
-  update: Maybe<MembersFields_Socials_Email_Update>;
-};
-
-export type MembersFields_Socials_Email_Create = {
-  __typename?: 'MembersFields_socials_email_Create';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersFields_Socials_Email_Delete = {
-  __typename?: 'MembersFields_socials_email_Delete';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersFields_Socials_Email_Read = {
-  __typename?: 'MembersFields_socials_email_Read';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersFields_Socials_Email_Update = {
-  __typename?: 'MembersFields_socials_email_Update';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersFields_Socials_Facebook = {
-  __typename?: 'MembersFields_socials_facebook';
-  create: Maybe<MembersFields_Socials_Facebook_Create>;
-  delete: Maybe<MembersFields_Socials_Facebook_Delete>;
-  read: Maybe<MembersFields_Socials_Facebook_Read>;
-  update: Maybe<MembersFields_Socials_Facebook_Update>;
-};
-
-export type MembersFields_Socials_Facebook_Create = {
-  __typename?: 'MembersFields_socials_facebook_Create';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersFields_Socials_Facebook_Delete = {
-  __typename?: 'MembersFields_socials_facebook_Delete';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersFields_Socials_Facebook_Read = {
-  __typename?: 'MembersFields_socials_facebook_Read';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersFields_Socials_Facebook_Update = {
-  __typename?: 'MembersFields_socials_facebook_Update';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersFields_Socials_Id = {
-  __typename?: 'MembersFields_socials_id';
-  create: Maybe<MembersFields_Socials_Id_Create>;
-  delete: Maybe<MembersFields_Socials_Id_Delete>;
-  read: Maybe<MembersFields_Socials_Id_Read>;
-  update: Maybe<MembersFields_Socials_Id_Update>;
-};
-
-export type MembersFields_Socials_Id_Create = {
-  __typename?: 'MembersFields_socials_id_Create';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersFields_Socials_Id_Delete = {
-  __typename?: 'MembersFields_socials_id_Delete';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersFields_Socials_Id_Read = {
-  __typename?: 'MembersFields_socials_id_Read';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersFields_Socials_Id_Update = {
-  __typename?: 'MembersFields_socials_id_Update';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersFields_Socials_Instagram = {
-  __typename?: 'MembersFields_socials_instagram';
-  create: Maybe<MembersFields_Socials_Instagram_Create>;
-  delete: Maybe<MembersFields_Socials_Instagram_Delete>;
-  read: Maybe<MembersFields_Socials_Instagram_Read>;
-  update: Maybe<MembersFields_Socials_Instagram_Update>;
-};
-
-export type MembersFields_Socials_Instagram_Create = {
-  __typename?: 'MembersFields_socials_instagram_Create';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersFields_Socials_Instagram_Delete = {
-  __typename?: 'MembersFields_socials_instagram_Delete';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersFields_Socials_Instagram_Read = {
-  __typename?: 'MembersFields_socials_instagram_Read';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersFields_Socials_Instagram_Update = {
-  __typename?: 'MembersFields_socials_instagram_Update';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersFields_Socials_Linkedin = {
-  __typename?: 'MembersFields_socials_linkedin';
-  create: Maybe<MembersFields_Socials_Linkedin_Create>;
-  delete: Maybe<MembersFields_Socials_Linkedin_Delete>;
-  read: Maybe<MembersFields_Socials_Linkedin_Read>;
-  update: Maybe<MembersFields_Socials_Linkedin_Update>;
-};
-
-export type MembersFields_Socials_Linkedin_Create = {
-  __typename?: 'MembersFields_socials_linkedin_Create';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersFields_Socials_Linkedin_Delete = {
-  __typename?: 'MembersFields_socials_linkedin_Delete';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersFields_Socials_Linkedin_Read = {
-  __typename?: 'MembersFields_socials_linkedin_Read';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersFields_Socials_Linkedin_Update = {
-  __typename?: 'MembersFields_socials_linkedin_Update';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersFields_Socials_Twitter = {
-  __typename?: 'MembersFields_socials_twitter';
-  create: Maybe<MembersFields_Socials_Twitter_Create>;
-  delete: Maybe<MembersFields_Socials_Twitter_Delete>;
-  read: Maybe<MembersFields_Socials_Twitter_Read>;
-  update: Maybe<MembersFields_Socials_Twitter_Update>;
-};
-
-export type MembersFields_Socials_Twitter_Create = {
-  __typename?: 'MembersFields_socials_twitter_Create';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersFields_Socials_Twitter_Delete = {
-  __typename?: 'MembersFields_socials_twitter_Delete';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersFields_Socials_Twitter_Read = {
-  __typename?: 'MembersFields_socials_twitter_Read';
-  permission: Scalars['Boolean']['output'];
-};
-
-export type MembersFields_Socials_Twitter_Update = {
-  __typename?: 'MembersFields_socials_twitter_Update';
   permission: Scalars['Boolean']['output'];
 };
 
@@ -5779,6 +4872,34 @@ export type MembersFields_Title_Update = {
   permission: Scalars['Boolean']['output'];
 };
 
+export type MembersFields_Twitter = {
+  __typename?: 'MembersFields_twitter';
+  create: Maybe<MembersFields_Twitter_Create>;
+  delete: Maybe<MembersFields_Twitter_Delete>;
+  read: Maybe<MembersFields_Twitter_Read>;
+  update: Maybe<MembersFields_Twitter_Update>;
+};
+
+export type MembersFields_Twitter_Create = {
+  __typename?: 'MembersFields_twitter_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MembersFields_Twitter_Delete = {
+  __typename?: 'MembersFields_twitter_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MembersFields_Twitter_Read = {
+  __typename?: 'MembersFields_twitter_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type MembersFields_Twitter_Update = {
+  __typename?: 'MembersFields_twitter_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
 export type MembersFields_UpdatedAt = {
   __typename?: 'MembersFields_updatedAt';
   create: Maybe<MembersFields_UpdatedAt_Create>;
@@ -5833,18 +4954,14 @@ export type MembersUpdateDocAccess = {
 
 export type Mutation = {
   __typename?: 'Mutation';
-  createAllTeam: Maybe<AllTeam>;
   createFile: Maybe<File>;
-  createHomeVideo: Maybe<HomeVideo>;
   createMedia: Maybe<Media>;
   createMember: Maybe<Member>;
   createNews: Maybe<News>;
   createPayloadPreference: Maybe<PayloadPreference>;
   createTexture: Maybe<Texture>;
   createUser: Maybe<User>;
-  deleteAllTeam: Maybe<AllTeam>;
   deleteFile: Maybe<File>;
-  deleteHomeVideo: Maybe<HomeVideo>;
   deleteMedia: Maybe<Media>;
   deleteMember: Maybe<Member>;
   deleteNews: Maybe<News>;
@@ -5857,33 +4974,21 @@ export type Mutation = {
   refreshTokenUser: Maybe<UsersRefreshedUser>;
   resetPasswordUser: Maybe<UsersResetPassword>;
   unlockUser: Scalars['Boolean']['output'];
-  updateAllTeam: Maybe<AllTeam>;
   updateFile: Maybe<File>;
   updateHomeVideo: Maybe<HomeVideo>;
   updateMedia: Maybe<Media>;
   updateMember: Maybe<Member>;
   updateNews: Maybe<News>;
   updatePayloadPreference: Maybe<PayloadPreference>;
+  updateTeamMemberDisplayConfig: Maybe<TeamMemberDisplayConfig>;
   updateTexture: Maybe<Texture>;
   updateUser: Maybe<User>;
   verifyEmailUser: Maybe<Scalars['Boolean']['output']>;
 };
 
 
-export type MutationCreateAllTeamArgs = {
-  data: MutationAllTeamInput;
-  draft: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
 export type MutationCreateFileArgs = {
   data: MutationFileInput;
-  draft: InputMaybe<Scalars['Boolean']['input']>;
-};
-
-
-export type MutationCreateHomeVideoArgs = {
-  data: MutationHomeVideoInput;
   draft: InputMaybe<Scalars['Boolean']['input']>;
 };
 
@@ -5924,17 +5029,7 @@ export type MutationCreateUserArgs = {
 };
 
 
-export type MutationDeleteAllTeamArgs = {
-  id: Scalars['String']['input'];
-};
-
-
 export type MutationDeleteFileArgs = {
-  id: Scalars['String']['input'];
-};
-
-
-export type MutationDeleteHomeVideoArgs = {
   id: Scalars['String']['input'];
 };
 
@@ -5998,14 +5093,6 @@ export type MutationUnlockUserArgs = {
 };
 
 
-export type MutationUpdateAllTeamArgs = {
-  autosave: InputMaybe<Scalars['Boolean']['input']>;
-  data: MutationAllTeamUpdateInput;
-  draft: InputMaybe<Scalars['Boolean']['input']>;
-  id: Scalars['String']['input'];
-};
-
-
 export type MutationUpdateFileArgs = {
   autosave: InputMaybe<Scalars['Boolean']['input']>;
   data: MutationFileUpdateInput;
@@ -6015,10 +5102,8 @@ export type MutationUpdateFileArgs = {
 
 
 export type MutationUpdateHomeVideoArgs = {
-  autosave: InputMaybe<Scalars['Boolean']['input']>;
-  data: MutationHomeVideoUpdateInput;
+  data: MutationHomeVideoInput;
   draft: InputMaybe<Scalars['Boolean']['input']>;
-  id: Scalars['String']['input'];
 };
 
 
@@ -6051,6 +5136,12 @@ export type MutationUpdatePayloadPreferenceArgs = {
   data: MutationPayloadPreferenceUpdateInput;
   draft: InputMaybe<Scalars['Boolean']['input']>;
   id: Scalars['String']['input'];
+};
+
+
+export type MutationUpdateTeamMemberDisplayConfigArgs = {
+  data: MutationTeamMemberDisplayConfigInput;
+  draft: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
@@ -7403,50 +6494,33 @@ export type PayloadPreferencesUpdateDocAccess = {
 export type Query = {
   __typename?: 'Query';
   Access: Maybe<Access>;
-  AllTeam: Maybe<AllTeam>;
-  AllTeams: Maybe<AllTeams>;
   File: Maybe<File>;
   Files: Maybe<Files>;
   HomeVideo: Maybe<HomeVideo>;
-  HomeVideos: Maybe<HomeVideos>;
   Media: Maybe<Media>;
   Member: Maybe<Member>;
   Members: Maybe<Members>;
   News: Maybe<News>;
   PayloadPreference: Maybe<PayloadPreference>;
   PayloadPreferences: Maybe<PayloadPreferences>;
+  TeamMemberDisplayConfig: Maybe<TeamMemberDisplayConfig>;
   Texture: Maybe<Texture>;
   Textures: Maybe<Textures>;
   User: Maybe<User>;
   Users: Maybe<Users>;
   allMedia: Maybe<AllMedia>;
   allNews: Maybe<AllNews>;
-  docAccessAllTeam: Maybe<AllTeamDocAccess>;
   docAccessFile: Maybe<FileDocAccess>;
   docAccessHomeVideo: Maybe<HomeVideoDocAccess>;
   docAccessMedia: Maybe<MediaDocAccess>;
   docAccessMember: Maybe<MembersDocAccess>;
   docAccessNews: Maybe<NewsDocAccess>;
   docAccessPayloadPreference: Maybe<Payload_PreferencesDocAccess>;
+  docAccessTeamMemberDisplayConfig: Maybe<TeamMemberDisplayConfigDocAccess>;
   docAccessTexture: Maybe<TextureDocAccess>;
   docAccessUser: Maybe<UsersDocAccess>;
   initializedUser: Maybe<Scalars['Boolean']['output']>;
   meUser: Maybe<UsersMe>;
-};
-
-
-export type QueryAllTeamArgs = {
-  draft: InputMaybe<Scalars['Boolean']['input']>;
-  id: Scalars['String']['input'];
-};
-
-
-export type QueryAllTeamsArgs = {
-  draft: InputMaybe<Scalars['Boolean']['input']>;
-  limit: InputMaybe<Scalars['Int']['input']>;
-  page: InputMaybe<Scalars['Int']['input']>;
-  sort: InputMaybe<Scalars['String']['input']>;
-  where: InputMaybe<AllTeam_Where>;
 };
 
 
@@ -7467,16 +6541,6 @@ export type QueryFilesArgs = {
 
 export type QueryHomeVideoArgs = {
   draft: InputMaybe<Scalars['Boolean']['input']>;
-  id: Scalars['String']['input'];
-};
-
-
-export type QueryHomeVideosArgs = {
-  draft: InputMaybe<Scalars['Boolean']['input']>;
-  limit: InputMaybe<Scalars['Int']['input']>;
-  page: InputMaybe<Scalars['Int']['input']>;
-  sort: InputMaybe<Scalars['String']['input']>;
-  where: InputMaybe<HomeVideo_Where>;
 };
 
 
@@ -7519,6 +6583,11 @@ export type QueryPayloadPreferencesArgs = {
   page: InputMaybe<Scalars['Int']['input']>;
   sort: InputMaybe<Scalars['String']['input']>;
   where: InputMaybe<PayloadPreference_Where>;
+};
+
+
+export type QueryTeamMemberDisplayConfigArgs = {
+  draft: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 
@@ -7570,17 +6639,7 @@ export type QueryAllNewsArgs = {
 };
 
 
-export type QueryDocAccessAllTeamArgs = {
-  id: Scalars['String']['input'];
-};
-
-
 export type QueryDocAccessFileArgs = {
-  id: Scalars['String']['input'];
-};
-
-
-export type QueryDocAccessHomeVideoArgs = {
   id: Scalars['String']['input'];
 };
 
@@ -7612,6 +6671,337 @@ export type QueryDocAccessTextureArgs = {
 
 export type QueryDocAccessUserArgs = {
   id: Scalars['String']['input'];
+};
+
+export type TeamMemberDisplayConfig = {
+  __typename?: 'TeamMemberDisplayConfig';
+  createdAt: Maybe<Scalars['DateTime']['output']>;
+  orderInAllTeamPage: Array<Member>;
+  orderInHomePage: Array<Member>;
+  teamDescription: Scalars['String']['output'];
+  updatedAt: Maybe<Scalars['DateTime']['output']>;
+};
+
+export type TeamMemberDisplayConfigDocAccessFields = {
+  __typename?: 'TeamMemberDisplayConfigDocAccessFields';
+  createdAt: Maybe<TeamMemberDisplayConfigDocAccessFields_CreatedAt>;
+  orderInAllTeamPage: Maybe<TeamMemberDisplayConfigDocAccessFields_OrderInAllTeamPage>;
+  orderInHomePage: Maybe<TeamMemberDisplayConfigDocAccessFields_OrderInHomePage>;
+  teamDescription: Maybe<TeamMemberDisplayConfigDocAccessFields_TeamDescription>;
+  updatedAt: Maybe<TeamMemberDisplayConfigDocAccessFields_UpdatedAt>;
+};
+
+export type TeamMemberDisplayConfigDocAccessFields_CreatedAt = {
+  __typename?: 'TeamMemberDisplayConfigDocAccessFields_createdAt';
+  create: Maybe<TeamMemberDisplayConfigDocAccessFields_CreatedAt_Create>;
+  delete: Maybe<TeamMemberDisplayConfigDocAccessFields_CreatedAt_Delete>;
+  read: Maybe<TeamMemberDisplayConfigDocAccessFields_CreatedAt_Read>;
+  update: Maybe<TeamMemberDisplayConfigDocAccessFields_CreatedAt_Update>;
+};
+
+export type TeamMemberDisplayConfigDocAccessFields_CreatedAt_Create = {
+  __typename?: 'TeamMemberDisplayConfigDocAccessFields_createdAt_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TeamMemberDisplayConfigDocAccessFields_CreatedAt_Delete = {
+  __typename?: 'TeamMemberDisplayConfigDocAccessFields_createdAt_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TeamMemberDisplayConfigDocAccessFields_CreatedAt_Read = {
+  __typename?: 'TeamMemberDisplayConfigDocAccessFields_createdAt_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TeamMemberDisplayConfigDocAccessFields_CreatedAt_Update = {
+  __typename?: 'TeamMemberDisplayConfigDocAccessFields_createdAt_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TeamMemberDisplayConfigDocAccessFields_OrderInAllTeamPage = {
+  __typename?: 'TeamMemberDisplayConfigDocAccessFields_orderInAllTeamPage';
+  create: Maybe<TeamMemberDisplayConfigDocAccessFields_OrderInAllTeamPage_Create>;
+  delete: Maybe<TeamMemberDisplayConfigDocAccessFields_OrderInAllTeamPage_Delete>;
+  read: Maybe<TeamMemberDisplayConfigDocAccessFields_OrderInAllTeamPage_Read>;
+  update: Maybe<TeamMemberDisplayConfigDocAccessFields_OrderInAllTeamPage_Update>;
+};
+
+export type TeamMemberDisplayConfigDocAccessFields_OrderInAllTeamPage_Create = {
+  __typename?: 'TeamMemberDisplayConfigDocAccessFields_orderInAllTeamPage_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TeamMemberDisplayConfigDocAccessFields_OrderInAllTeamPage_Delete = {
+  __typename?: 'TeamMemberDisplayConfigDocAccessFields_orderInAllTeamPage_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TeamMemberDisplayConfigDocAccessFields_OrderInAllTeamPage_Read = {
+  __typename?: 'TeamMemberDisplayConfigDocAccessFields_orderInAllTeamPage_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TeamMemberDisplayConfigDocAccessFields_OrderInAllTeamPage_Update = {
+  __typename?: 'TeamMemberDisplayConfigDocAccessFields_orderInAllTeamPage_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TeamMemberDisplayConfigDocAccessFields_OrderInHomePage = {
+  __typename?: 'TeamMemberDisplayConfigDocAccessFields_orderInHomePage';
+  create: Maybe<TeamMemberDisplayConfigDocAccessFields_OrderInHomePage_Create>;
+  delete: Maybe<TeamMemberDisplayConfigDocAccessFields_OrderInHomePage_Delete>;
+  read: Maybe<TeamMemberDisplayConfigDocAccessFields_OrderInHomePage_Read>;
+  update: Maybe<TeamMemberDisplayConfigDocAccessFields_OrderInHomePage_Update>;
+};
+
+export type TeamMemberDisplayConfigDocAccessFields_OrderInHomePage_Create = {
+  __typename?: 'TeamMemberDisplayConfigDocAccessFields_orderInHomePage_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TeamMemberDisplayConfigDocAccessFields_OrderInHomePage_Delete = {
+  __typename?: 'TeamMemberDisplayConfigDocAccessFields_orderInHomePage_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TeamMemberDisplayConfigDocAccessFields_OrderInHomePage_Read = {
+  __typename?: 'TeamMemberDisplayConfigDocAccessFields_orderInHomePage_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TeamMemberDisplayConfigDocAccessFields_OrderInHomePage_Update = {
+  __typename?: 'TeamMemberDisplayConfigDocAccessFields_orderInHomePage_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TeamMemberDisplayConfigDocAccessFields_TeamDescription = {
+  __typename?: 'TeamMemberDisplayConfigDocAccessFields_teamDescription';
+  create: Maybe<TeamMemberDisplayConfigDocAccessFields_TeamDescription_Create>;
+  delete: Maybe<TeamMemberDisplayConfigDocAccessFields_TeamDescription_Delete>;
+  read: Maybe<TeamMemberDisplayConfigDocAccessFields_TeamDescription_Read>;
+  update: Maybe<TeamMemberDisplayConfigDocAccessFields_TeamDescription_Update>;
+};
+
+export type TeamMemberDisplayConfigDocAccessFields_TeamDescription_Create = {
+  __typename?: 'TeamMemberDisplayConfigDocAccessFields_teamDescription_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TeamMemberDisplayConfigDocAccessFields_TeamDescription_Delete = {
+  __typename?: 'TeamMemberDisplayConfigDocAccessFields_teamDescription_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TeamMemberDisplayConfigDocAccessFields_TeamDescription_Read = {
+  __typename?: 'TeamMemberDisplayConfigDocAccessFields_teamDescription_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TeamMemberDisplayConfigDocAccessFields_TeamDescription_Update = {
+  __typename?: 'TeamMemberDisplayConfigDocAccessFields_teamDescription_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TeamMemberDisplayConfigDocAccessFields_UpdatedAt = {
+  __typename?: 'TeamMemberDisplayConfigDocAccessFields_updatedAt';
+  create: Maybe<TeamMemberDisplayConfigDocAccessFields_UpdatedAt_Create>;
+  delete: Maybe<TeamMemberDisplayConfigDocAccessFields_UpdatedAt_Delete>;
+  read: Maybe<TeamMemberDisplayConfigDocAccessFields_UpdatedAt_Read>;
+  update: Maybe<TeamMemberDisplayConfigDocAccessFields_UpdatedAt_Update>;
+};
+
+export type TeamMemberDisplayConfigDocAccessFields_UpdatedAt_Create = {
+  __typename?: 'TeamMemberDisplayConfigDocAccessFields_updatedAt_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TeamMemberDisplayConfigDocAccessFields_UpdatedAt_Delete = {
+  __typename?: 'TeamMemberDisplayConfigDocAccessFields_updatedAt_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TeamMemberDisplayConfigDocAccessFields_UpdatedAt_Read = {
+  __typename?: 'TeamMemberDisplayConfigDocAccessFields_updatedAt_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TeamMemberDisplayConfigDocAccessFields_UpdatedAt_Update = {
+  __typename?: 'TeamMemberDisplayConfigDocAccessFields_updatedAt_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TeamMemberDisplayConfigFields = {
+  __typename?: 'TeamMemberDisplayConfigFields';
+  createdAt: Maybe<TeamMemberDisplayConfigFields_CreatedAt>;
+  orderInAllTeamPage: Maybe<TeamMemberDisplayConfigFields_OrderInAllTeamPage>;
+  orderInHomePage: Maybe<TeamMemberDisplayConfigFields_OrderInHomePage>;
+  teamDescription: Maybe<TeamMemberDisplayConfigFields_TeamDescription>;
+  updatedAt: Maybe<TeamMemberDisplayConfigFields_UpdatedAt>;
+};
+
+export type TeamMemberDisplayConfigFields_CreatedAt = {
+  __typename?: 'TeamMemberDisplayConfigFields_createdAt';
+  create: Maybe<TeamMemberDisplayConfigFields_CreatedAt_Create>;
+  delete: Maybe<TeamMemberDisplayConfigFields_CreatedAt_Delete>;
+  read: Maybe<TeamMemberDisplayConfigFields_CreatedAt_Read>;
+  update: Maybe<TeamMemberDisplayConfigFields_CreatedAt_Update>;
+};
+
+export type TeamMemberDisplayConfigFields_CreatedAt_Create = {
+  __typename?: 'TeamMemberDisplayConfigFields_createdAt_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TeamMemberDisplayConfigFields_CreatedAt_Delete = {
+  __typename?: 'TeamMemberDisplayConfigFields_createdAt_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TeamMemberDisplayConfigFields_CreatedAt_Read = {
+  __typename?: 'TeamMemberDisplayConfigFields_createdAt_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TeamMemberDisplayConfigFields_CreatedAt_Update = {
+  __typename?: 'TeamMemberDisplayConfigFields_createdAt_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TeamMemberDisplayConfigFields_OrderInAllTeamPage = {
+  __typename?: 'TeamMemberDisplayConfigFields_orderInAllTeamPage';
+  create: Maybe<TeamMemberDisplayConfigFields_OrderInAllTeamPage_Create>;
+  delete: Maybe<TeamMemberDisplayConfigFields_OrderInAllTeamPage_Delete>;
+  read: Maybe<TeamMemberDisplayConfigFields_OrderInAllTeamPage_Read>;
+  update: Maybe<TeamMemberDisplayConfigFields_OrderInAllTeamPage_Update>;
+};
+
+export type TeamMemberDisplayConfigFields_OrderInAllTeamPage_Create = {
+  __typename?: 'TeamMemberDisplayConfigFields_orderInAllTeamPage_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TeamMemberDisplayConfigFields_OrderInAllTeamPage_Delete = {
+  __typename?: 'TeamMemberDisplayConfigFields_orderInAllTeamPage_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TeamMemberDisplayConfigFields_OrderInAllTeamPage_Read = {
+  __typename?: 'TeamMemberDisplayConfigFields_orderInAllTeamPage_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TeamMemberDisplayConfigFields_OrderInAllTeamPage_Update = {
+  __typename?: 'TeamMemberDisplayConfigFields_orderInAllTeamPage_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TeamMemberDisplayConfigFields_OrderInHomePage = {
+  __typename?: 'TeamMemberDisplayConfigFields_orderInHomePage';
+  create: Maybe<TeamMemberDisplayConfigFields_OrderInHomePage_Create>;
+  delete: Maybe<TeamMemberDisplayConfigFields_OrderInHomePage_Delete>;
+  read: Maybe<TeamMemberDisplayConfigFields_OrderInHomePage_Read>;
+  update: Maybe<TeamMemberDisplayConfigFields_OrderInHomePage_Update>;
+};
+
+export type TeamMemberDisplayConfigFields_OrderInHomePage_Create = {
+  __typename?: 'TeamMemberDisplayConfigFields_orderInHomePage_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TeamMemberDisplayConfigFields_OrderInHomePage_Delete = {
+  __typename?: 'TeamMemberDisplayConfigFields_orderInHomePage_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TeamMemberDisplayConfigFields_OrderInHomePage_Read = {
+  __typename?: 'TeamMemberDisplayConfigFields_orderInHomePage_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TeamMemberDisplayConfigFields_OrderInHomePage_Update = {
+  __typename?: 'TeamMemberDisplayConfigFields_orderInHomePage_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TeamMemberDisplayConfigFields_TeamDescription = {
+  __typename?: 'TeamMemberDisplayConfigFields_teamDescription';
+  create: Maybe<TeamMemberDisplayConfigFields_TeamDescription_Create>;
+  delete: Maybe<TeamMemberDisplayConfigFields_TeamDescription_Delete>;
+  read: Maybe<TeamMemberDisplayConfigFields_TeamDescription_Read>;
+  update: Maybe<TeamMemberDisplayConfigFields_TeamDescription_Update>;
+};
+
+export type TeamMemberDisplayConfigFields_TeamDescription_Create = {
+  __typename?: 'TeamMemberDisplayConfigFields_teamDescription_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TeamMemberDisplayConfigFields_TeamDescription_Delete = {
+  __typename?: 'TeamMemberDisplayConfigFields_teamDescription_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TeamMemberDisplayConfigFields_TeamDescription_Read = {
+  __typename?: 'TeamMemberDisplayConfigFields_teamDescription_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TeamMemberDisplayConfigFields_TeamDescription_Update = {
+  __typename?: 'TeamMemberDisplayConfigFields_teamDescription_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TeamMemberDisplayConfigFields_UpdatedAt = {
+  __typename?: 'TeamMemberDisplayConfigFields_updatedAt';
+  create: Maybe<TeamMemberDisplayConfigFields_UpdatedAt_Create>;
+  delete: Maybe<TeamMemberDisplayConfigFields_UpdatedAt_Delete>;
+  read: Maybe<TeamMemberDisplayConfigFields_UpdatedAt_Read>;
+  update: Maybe<TeamMemberDisplayConfigFields_UpdatedAt_Update>;
+};
+
+export type TeamMemberDisplayConfigFields_UpdatedAt_Create = {
+  __typename?: 'TeamMemberDisplayConfigFields_updatedAt_Create';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TeamMemberDisplayConfigFields_UpdatedAt_Delete = {
+  __typename?: 'TeamMemberDisplayConfigFields_updatedAt_Delete';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TeamMemberDisplayConfigFields_UpdatedAt_Read = {
+  __typename?: 'TeamMemberDisplayConfigFields_updatedAt_Read';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TeamMemberDisplayConfigFields_UpdatedAt_Update = {
+  __typename?: 'TeamMemberDisplayConfigFields_updatedAt_Update';
+  permission: Scalars['Boolean']['output'];
+};
+
+export type TeamMemberDisplayConfigReadAccess = {
+  __typename?: 'TeamMemberDisplayConfigReadAccess';
+  permission: Scalars['Boolean']['output'];
+  where: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type TeamMemberDisplayConfigReadDocAccess = {
+  __typename?: 'TeamMemberDisplayConfigReadDocAccess';
+  permission: Scalars['Boolean']['output'];
+  where: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type TeamMemberDisplayConfigUpdateAccess = {
+  __typename?: 'TeamMemberDisplayConfigUpdateAccess';
+  permission: Scalars['Boolean']['output'];
+  where: Maybe<Scalars['JSONObject']['output']>;
+};
+
+export type TeamMemberDisplayConfigUpdateDocAccess = {
+  __typename?: 'TeamMemberDisplayConfigUpdateDocAccess';
+  permission: Scalars['Boolean']['output'];
+  where: Maybe<Scalars['JSONObject']['output']>;
 };
 
 export type Texture = {
@@ -8872,24 +8262,6 @@ export type AllNews = {
   totalPages: Maybe<Scalars['Int']['output']>;
 };
 
-export type AllTeamAccess = {
-  __typename?: 'allTeamAccess';
-  create: Maybe<AllTeamCreateAccess>;
-  delete: Maybe<AllTeamDeleteAccess>;
-  fields: Maybe<AllTeamFields>;
-  read: Maybe<AllTeamReadAccess>;
-  update: Maybe<AllTeamUpdateAccess>;
-};
-
-export type AllTeamDocAccess = {
-  __typename?: 'allTeamDocAccess';
-  create: Maybe<AllTeamCreateDocAccess>;
-  delete: Maybe<AllTeamDeleteDocAccess>;
-  fields: Maybe<AllTeamDocAccessFields>;
-  read: Maybe<AllTeamReadDocAccess>;
-  update: Maybe<AllTeamUpdateDocAccess>;
-};
-
 export type FileAccess = {
   __typename?: 'fileAccess';
   create: Maybe<FileCreateAccess>;
@@ -8910,8 +8282,6 @@ export type FileDocAccess = {
 
 export type HomeVideoAccess = {
   __typename?: 'homeVideoAccess';
-  create: Maybe<HomeVideoCreateAccess>;
-  delete: Maybe<HomeVideoDeleteAccess>;
   fields: Maybe<HomeVideoFields>;
   read: Maybe<HomeVideoReadAccess>;
   update: Maybe<HomeVideoUpdateAccess>;
@@ -8919,8 +8289,6 @@ export type HomeVideoAccess = {
 
 export type HomeVideoDocAccess = {
   __typename?: 'homeVideoDocAccess';
-  create: Maybe<HomeVideoCreateDocAccess>;
-  delete: Maybe<HomeVideoDeleteDocAccess>;
   fields: Maybe<HomeVideoDocAccessFields>;
   read: Maybe<HomeVideoReadDocAccess>;
   update: Maybe<HomeVideoUpdateDocAccess>;
@@ -8962,20 +8330,6 @@ export type MembersDocAccess = {
   update: Maybe<MembersUpdateDocAccess>;
 };
 
-export type MutationAllTeamInput = {
-  createdAt: InputMaybe<Scalars['String']['input']>;
-  description: Scalars['String']['input'];
-  photo: Scalars['String']['input'];
-  updatedAt: InputMaybe<Scalars['String']['input']>;
-};
-
-export type MutationAllTeamUpdateInput = {
-  createdAt: InputMaybe<Scalars['String']['input']>;
-  description: InputMaybe<Scalars['String']['input']>;
-  photo: InputMaybe<Scalars['String']['input']>;
-  updatedAt: InputMaybe<Scalars['String']['input']>;
-};
-
 export type MutationFileInput = {
   createdAt: InputMaybe<Scalars['String']['input']>;
   filename: InputMaybe<Scalars['String']['input']>;
@@ -9002,12 +8356,6 @@ export type MutationHomeVideoInput = {
   createdAt: InputMaybe<Scalars['String']['input']>;
   updatedAt: InputMaybe<Scalars['String']['input']>;
   video: Scalars['String']['input'];
-};
-
-export type MutationHomeVideoUpdateInput = {
-  createdAt: InputMaybe<Scalars['String']['input']>;
-  updatedAt: InputMaybe<Scalars['String']['input']>;
-  video: InputMaybe<Scalars['String']['input']>;
 };
 
 export type MutationMediaInput = {
@@ -9065,36 +8413,35 @@ export type MutationMedia_Sizes_ThumbnailInput = {
 export type MutationMemberInput = {
   createdAt: InputMaybe<Scalars['String']['input']>;
   description: Scalars['String']['input'];
+  email: InputMaybe<Scalars['String']['input']>;
+  facebook: InputMaybe<Scalars['String']['input']>;
   image: Scalars['String']['input'];
+  instagram: InputMaybe<Scalars['String']['input']>;
+  linkedin: InputMaybe<Scalars['String']['input']>;
   mat: Scalars['String']['input'];
   name: Scalars['String']['input'];
   obj: Scalars['String']['input'];
-  socials: InputMaybe<Array<MutationMember_SocialsInput>>;
   textures: InputMaybe<Array<InputMaybe<MutationMember_TexturesInput>>>;
   title: Scalars['String']['input'];
+  twitter: InputMaybe<Scalars['String']['input']>;
   updatedAt: InputMaybe<Scalars['String']['input']>;
 };
 
 export type MutationMemberUpdateInput = {
   createdAt: InputMaybe<Scalars['String']['input']>;
   description: InputMaybe<Scalars['String']['input']>;
+  email: InputMaybe<Scalars['String']['input']>;
+  facebook: InputMaybe<Scalars['String']['input']>;
   image: InputMaybe<Scalars['String']['input']>;
+  instagram: InputMaybe<Scalars['String']['input']>;
+  linkedin: InputMaybe<Scalars['String']['input']>;
   mat: InputMaybe<Scalars['String']['input']>;
   name: InputMaybe<Scalars['String']['input']>;
   obj: InputMaybe<Scalars['String']['input']>;
-  socials: InputMaybe<Array<InputMaybe<MutationMemberUpdate_SocialsInput>>>;
   textures: InputMaybe<Array<InputMaybe<MutationMemberUpdate_TexturesInput>>>;
   title: InputMaybe<Scalars['String']['input']>;
-  updatedAt: InputMaybe<Scalars['String']['input']>;
-};
-
-export type MutationMemberUpdate_SocialsInput = {
-  email: InputMaybe<Scalars['String']['input']>;
-  facebook: InputMaybe<Scalars['String']['input']>;
-  id: InputMaybe<Scalars['String']['input']>;
-  instagram: InputMaybe<Scalars['String']['input']>;
-  linkedin: InputMaybe<Scalars['String']['input']>;
   twitter: InputMaybe<Scalars['String']['input']>;
+  updatedAt: InputMaybe<Scalars['String']['input']>;
 };
 
 export type MutationMemberUpdate_TexturesInput = {
@@ -9103,15 +8450,6 @@ export type MutationMemberUpdate_TexturesInput = {
   tex2: InputMaybe<Scalars['String']['input']>;
   tex3: InputMaybe<Scalars['String']['input']>;
   tex4: InputMaybe<Scalars['String']['input']>;
-};
-
-export type MutationMember_SocialsInput = {
-  email: InputMaybe<Scalars['String']['input']>;
-  facebook: InputMaybe<Scalars['String']['input']>;
-  id: InputMaybe<Scalars['String']['input']>;
-  instagram: InputMaybe<Scalars['String']['input']>;
-  linkedin: InputMaybe<Scalars['String']['input']>;
-  twitter: InputMaybe<Scalars['String']['input']>;
 };
 
 export type MutationMember_TexturesInput = {
@@ -9156,6 +8494,14 @@ export type MutationPayloadPreferenceUpdateInput = {
   updatedAt: InputMaybe<Scalars['String']['input']>;
   user: InputMaybe<PayloadPreferenceUpdate_UserRelationshipInput>;
   value: InputMaybe<Scalars['JSON']['input']>;
+};
+
+export type MutationTeamMemberDisplayConfigInput = {
+  createdAt: InputMaybe<Scalars['String']['input']>;
+  orderInAllTeamPage: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  orderInHomePage: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  teamDescription: Scalars['String']['input'];
+  updatedAt: InputMaybe<Scalars['String']['input']>;
 };
 
 export type MutationTextureInput = {
@@ -9248,6 +8594,20 @@ export type Payload_PreferencesDocAccess = {
   update: Maybe<PayloadPreferencesUpdateDocAccess>;
 };
 
+export type TeamMemberDisplayConfigAccess = {
+  __typename?: 'teamMemberDisplayConfigAccess';
+  fields: Maybe<TeamMemberDisplayConfigFields>;
+  read: Maybe<TeamMemberDisplayConfigReadAccess>;
+  update: Maybe<TeamMemberDisplayConfigUpdateAccess>;
+};
+
+export type TeamMemberDisplayConfigDocAccess = {
+  __typename?: 'teamMemberDisplayConfigDocAccess';
+  fields: Maybe<TeamMemberDisplayConfigDocAccessFields>;
+  read: Maybe<TeamMemberDisplayConfigReadDocAccess>;
+  update: Maybe<TeamMemberDisplayConfigUpdateDocAccess>;
+};
+
 export type TextureAccess = {
   __typename?: 'textureAccess';
   create: Maybe<TextureCreateAccess>;
@@ -9320,28 +8680,28 @@ export type UsersResetPassword = {
   user: Maybe<User>;
 };
 
-export type GetTeamDescriptionsQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetHomePageMemberQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetTeamDescriptionsQuery = { __typename?: 'Query', AllTeams: { __typename?: 'AllTeams', docs: Array<{ __typename?: 'AllTeam', id: string | null, description: string, photo: { __typename?: 'Media', filename: string | null, url: string | null } } | null> | null } | null };
+export type GetHomePageMemberQuery = { __typename?: 'Query', TeamMemberDisplayConfig: { __typename?: 'TeamMemberDisplayConfig', teamDescription: string, orderInHomePage: Array<{ __typename?: 'Member', id: string | null, name: string, title: string, description: string, email: string | null, facebook: string | null, linkedin: string | null, twitter: string | null, image: { __typename?: 'Media', filename: string | null, url: string | null, id: string | null }, obj: { __typename?: 'File', url: string | null }, mat: { __typename?: 'File', url: string | null } }> } | null };
 
 export type GetAllNewsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type GetAllNewsQuery = { __typename?: 'Query', allNews: { __typename?: 'allNews', docs: Array<{ __typename?: 'News', id: string | null, title: string, description: string, date: any, Url: string, image: { __typename?: 'Media', id: string | null, filename: string | null, url: string | null } } | null> | null } | null };
 
-export type GetAllTeamMembersQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetTeamMemberConfigQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetAllTeamMembersQuery = { __typename?: 'Query', Members: { __typename?: 'Members', docs: Array<{ __typename?: 'Member', id: string | null, name: string, title: string, description: string, socials: Array<{ __typename?: 'Member_Socials', email: any | null, facebook: string | null, linkedin: string | null, twitter: string | null }>, image: { __typename?: 'Media', filename: string | null, url: string | null, id: string | null }, obj: { __typename?: 'File', url: string | null }, mat: { __typename?: 'File', url: string | null } } | null> | null } | null };
+export type GetTeamMemberConfigQuery = { __typename?: 'Query', TeamMemberDisplayConfig: { __typename?: 'TeamMemberDisplayConfig', teamDescription: string, orderInAllTeamPage: Array<{ __typename?: 'Member', id: string | null, name: string, title: string, description: string, email: string | null, facebook: string | null, linkedin: string | null, twitter: string | null, image: { __typename?: 'Media', filename: string | null, url: string | null, id: string | null }, obj: { __typename?: 'File', url: string | null }, mat: { __typename?: 'File', url: string | null } }> } | null };
 
 export type GetHomeVideoQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetHomeVideoQuery = { __typename?: 'Query', HomeVideos: { __typename?: 'HomeVideos', docs: Array<{ __typename?: 'HomeVideo', video: { __typename?: 'File', url: string | null, filename: string | null, id: string | null } } | null> | null } | null };
+export type GetHomeVideoQuery = { __typename?: 'Query', HomeVideo: { __typename?: 'HomeVideo', video: { __typename?: 'File', id: string | null, url: string | null, filename: string | null } } | null };
 
 
-export const GetTeamDescriptionsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"getTeamDescriptions"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"AllTeams"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"docs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"photo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"filename"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}},{"kind":"Field","name":{"kind":"Name","value":"description"}}]}}]}}]}}]} as unknown as DocumentNode<GetTeamDescriptionsQuery, GetTeamDescriptionsQueryVariables>;
+export const GetHomePageMemberDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetHomePageMember"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"TeamMemberDisplayConfig"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"teamDescription"}},{"kind":"Field","name":{"kind":"Name","value":"orderInHomePage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"email"}},{"kind":"Field","name":{"kind":"Name","value":"facebook"}},{"kind":"Field","name":{"kind":"Name","value":"linkedin"}},{"kind":"Field","name":{"kind":"Name","value":"twitter"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"filename"}},{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"id"}}]}},{"kind":"Field","name":{"kind":"Name","value":"obj"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}},{"kind":"Field","name":{"kind":"Name","value":"mat"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]}}]} as unknown as DocumentNode<GetHomePageMemberQuery, GetHomePageMemberQueryVariables>;
 export const GetAllNewsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetAllNews"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"allNews"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"docs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"date"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"filename"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}},{"kind":"Field","name":{"kind":"Name","value":"Url"}}]}}]}}]}}]} as unknown as DocumentNode<GetAllNewsQuery, GetAllNewsQueryVariables>;
-export const GetAllTeamMembersDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"getAllTeamMembers"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"Members"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"docs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"socials"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"email"}},{"kind":"Field","name":{"kind":"Name","value":"facebook"}},{"kind":"Field","name":{"kind":"Name","value":"linkedin"}},{"kind":"Field","name":{"kind":"Name","value":"twitter"}}]}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"filename"}},{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"id"}}]}},{"kind":"Field","name":{"kind":"Name","value":"obj"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}},{"kind":"Field","name":{"kind":"Name","value":"mat"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]}}]} as unknown as DocumentNode<GetAllTeamMembersQuery, GetAllTeamMembersQueryVariables>;
-export const GetHomeVideoDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"getHomeVideo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"HomeVideos"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"docs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"video"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"filename"}},{"kind":"Field","name":{"kind":"Name","value":"id"}}]}}]}}]}}]}}]} as unknown as DocumentNode<GetHomeVideoQuery, GetHomeVideoQueryVariables>;
+export const GetTeamMemberConfigDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetTeamMemberConfig"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"TeamMemberDisplayConfig"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"teamDescription"}},{"kind":"Field","name":{"kind":"Name","value":"orderInAllTeamPage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"name"}},{"kind":"Field","name":{"kind":"Name","value":"title"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"email"}},{"kind":"Field","name":{"kind":"Name","value":"facebook"}},{"kind":"Field","name":{"kind":"Name","value":"linkedin"}},{"kind":"Field","name":{"kind":"Name","value":"twitter"}},{"kind":"Field","name":{"kind":"Name","value":"image"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"filename"}},{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"id"}}]}},{"kind":"Field","name":{"kind":"Name","value":"obj"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}},{"kind":"Field","name":{"kind":"Name","value":"mat"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]}}]} as unknown as DocumentNode<GetTeamMemberConfigQuery, GetTeamMemberConfigQueryVariables>;
+export const GetHomeVideoDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetHomeVideo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"HomeVideo"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"video"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"url"}},{"kind":"Field","name":{"kind":"Name","value":"filename"}}]}}]}}]}}]} as unknown as DocumentNode<GetHomeVideoQuery, GetHomeVideoQueryVariables>;

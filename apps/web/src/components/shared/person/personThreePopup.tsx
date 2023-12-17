@@ -7,18 +7,22 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import Person from "./person";
-import Socials from "../shared/socials";
 import ThreeScene from "@/components/shared/threeScene";
 import Image from "next/image";
 import { Member } from "@/gql/graphql";
+import Socials from "./personSocials";
 
-export default function PersonPopup({ person }: { person: Member }) {
+export default function PersonPopup({
+  person,
+  trigger,
+}: {
+  person: Member;
+  trigger: React.ReactNode;
+}) {
+  if (person == null) return;
   return (
     <Dialog>
-      <DialogTrigger>
-        <Person person={person} />
-      </DialogTrigger>
+      <DialogTrigger>{trigger}</DialogTrigger>
       <DialogContent>
         <ThreeScene
           objUrl={person.obj.url as string}
@@ -29,16 +33,18 @@ export default function PersonPopup({ person }: { person: Member }) {
           width={50}
           height={15}
           alt="rotate here"
-          className="fixed left-10 top-10 animate-pulse"
+          className="fixed left-10 top-10 animate-pulse "
         />
 
         <DialogHeader>
-          <DialogTitle>{person.name}</DialogTitle>
-          <DialogDescription>{person.description}</DialogDescription>
+          <DialogTitle className="text-amber-300">{person.name}</DialogTitle>
+          <DialogDescription className="text-white">
+            {person.description}
+          </DialogDescription>
         </DialogHeader>
 
         <DialogFooter>
-          <Socials socials={person.socials[0]}></Socials>
+          <Socials person={person}></Socials>
         </DialogFooter>
       </DialogContent>
     </Dialog>

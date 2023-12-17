@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Socials from "../shared/socials";
+import Socials from "../../../../components/shared/person/personSocials";
 import { Member } from "@/gql/graphql";
 
 export default function Person(props: { person: Member }) {
@@ -7,8 +7,8 @@ export default function Person(props: { person: Member }) {
   return (
     <div className="h-full hover:scale-110 transition-transform text-left flex flex-col gap-3 border border-gray-50/10 ">
       <Image
-        className="w-full h-[20rem]"
-        src={"/placeholder.png"}
+        className="w-full object-contain h-[20rem]"
+        src={person.image.url ?? "/placeholder.png"}
         width={500}
         height={500}
         alt="Image"
@@ -19,7 +19,7 @@ export default function Person(props: { person: Member }) {
         <p className="h-full text-tertiary truncate">{person.description}</p>
       </div>
 
-      <Socials socials={person.socials[0]} />
+      <Socials person={person} />
     </div>
   );
 }

@@ -1,22 +1,22 @@
-import Team from "./_components/core/popup";
 import { graphql } from "@/gql";
 import { graphqlClient } from "@/lib/graphql-client";
 import { Member } from "@/gql/graphql";
+import Person from "./_components/core/person";
+import PersonPopup from "@/components/shared/person/personThreePopup";
 
-const getAllTeamMembers = graphql(`
-  query getAllTeamMembers {
-    Members {
-      docs {
+const getTeamData = graphql(`
+  query GetTeamMemberConfig {
+    TeamMemberDisplayConfig {
+      teamDescription
+      orderInAllTeamPage {
         id
         name
         title
         description
-        socials {
-          email
-          facebook
-          linkedin
-          twitter
-        }
+        email
+        facebook
+        linkedin
+        twitter
         image {
           filename
           url
@@ -33,25 +33,9 @@ const getAllTeamMembers = graphql(`
   }
 `);
 
-const getTeamDescriptions = graphql(`
-  query getTeamDescriptions {
-    AllTeams {
-      docs {
-        id
-        photo {
-          filename
-          url
-        }
-        description
-      }
-    }
-  }
-`);
-
 export default async function Page() {
-  const { AllTeams: desc } = await graphqlClient.request(getTeamDescriptions);
-
-  const { Members: teams } = await graphqlClient.request(getAllTeamMembers);
+  const { TeamMemberDisplayConfig: config } =
+    await graphqlClient.request(getTeamData);
 
   return (
     <div className="container py-20 flex flex-col gap-20">
@@ -61,18 +45,22 @@ export default async function Page() {
           Meet the RXT TEAM
         </h2>
         <p className="text-tertiary text-center">
-          {desc != null && desc.docs != null && desc.docs[0] != null
-            ? desc.docs[0].description
-            : "Team Description"}
+          {config != null ? config.teamDescription : "Team Description"}
         </p>
       </div>
 
       <div className="grid max-sm:grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-10">
-        {teams == null || teams.docs == null
+        {config == null
           ? "No Team"
-          : teams.docs.map((team) => {
+          : config.orderInAllTeamPage.map((team) => {
               if (team == null) return <></>;
-              return <Team key={team.id} person={team as Member} />;
+              return (
+                <PersonPopup
+                  key={team.id}
+                  person={team as Member}
+                  trigger={<Person person={team as Member} />}
+                />
+              );
             })}
       </div>
     </div>

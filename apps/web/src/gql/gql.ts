@@ -13,11 +13,10 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel or swc plugin for production.
  */
 const documents = {
-    "\n    query getTeamDescriptions {\n      AllTeams {\n        docs {\n          id\n          photo {\n            filename\n            url\n          }\n          description\n        }\n      }\n    }\n  ": types.GetTeamDescriptionsDocument,
+    "\n    query GetHomePageMember {\n      TeamMemberDisplayConfig {\n        teamDescription\n        orderInHomePage {\n          id\n          name\n          title\n          description\n          email\n          facebook\n          linkedin\n          twitter\n          image {\n            filename\n            url\n            id\n          }\n          obj {\n            url\n          }\n          mat {\n            url\n          }\n        }\n      }\n    }\n  ": types.GetHomePageMemberDocument,
     "\n    query GetAllNews {\n      allNews {\n        docs {\n          id\n          title\n          description\n          date\n          image {\n            id\n            filename\n            url\n          }\n          Url\n        }\n      }\n    }\n  ": types.GetAllNewsDocument,
-    "\n  query getAllTeamMembers {\n    Members {\n      docs {\n        id\n        name\n        title\n        description\n        socials {\n          email\n          facebook\n          linkedin\n          twitter\n        }\n        image {\n          filename\n          url\n          id\n        }\n        obj {\n          url\n        }\n        mat {\n          url\n        }\n      }\n    }\n  }\n": types.GetAllTeamMembersDocument,
-    "\n  query getTeamDescriptions {\n    AllTeams {\n      docs {\n        id\n        photo {\n          filename\n          url\n        }\n        description\n      }\n    }\n  }\n": types.GetTeamDescriptionsDocument,
-    "\n  query getHomeVideo {\n    HomeVideos {\n      docs {\n        video {\n          url\n          filename\n          id\n        }\n      }\n    }\n  }\n": types.GetHomeVideoDocument,
+    "\n  query GetTeamMemberConfig {\n    TeamMemberDisplayConfig {\n      teamDescription\n      orderInAllTeamPage {\n        id\n        name\n        title\n        description\n        email\n        facebook\n        linkedin\n        twitter\n        image {\n          filename\n          url\n          id\n        }\n        obj {\n          url\n        }\n        mat {\n          url\n        }\n      }\n    }\n  }\n": types.GetTeamMemberConfigDocument,
+    "\n  query GetHomeVideo {\n    HomeVideo {\n      video {\n        id\n        url\n        filename\n      }\n    }\n  }\n": types.GetHomeVideoDocument,
 };
 
 /**
@@ -37,7 +36,7 @@ export function graphql(source: string): unknown;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n    query getTeamDescriptions {\n      AllTeams {\n        docs {\n          id\n          photo {\n            filename\n            url\n          }\n          description\n        }\n      }\n    }\n  "): (typeof documents)["\n    query getTeamDescriptions {\n      AllTeams {\n        docs {\n          id\n          photo {\n            filename\n            url\n          }\n          description\n        }\n      }\n    }\n  "];
+export function graphql(source: "\n    query GetHomePageMember {\n      TeamMemberDisplayConfig {\n        teamDescription\n        orderInHomePage {\n          id\n          name\n          title\n          description\n          email\n          facebook\n          linkedin\n          twitter\n          image {\n            filename\n            url\n            id\n          }\n          obj {\n            url\n          }\n          mat {\n            url\n          }\n        }\n      }\n    }\n  "): (typeof documents)["\n    query GetHomePageMember {\n      TeamMemberDisplayConfig {\n        teamDescription\n        orderInHomePage {\n          id\n          name\n          title\n          description\n          email\n          facebook\n          linkedin\n          twitter\n          image {\n            filename\n            url\n            id\n          }\n          obj {\n            url\n          }\n          mat {\n            url\n          }\n        }\n      }\n    }\n  "];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
@@ -45,15 +44,11 @@ export function graphql(source: "\n    query GetAllNews {\n      allNews {\n    
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n  query getAllTeamMembers {\n    Members {\n      docs {\n        id\n        name\n        title\n        description\n        socials {\n          email\n          facebook\n          linkedin\n          twitter\n        }\n        image {\n          filename\n          url\n          id\n        }\n        obj {\n          url\n        }\n        mat {\n          url\n        }\n      }\n    }\n  }\n"): (typeof documents)["\n  query getAllTeamMembers {\n    Members {\n      docs {\n        id\n        name\n        title\n        description\n        socials {\n          email\n          facebook\n          linkedin\n          twitter\n        }\n        image {\n          filename\n          url\n          id\n        }\n        obj {\n          url\n        }\n        mat {\n          url\n        }\n      }\n    }\n  }\n"];
+export function graphql(source: "\n  query GetTeamMemberConfig {\n    TeamMemberDisplayConfig {\n      teamDescription\n      orderInAllTeamPage {\n        id\n        name\n        title\n        description\n        email\n        facebook\n        linkedin\n        twitter\n        image {\n          filename\n          url\n          id\n        }\n        obj {\n          url\n        }\n        mat {\n          url\n        }\n      }\n    }\n  }\n"): (typeof documents)["\n  query GetTeamMemberConfig {\n    TeamMemberDisplayConfig {\n      teamDescription\n      orderInAllTeamPage {\n        id\n        name\n        title\n        description\n        email\n        facebook\n        linkedin\n        twitter\n        image {\n          filename\n          url\n          id\n        }\n        obj {\n          url\n        }\n        mat {\n          url\n        }\n      }\n    }\n  }\n"];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n  query getTeamDescriptions {\n    AllTeams {\n      docs {\n        id\n        photo {\n          filename\n          url\n        }\n        description\n      }\n    }\n  }\n"): (typeof documents)["\n  query getTeamDescriptions {\n    AllTeams {\n      docs {\n        id\n        photo {\n          filename\n          url\n        }\n        description\n      }\n    }\n  }\n"];
-/**
- * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
- */
-export function graphql(source: "\n  query getHomeVideo {\n    HomeVideos {\n      docs {\n        video {\n          url\n          filename\n          id\n        }\n      }\n    }\n  }\n"): (typeof documents)["\n  query getHomeVideo {\n    HomeVideos {\n      docs {\n        video {\n          url\n          filename\n          id\n        }\n      }\n    }\n  }\n"];
+export function graphql(source: "\n  query GetHomeVideo {\n    HomeVideo {\n      video {\n        id\n        url\n        filename\n      }\n    }\n  }\n"): (typeof documents)["\n  query GetHomeVideo {\n    HomeVideo {\n      video {\n        id\n        url\n        filename\n      }\n    }\n  }\n"];
 
 export function graphql(source: string) {
   return (documents as any)[source] ?? {};

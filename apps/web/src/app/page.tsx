@@ -16,31 +16,23 @@ import { graphql } from "@/gql";
 import { graphqlClient } from "@/lib/graphql-client";
 
 const getHomeVideo = graphql(`
-  query getHomeVideo {
-    HomeVideos {
-      docs {
-        video {
-          url
-          filename
-          id
-        }
+  query GetHomeVideo {
+    HomeVideo {
+      video {
+        id
+        url
+        filename
       }
     }
   }
 `);
 
 export default async function Home() {
-  const { HomeVideos: videos } = await graphqlClient.request(getHomeVideo);
+  const { HomeVideo } = await graphqlClient.request(getHomeVideo);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
-      <HomeHeader
-        fileUrl={
-          videos != null && videos.docs != null && videos.docs[0] != null
-            ? videos.docs[0].video.url
-            : "/"
-        }
-      />
+      <HomeHeader fileUrl={HomeVideo?.video.url ?? "/"} />
       <Separator className="container z-0" />
       <MeetRimaunangis />
       <Teams />
