@@ -2,6 +2,7 @@ version: "3"
 services:
   cms:
     container_name: cms
+    image: imamsyahid/rtx-world-cms
     build:
       context: ./apps/api
       dockerfile: .dockerfile
@@ -11,7 +12,7 @@ services:
     networks:
       - rxt_network
     env_file:
-      - ./apps/api/.env
+      - .cms.env
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3001/health"]
       interval: 3s
@@ -20,6 +21,7 @@ services:
 
   web:
     container_name: web
+    image: imamsyahid/rtx-world-web
     build:
       context: ./apps/web
       dockerfile: .dockerfile
@@ -32,7 +34,7 @@ services:
       cms:
         condition: service_healthy
     env_file:
-      - ./apps/web/.env
+      - .web.env
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
       interval: 3s
