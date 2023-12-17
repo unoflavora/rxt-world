@@ -1,22 +1,5 @@
 version: "3"
 services:
-  web:
-    container_name: web
-    build:
-      context: ./apps/web
-      dockerfile: .dockerfile
-    restart: always
-    ports:
-      - 3000:3000
-    networks:
-      - rxt_network
-    depends_on:
-      cms:
-        condition: service_started
-
-    env_file:
-      - ./apps/web/.env
-      - ./apps/web/.env.prod
   cms:
     container_name: cms
     build:
@@ -29,10 +12,32 @@ services:
       - rxt_network
     env_file:
       - ./apps/api/.env
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3001/health"]
+      interval: 3s
+      timeout: 2s
+      retries: 5
+
+  web:
+    container_name: web
+    build:
+      context: ./apps/web
+      dockerfile: .dockerfile
+    restart: always
+    ports:
+      - 3000:3000
+    networks:
+      - rxt_network
+    depends_on:
+      cms:
+        condition: service_healthy
+    env_file:
+      - ./apps/web/.env
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000/api/health"]
+      interval: 3s
+      timeout: 2s
+      retries: 5
 
 networks:
   rxt_network:
-    external: true
-volumes:
-  data:
-    driver: local
