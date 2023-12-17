@@ -11,6 +11,7 @@ const TeamMembers: CollectionConfig = {
       name: "name",
       type: "text",
       required: true,
+      unique: true,
     },
     {
       name: "title",
@@ -28,7 +29,7 @@ const TeamMembers: CollectionConfig = {
         description:
           "You can fill this one or not, if empty, the icon will not be shown in the page",
       },
-      type: "email",
+      type: "text",
     },
     {
       name: "facebook",
@@ -72,6 +73,7 @@ const TeamMembers: CollectionConfig = {
       type: "upload",
       relationTo: "media",
       required: true,
+      unique: true,
     },
     {
       name: "obj",
@@ -82,12 +84,13 @@ const TeamMembers: CollectionConfig = {
       type: "upload",
       required: true,
       relationTo: "file",
+      unique: true,
     },
     {
       name: "mat",
       admin: {
         description:
-          "Please upload ONLY .mat files, otherwise web will return error",
+          "Please upload ONLY .mtl files, otherwise web will return error",
       },
       type: "upload",
       required: true,
@@ -100,12 +103,11 @@ const TeamMembers: CollectionConfig = {
         description:
           "Input texture files, feel free to add more rows as needed",
       },
-
       fields: [
-        { name: "tex1", type: "upload", relationTo: "texture" },
-        { name: "tex2", type: "upload", relationTo: "texture" },
-        { name: "tex3", type: "upload", relationTo: "texture" },
-        { name: "tex4", type: "upload", relationTo: "texture" },
+        { name: "tex1", type: "upload", relationTo: "texture", unique: true },
+        { name: "tex2", type: "upload", relationTo: "texture", unique: true },
+        { name: "tex3", type: "upload", relationTo: "texture", unique: true },
+        { name: "tex4", type: "upload", relationTo: "texture", unique: true },
       ],
     },
   ],

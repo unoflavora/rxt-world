@@ -2,9 +2,6 @@ import { CollectionConfig } from "payload/types";
 
 export const Texture: CollectionConfig = {
   slug: "texture",
-  admin: {
-    hidden: true,
-  },
   upload: {
     staticURL: process.env.S3_DOMAIN,
     staticDir: "",

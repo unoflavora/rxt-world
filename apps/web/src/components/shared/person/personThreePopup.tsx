@@ -11,6 +11,7 @@ import ThreeScene from "@/components/shared/threeScene";
 import Image from "next/image";
 import { Member } from "@/gql/graphql";
 import Socials from "./personSocials";
+import { getUrl } from "@/lib/utils";
 
 export default function PersonPopup({
   person,
@@ -25,8 +26,8 @@ export default function PersonPopup({
       <DialogTrigger>{trigger}</DialogTrigger>
       <DialogContent>
         <ThreeScene
-          objUrl={person.obj.url as string}
-          matUrl={person.mat.url as string}
+          objUrl={getUrl(person.obj.url as string)}
+          matUrl={getUrl(person.mat.url as string)}
         />
         <Image
           src="/graphics/rotate.svg"

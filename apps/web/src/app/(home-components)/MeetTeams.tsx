@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { graphql } from "@/gql";
 import { Member } from "@/gql/graphql";
 import { graphqlClient } from "@/lib/graphql-client";
+import { getUrl } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -54,7 +55,7 @@ export default async function Teams() {
                 person={member as Member}
                 trigger={
                   <Image
-                    src={member.image.url!}
+                    src={getUrl(member.image.url!)}
                     width={500}
                     height={100}
                     className={`w-full h-full absolute overflow-visible object-cover object-center `}

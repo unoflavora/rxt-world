@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Socials from "../../../../components/shared/person/personSocials";
 import { Member } from "@/gql/graphql";
+import { getUrl } from "@/lib/utils";
 
 export default function Person(props: { person: Member }) {
   const { person } = props;
@@ -8,7 +9,7 @@ export default function Person(props: { person: Member }) {
     <div className="h-full hover:scale-110 transition-transform text-left flex flex-col gap-3 border border-gray-50/10 ">
       <Image
         className="w-full object-contain h-[20rem]"
-        src={person.image.url ?? "/placeholder.png"}
+        src={getUrl(person.image.url!) ?? "/placeholder.png"}
         width={500}
         height={500}
         alt="Image"

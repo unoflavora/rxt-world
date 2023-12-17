@@ -2,9 +2,6 @@ import { CollectionConfig } from "payload/types";
 
 export const Media: CollectionConfig = {
   slug: "media",
-  admin: {
-    hidden: true,
-  },
   upload: {
     staticURL: process.env.S3_DOMAIN,
     staticDir: "",

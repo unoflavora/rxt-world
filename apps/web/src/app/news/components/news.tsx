@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { cn } from "@/lib/utils";
+import { cn, getUrl } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { News } from "@/gql/graphql";
 import Image from "next/image";
@@ -21,7 +21,7 @@ export function News(
       )}
     >
       <Image
-        src={news.image.url as string}
+        src={getUrl(news.image.url as string)}
         width={500}
         height={100}
         className="w-full h-full object-cover object-center"
