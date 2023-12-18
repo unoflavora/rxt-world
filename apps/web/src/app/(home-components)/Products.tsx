@@ -55,7 +55,7 @@ export default function Products() {
           }}
           viewport={{ once: true }}
           style={{ gridTemplateColumns: "repeat(2, minmax(0, 1fr))" }}
-          className={`flex flex-col gap-10 md:grid md:gap-20 lg:gap-44 place-content-start justify-items-start`}
+          className={`flex flex-col gap-10 md:grid md:gap-20 lg:gap-44 xl:gap-64 place-content-start justify-items-start`}
         >
           {products.map((product, i) => {
             const index = i + 1;
@@ -70,9 +70,9 @@ export default function Products() {
                 <Image
                   loading="eager"
                   src={product.image}
-                  height={300}
-                  width={300}
-                  className="w-full h-full object-cover object-center"
+                  height={200}
+                  width={200}
+                  className="w-full h-full object-contain object-center"
                   alt={product.desc}
                 />
 
