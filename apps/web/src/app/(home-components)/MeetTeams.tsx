@@ -55,6 +55,7 @@ export default async function Teams() {
                 person={member as Member}
                 trigger={
                   <Image
+                    loading="eager"
                     src={getUrl(member.image.url!)}
                     width={500}
                     height={100}

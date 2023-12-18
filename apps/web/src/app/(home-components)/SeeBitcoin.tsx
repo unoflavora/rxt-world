@@ -11,7 +11,7 @@ export default function Bitcoinland() {
         </div>
         <div className="w-full relative justify-center items-end text-4xl">
           <div className="w-full h-[46rem] ">
-            <MapScene />
+            <MapScene url={process.env.PRODUCTION_ASSET_URL + "/penang_bitcoin.glb"}/>
           </div>
           <div className="absolute -bottom-7 left-1/2 -translate-x-1/2 bg-background w-[80%] max-w-[46rem]  py-7 px-14 flex max-sm:flex-col max-sm:justify-center max-sm:gap-2 justify-between items-center">
             <h1 className="text-base text-tertiary">EXPLORE MORE</h1>

@@ -8,6 +8,7 @@ export default function Person(props: { person: Member }) {
   return (
     <div className="h-full hover:scale-110 transition-transform text-left flex flex-col gap-3 border border-gray-50/10 ">
       <Image
+        loading="eager"
         className="w-full object-contain h-[20rem]"
         src={getUrl(person.image.url!) ?? "/placeholder.png"}
         width={500}

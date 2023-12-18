@@ -2,23 +2,16 @@
 import { Canvas, useLoader } from "@react-three/fiber";
 import { Suspense } from "react";
 import { OrbitControls } from "@react-three/drei";
-import { MTLLoader } from "three/addons/loaders/MTLLoader.js";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
-import { Loader, LoaderIcon } from "lucide-react";
-const Scene = () => {
-  // const materials = useLoader(
-  //   MTLLoader,
-  //   "penang bitcoin _final.mtl",
-  //   (loader) => {
-  //     loader.setPath("/map/");
-  //   }
-  // );
-  const obj = useLoader(GLTFLoader, "/models/penang_bitcoin.glb");
+import { LoaderIcon } from "lucide-react";
+const Scene = (props: {url: string}) => {
+
+  const obj = useLoader(GLTFLoader, props.url);
 
   return <primitive object={obj.scene} scale={0.008} />;
 };
 
-export default function MapScene() {
+export default function MapScene(props: {url: string}) {
   return (
     <div className=" w-full h-full">
       <Suspense
@@ -30,7 +23,7 @@ export default function MapScene() {
         }
       >
         <Canvas camera={{ fov: 45, position: [10, 5, 0] }}>
-          <Scene />
+          <Scene url={props.url} />
           <OrbitControls minPolarAngle={1.2} maxPolarAngle={1.2} />
 
           <ambientLight />

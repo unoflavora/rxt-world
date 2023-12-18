@@ -1,6 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import Link from "next/link";
 export default function Products() {
   const products = [
@@ -66,10 +67,15 @@ export default function Products() {
                   index % 2 === 0 ? "md:pt-72" : index !== 1 ? "md:-mt-36" : ""
                 } flex flex-col gap-4 md:gap-10 h-fit `}
               >
-                <div
-                  style={{ backgroundImage: `url('${product.image}')` }}
-                  className="h-[20rem] w-full bg-center bg-contain bg-no-repeat"
+                <Image
+                  loading="eager"
+                  src={product.image}
+                  height={300}
+                  width={300}
+                  className="w-full h-full object-cover object-center"
+                  alt={product.desc}
                 />
+
                 <h1 className="font-crimson text-2xl">{product.title}</h1>
                 <p className="text-[#E2E2E2] text-sm md:text-base">
                   {product.desc}
